@@ -8,6 +8,7 @@
 	<module name="language_menu" order="4" preload="yes"/>
 	<module name="captcha" order="0" preload="no"/>
 	<module name="links" order="5" preload="no"/>
+	<module name="articles" order="6" preload="no"/>
 
 	<user
 		fullname="Administrator"

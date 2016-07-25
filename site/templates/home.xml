@@ -10,7 +10,20 @@
 
 		<body>
 			<div class="intro">
-				
+				<a
+					class="action"
+					href="url_Make('', 'home')"
+					cms:eval="href"
+					>
+					<cms:text constant="label_enter"/>
+				</a>
+				<!-- terms article -->
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="terms"
+					template="stock/article_generic.xml"
+					/>
 			</div>
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
