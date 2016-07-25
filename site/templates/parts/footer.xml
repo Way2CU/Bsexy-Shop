@@ -11,7 +11,7 @@
       <!-- phone link -->
       <cms:module
         name="links"
-        action="show_link_list"
+        action="show"
         text_id="phone"
         template="parts/phone_link.xml"
         />
