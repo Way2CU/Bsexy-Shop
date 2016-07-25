@@ -1,0 +1,27 @@
+<document>
+  <footer>
+    <div class="content">
+      <img
+        class="logo"
+        src="_BASEURL.'/site/images/logo-vector'"
+        alt="bsexy-logo"
+        cms:eval="src"
+        />
+        
+      <!-- phone link -->
+      <cms:module
+        name="links"
+        action="show_link_list"
+        text_id="phone"
+        template="parts/phone_link.xml"
+        />
+
+      <img
+        class="note"
+        src="_BASEURL.'/site/images/footer-note-vector.svg'"
+        alt="message"
+        cms:eval="src"
+        />
+    </div>
+  </footer>
+</document>

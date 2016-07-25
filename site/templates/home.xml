@@ -9,7 +9,11 @@
 		</head>
 
 		<body>
-			<h1>It works!</h1>
+			<div class="intro">
+				
+			</div>
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
 		</body>
 	</html>
 </document>
