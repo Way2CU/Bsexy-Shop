@@ -8,13 +8,13 @@
 
 div.intro {
   padding: 0px calc(~'(100% - 960px)' / 2);
-  padding-top: 620px;
+  padding-top: calc(100vw * 0.33);
   text-align: center;
   background-color: @color_background;
   background-image: url(../images/main-header.jpg);
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: 1920px 600px;
+  background-size: 100% auto;
 }
 
 div.intro a {
@@ -24,6 +24,7 @@ div.intro a {
   color: @color_text;
   font-weight: 700;
   font-size: 2em;
+  border: 1px solid @color_dark_action;
 }
 
 div.intro article {
