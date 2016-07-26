@@ -13,7 +13,7 @@
         name="links"
         action="show"
         text_id="phone"
-        template="parts/phone_link.xml"
+        template="parts/link.xml"
         />
 
       <img
