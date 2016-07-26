@@ -1,5 +1,11 @@
 <document>
   <div class="intro">
+    <img 
+      src="_BASEURL.'/site/images/logo-vector'"
+      alt="bsexy-logo"
+      class="logo"
+      cms:eval="src"
+      />
     <a
       class="action"
       href="url_Make('', 'home')"
