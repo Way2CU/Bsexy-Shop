@@ -1,0 +1,47 @@
+<document>
+    <!-- sprite svg -->
+    <cms:svg file="site-sprite.svg"/>
+    
+  <header>
+    <div class="main">
+      <!-- phone link -->
+      <cms:module
+        name="links"
+        action="show"
+        text_id="phone"
+        template="parts/link.xml"
+        />
+      <!-- logo -->
+      <a 
+        href="url_Make('', 'home')"
+        class="logo"
+        cms:eval="href"
+        >
+        <img src="_BASEURL.'/site/images/logo-vector.svg'" alt="bsexy-logo" cms:eval="src"/>
+      </a>
+      <!-- Links to services outside the site -->
+      <a href="#" class="service">
+        <cms:svg file="site-sprite.svg" symbol="shop"/>
+        <cms:text constant="sex_store"/>
+      </a>
+      <a href="#" class="service">
+        <cms:svg file="site-sprite.svg" symbol="calls"/>
+        <cms:text constant="erotic_calls"/>
+      </a>
+      <a href="#" class="service">
+        <cms:svg file="site-sprite.svg" symbol="rooms"/>
+        <cms:text constant="rooms_for_rent"/>
+      </a>
+    </div>
+
+    <!-- Services categories menu -->
+    <nav id="categories">
+      <cms:module
+          name="shop"
+          action="show_category_list"
+          parent="services"
+          template="parts/services_menu_item.xml"
+          />
+    </nav>
+  </header>
+</document>
