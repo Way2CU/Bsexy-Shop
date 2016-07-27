@@ -1,8 +1,6 @@
 <document>
   <optgroup
     label="$params['title'][$language]"
-    selected="$params['text_id'] == 'central' ? selected : false"
-    cms:optional="selected"
     cms:eval="label"
     >
     <cms:var param="name" multilanguage="yes"/>
