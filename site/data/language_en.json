@@ -3,5 +3,10 @@
   "label_enter": "Enter site",
   "sex_store": "Sex store",
   "erotic_calls": "Erotic calls",
-  "rooms_for_rent": "Rooms for rent"
+  "rooms_for_rent": "Rooms for rent",
+  "label_areas": "Choose area:",
+  "label_search": "Search",
+  "label_display_options": "Display options:",
+  "label_list": "List",
+  "label_gallery": "Gallery"
 }

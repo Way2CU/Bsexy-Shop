@@ -3,5 +3,10 @@
   "label_enter": "כניסה לאתר",
   "sex_store": "חנות סקס",
   "erotic_calls": "שיחות אירוטיות",
-  "rooms_for_rent": "חדרים לפי שעה"
+  "rooms_for_rent": "חדרים לפי שעה",
+  "label_areas": "בחר אזור:",
+  "label_search": "חפש",
+  "label_display_options": "שינוי תצוגה:",
+  "label_list": "רשימה",
+  "label_gallery": "גלריה"
 }

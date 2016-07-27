@@ -170,3 +170,111 @@ nav#categories a span {
   height: 1.3em;
   fill: @color_text;
 }
+
+/**
+ * Header options section
+ */
+div#options {
+  padding: 0px calc(~'(100% - 1200px)' / 2);
+}
+
+div#options form {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid @color_border;
+}
+
+div#options form label {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+div#options form label span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.7em 1em;
+  line-height: 1.5em;
+  background-color: @color_border;
+}
+
+div#options form label input,
+div#options form label select {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0.7em 0.2em;
+  line-height: 1.5em;
+  border: none;
+  box-shadow: none;
+  background-color: inherit;
+  color: @color_text;
+  width: 220px;
+  margin: 0;
+}
+
+div#options form label select optgroup,
+div#options form label select option {
+  background-color: @color_background;
+}
+
+div#options form button {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+  padding: 0em 1.5em;
+  height: 2.9em;
+  background-color: @color_dark_action;
+  cursor: pointer;
+}
+
+div#options form  button svg {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  fill: @color_text;
+}
+
+div.display {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+}
+
+html[dir="rtl"] div.display {
+  float: left;
+}
+
+div.display span,
+div.display a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.display span {
+  padding: 0.8em 1em;
+}
+
+div.display a {
+  text-decoration: none;
+  color: @color_text;
+  padding: 0em 0.5em;
+  line-height: 3em;
+}
+
+div.display a svg {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0em 0.2em;
+  width: 2em;
+  height: 2em;
+  fill: @color_text;
+  transition: all 0.3s;
+}
+
+div.display a:hover svg {
+  fill: @color_dark_action;
+}

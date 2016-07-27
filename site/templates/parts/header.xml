@@ -33,7 +33,6 @@
         <cms:text constant="rooms_for_rent"/>
       </a>
     </div>
-
     <!-- Services categories menu -->
     <nav id="categories">
       <cms:module
@@ -43,5 +42,43 @@
           template="parts/services_menu_item.xml"
           />
     </nav>
+
+    <div id="options">
+      <form action="">
+        <label>
+          <span><cms:text constant="label_areas"/></span>
+          <select name="areas">
+            <cms:module
+              name="shop"
+              action="show_category_list"
+              parent="areas"
+              template="parts/areas_option_group_item.xml"
+              />
+          </select>
+        </label>
+
+        <label>
+          <span><cms:text constant="label_search"/></span>
+          <input type="search"/>
+        </label>
+
+        <button class="action" type="submit">
+            <cms:svg file="site-sprite.svg" symbol="search"/>
+        </button>
+      </form>
+
+      <!-- display options -->
+      <div class="display">
+        <span><cms:text constant="label_display_options"/></span>
+        <a data-id="list" href="javascript:void()">
+          <cms:text constant="label_list"/>
+          <cms:svg file="site-sprite.svg" symbol="view"/>
+        </a>
+        <a data-id="gallery" href="javascript:void()">
+          <cms:text constant="label_gallery"/>
+          <cms:svg file="site-sprite.svg" symbol="gallery"/>
+        </a>
+      </div>
+    </div>
   </header>
 </document>

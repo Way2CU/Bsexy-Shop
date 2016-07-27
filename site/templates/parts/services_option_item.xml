@@ -1,0 +1,5 @@
+<document>
+  <option value="$params['title'][$language]" cms:eval="value">
+    <cms:var param="title" multilanguage="yes"/>
+  </option>
+</document>
