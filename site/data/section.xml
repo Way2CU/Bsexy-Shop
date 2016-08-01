@@ -5,7 +5,10 @@
 		<language name="all" file="home.xml" />
 	</section>
   <section name="services">
-    <language name="all" file="services.xml" />
+    <language name="all">
+      <action name="_default" file="services.xml"/>
+      <action name="view" file="item_detail.xml"/>
+    </language>
   </section>
   <section name="areas">
     <language name="all" file="areas.xml" />
