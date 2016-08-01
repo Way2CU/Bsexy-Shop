@@ -12,6 +12,47 @@
 			<!-- Top part of the site -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
 				<cms:template file="parts/header.xml"/>
+				<!-- Promoted categories section-->
+				<section>
+					<!-- Show category title -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="promoted1"
+						template="parts/category_title.xml"
+						/>
+
+					<!-- Show promoted items -->
+					<div class="promoted">
+						<cms:module
+							name="shop"
+							action="show_item_list"
+							category="promoted1"
+							order_by="priority"
+							template="parts/category_items.xml"
+							/>
+
+						<cms:module
+							name="shop"
+							action="show_item_list"
+							category="promoted1"
+							order_by="priority"
+							template="parts/category_items.xml"
+							/>
+					</div>
+
+					<div class="latest">
+						<h3><cms:text constant="title_latest"/></h3>
+						<cms:module
+							name="shop"
+							action="show_item_list"
+							category="promoted1"
+							order_by="id"
+							limit="6"
+							template="parts/category_latest_items.xml"
+							/>
+					</div>
+				</section>
 			</cms:if>
 			
 			<!-- condition for showing intro page on first time visiting the site -->

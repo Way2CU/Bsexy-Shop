@@ -5,6 +5,70 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors:Tal Reznic
  */
+section {
+  padding: 0 calc(~'(100% - 1200px)' / 2);
+}
+
+div.latest > h3,
+section > h2 {
+  text-align: center;
+  margin: 0;
+  padding: 1em 0em;
+  position: relative;
+  overflow: hidden;
+}
+
+div.latest > h3 {
+  padding: 0.5em 0em;
+}
+
+div.latest > h3:before,
+section > h2:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: @color_border;
+  transform: translatey(-50%);
+  z-index: -2;
+}
+
+div.latest > h3:after,
+section > h2:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: @color_background;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+div.latest > h3:after {
+  width: 50%;
+}
+
+div.latest,
+div.promoted {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 800px;
+}
+
+div.latest {
+  width: 380px;
+  margin-left: 20px;
+}
+
+html[dir="rtl"] div.latest {
+  margin-right: 20px;
+  margin-left: 0;
+}
 
 div.intro {
   padding: 0px calc(~'(100% - 960px)' / 2);
@@ -38,4 +102,164 @@ div.intro article {
   margin: 0;
   padding: 1em 0em;
   border-top: 1px solid @color_text;
+}
+
+/**
+ * Item
+ */
+div.new,
+div.item {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: calc(~'(40px / 3)');
+  box-sizing: border-box;
+  border: 1px solid @color_text;
+  width: 190px;
+}
+
+div.item.gallery {
+  display: block;
+  width: 100%;
+}
+
+div.latest div.new {
+  width: 120px;
+  margin: 0;
+  margin-bottom: calc(~'(20px / 2)');
+}
+
+div.item:nth-of-type(1n) {
+  margin-right: calc(~'(40px / 3)');
+}
+
+html[dir="rtl"] div.item:nth-of-type(1n) {
+  margin-left: calc(~'(40px / 3)');
+  margin-right: 0;
+}
+
+div.latest div.new:nth-of-type(1n) {
+  margin-right: calc(~'(20px / 2)');
+}
+
+html[dir="rtl"] div.latest div.new:nth-of-type(1n) {
+  margin-left: calc(~'(20px / 2)');
+  margin-right: 0;
+}
+
+div.latest div.new:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+html[dir="rtl"] div.latest div.new:nth-of-type(3n) {
+  margin-left: 0;
+}
+
+div.item:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+html[dir="rtl"] div.item:nth-of-type(4n) {
+  margin-left: 0;
+}
+
+div.latest div.new:nth-of-type(4n) {
+  margin-right: calc(~'(40px / 3)');
+}
+
+html[dir="rtl"] div.latest div.new:nth-of-type(4n) {
+  margin-left: calc(~'(40px / 3)');
+}
+
+div.new[data-priority="1"],
+div.item[data-priority="1"] {
+  border-color: @color_premium;
+  background-color: fade(@color_premium, 20%);
+}
+
+div.new[data-priority="2"],
+div.item[data-priority="2"] {
+  border-color: @color_classic;
+  background-color: fade(@color_classic, 20%);
+}
+
+div.new a.image,
+div.item a.image {
+  display: block;
+  text-align: center;
+  height: 230px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+div.item.gallery a.image {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.latest div.new a.image {
+  height: 120px;
+}
+
+div.new a.image img,
+div.item a.image img {
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+div.item a.image:hover img {
+  transform: scale(1.2);
+}
+
+div.item.gallery div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.new h4,
+div.item h4 {
+  margin: 0;
+  padding: 0.5em 0.5em;
+}
+
+div.latest div.new h4 {
+  font-size: 1em;
+}
+
+div.new p,
+div.item p {
+  margin: 0;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+div.new a.phone,
+div.item a.phone {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  color: @color_text;
+  font-weight: 700;
+}
+
+div.item.gallery a.phone {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+}
+
+div.new a.phone svg,
+div.item a.phone svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0em 0.2em;
+  fill: @color_text;
 }

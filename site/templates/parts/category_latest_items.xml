@@ -1,0 +1,26 @@
+<document>
+  <div class="new" data-priority="$params['priority']" cms:eval="data-priority">
+    <a
+      class="image"
+      href="url_Make('view', 'services')" 
+      cms:eval="href"
+      >
+      <img 
+        src="gallery::getGroupThumbnailById($params['gallery'], null, 120,Thumbnail::CONSTRAIN_HEIGHT)"
+        alt="$params['name'][$language]"
+        cms:eval="src,alt"
+        />
+    </a>
+      <h4><cms:var param="name" multilanguage="yes"/></h4>
+
+      <!-- Show phone numbers -->
+      <cms:module
+        name="shop"
+        action="show_property"
+        item="$params['id']"
+        text_id="phone1"
+        template="parts/phone.xml"
+        cms:eval="item"
+        />
+  </div>
+</document>
