@@ -46,11 +46,44 @@ Site.is_mobile = function() {
 };
 
 /**
+ * Handler function for view control links
+ */
+Site.handle_view_controls = function() {
+	var self = this;
+	var view = self.getAttribute('data-id');
+	var view_controls = document.querySelectorAll('div.display a');
+	var items = document.querySelectorAll('div.item');
+
+	self.classList.add('active');
+	for(var i = 0,count = view_controls.length; i <count; i++) {
+		if(self != view_controls[i]) {
+			view_controls[i].classList.remove('active');
+		}
+	}
+
+	if(view == "gallery") {
+		for(var i = 0, count = items.length; i < count; i++) {
+			items[i].classList.add('gallery');
+		}
+	} else {
+		for(var i = 0, count = items.length; i < count; i++) {
+			items[i].classList.remove('gallery');
+		}
+	}
+}
+
+/**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
+
+	// create function for displaying category items view
+	var view_controls = document.querySelectorAll('div.display a');
+	for(var i = 0,count = view_controls.length; i <count; i++) {
+		view_controls[i].addEventListener('click', Site.handle_view_controls);
+	}
 };
 
 
