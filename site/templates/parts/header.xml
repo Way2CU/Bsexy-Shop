@@ -70,7 +70,7 @@
       <!-- display options -->
       <div class="display">
         <span><cms:text constant="label_display_options"/></span>
-        <a data-id="list" href="javascript:void()">
+        <a class="active" data-id="list" href="javascript:void()">
           <cms:text constant="label_list"/>
           <cms:svg file="site-sprite.svg" symbol="view"/>
         </a>
