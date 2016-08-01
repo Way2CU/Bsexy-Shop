@@ -20,10 +20,12 @@
 						action="show_category"
 						text_id="promoted1"
 						template="parts/category_title.xml"
-						/>
+						>
+						<param name="no_icon" value=""/>
+					</cms:module>
 
 					<!-- Show promoted items -->
-					<div class="promoted">
+					<div class="category_items">
 						<cms:module
 							name="shop"
 							action="show_item_list"

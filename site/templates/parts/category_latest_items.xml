@@ -1,5 +1,5 @@
 <document>
-  <div class="new" data-priority="$params['priority']" cms:eval="data-priority">
+  <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
     <a
       class="image"
       href="url_Make('view', 'services')" 

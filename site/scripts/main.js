@@ -52,7 +52,7 @@ Site.handle_view_controls = function() {
 	var self = this;
 	var view = self.getAttribute('data-id');
 	var view_controls = document.querySelectorAll('div.display a');
-	var items = document.querySelectorAll('div.item');
+	var items = document.querySelectorAll('div.category_items div.item');
 
 	self.classList.add('active');
 	for(var i = 0,count = view_controls.length; i <count; i++) {

@@ -5,11 +5,21 @@
       href="url_Make('view', 'services')" 
       cms:eval="href"
       >
-      <img 
-        src="gallery::getGroupThumbnailById($params['gallery'], null, 190,Thumbnail::CONSTRAIN_HEIGHT)"
-        alt="$params['name'][$language]"
-        cms:eval="src,alt"
-        />
+      <cms:if condition="isset($template['category_template'])">
+        <img 
+          src="gallery::getGroupThumbnailById($params['gallery'], null, 250,Thumbnail::CONSTRAIN_HEIGHT)"
+          alt="$params['name'][$language]"
+          cms:eval="src,alt"
+          />
+      </cms:if>
+
+      <cms:if condition="!isset($template['category_template'])">
+        <img 
+          src="gallery::getGroupThumbnailById($params['gallery'], null, 190,Thumbnail::CONSTRAIN_HEIGHT)"
+          alt="$params['name'][$language]"
+          cms:eval="src,alt"
+          />
+      </cms:if>
     </a>
     <div>
         <h4><cms:var param="name" multilanguage="yes"/></h4>
