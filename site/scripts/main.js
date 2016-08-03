@@ -46,30 +46,40 @@ Site.is_mobile = function() {
 };
 
 /**
+ * Handle product thumbnail click event
+ */
+Site.handle_product_thumbnail = function(event) {
+	var index = event.target.dataset.index;
+	var big_image_container = document.querySelector('div.main_image');
+	var big_images = document.querySelectorAll('img.big_image');
+	
+	for (var i=0, count=big_images.length; i<count; i++) {
+		if (index == i) {
+			big_images[i].classList.add('visible');
+		} else {
+			big_images[i].classList.remove('visible');
+		}
+	}
+}
+
+/**
  * Handler function for view control links
  */
 Site.handle_view_controls = function() {
-	var self = this;
-	var view = self.getAttribute('data-id');
+	var view = this.getAttribute('data-id');
 	var view_controls = document.querySelectorAll('div.display a');
-	var items = document.querySelectorAll('div.category_items div.item');
+	var items_container = document.querySelector('div.category_items');
 
-	self.classList.add('active');
+	this.classList.add('active');
 	for(var i = 0,count = view_controls.length; i <count; i++) {
-		if(self != view_controls[i]) {
+		if(this != view_controls[i]) {
 			view_controls[i].classList.remove('active');
 		}
 	}
 
-	if(view == "gallery") {
-		for(var i = 0, count = items.length; i < count; i++) {
-			items[i].classList.add('gallery');
-		}
-	} else {
-		for(var i = 0, count = items.length; i < count; i++) {
-			items[i].classList.remove('gallery');
-		}
-	}
+	if(view == "gallery")
+			items_container.classList.add('gallery'); else
+			items_container.classList.remove('gallery');
 }
 
 /**
@@ -83,6 +93,16 @@ Site.on_load = function() {
 	var view_controls = document.querySelectorAll('div.display a');
 	for(var i = 0,count = view_controls.length; i <count; i++) {
 		view_controls[i].addEventListener('click', Site.handle_view_controls);
+	}
+
+	// create function for rotating product big image
+	if(document.querySelector('section.item_details')) {
+		var product_thumbnails = document.querySelectorAll('img.thumbnail');
+		var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+		for (var i = 0, count = product_thumbnails.length; i<count; i++) {
+			product_thumbnails[i].dataset.index = i;
+			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+		}
 	}
 };
 
