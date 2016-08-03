@@ -1,0 +1,51 @@
+<document>
+  <!-- Item title -->
+  <h2><cms:var param="name" multilanguage="yes"/></h2>
+  <!-- Information -->
+  <div class="information">
+    <cms:markdown param="description" multilanguage="yes"/>
+    <!-- Show phone numbers -->
+    <cms:module
+      name="shop"
+      action="show_property_list"
+      item="$params['id']"
+      template="parts/phone.xml"
+      cms:eval="item"
+      />
+  </div>
+
+  <!-- Item images -->
+  <div class="item_gallery">
+    <!-- Big image container-->
+    <div 
+      class="main_image"
+      style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
+      cms:eval="style"
+      >
+      <cms:module
+        name="gallery"
+        action="show_image_list"
+        group_id="$params['gallery']"
+        limit="4"
+        template="parts/item_images.xml"
+        cms:eval="group_id"
+        >
+        <param name="big_image" value=""/>
+      </cms:module>
+    </div>
+    
+    <!-- Thumbnail images -->
+    <div class="thumbnails">
+      <cms:module
+        name="gallery"
+        action="show_image_list"
+        group_id="$params['gallery']"
+        limit="4"
+        template="parts/item_images.xml"
+        cms:eval="group_id"
+        >
+        <param name="thumbnail_image" value=""/>
+      </cms:module>
+    </div>
+  </div>
+</document>

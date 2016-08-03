@@ -7,7 +7,7 @@
   <section name="services">
     <language name="all">
       <action name="_default" file="services.xml"/>
-      <action name="view" file="item_detail.xml"/>
+      <action name="view" file="view.xml"/>
     </language>
   </section>
   <section name="areas">
