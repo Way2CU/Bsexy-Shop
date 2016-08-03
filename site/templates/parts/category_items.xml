@@ -1,8 +1,9 @@
+
 <document>
   <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
     <a
       class="image"
-      href="url_Make('view', 'services')" 
+      href="url_Make('view', 'services', array('id', $params['id']))"
       cms:eval="href"
       >
       <cms:if condition="isset($template['category_template'])">
