@@ -143,8 +143,7 @@ section.category div.item {
   margin-bottom: calc(~'(50px / 2)');
 }
 
-section.category div.item.gallery,
-div.item.gallery {
+div.category_items.gallery div.item {
   display: block;
   width: 100%;
 }
@@ -229,7 +228,7 @@ div.item a.image {
   overflow: hidden;
 }
 
-div.item.gallery a.image {
+div.category_items.gallery div.item a.image {
   display: inline-block;
   vertical-align: top;
 }
@@ -252,7 +251,7 @@ div.item a.image:hover img {
   transform: scale(1.2);
 }
 
-div.item.gallery div {
+div.category_items.gallery div.item div {
   display: inline-block;
   vertical-align: top;
 }
@@ -284,7 +283,7 @@ div.item a.phone {
   font-weight: 700;
 }
 
-div.item.gallery a.phone {
+div.category_items.gallery div.item a.phone {
   display: inline-block;
   padding: 0.5em 1.5em;
 }
@@ -296,4 +295,81 @@ div.item a.phone svg {
   height: 1.5em;
   padding: 0em 0.2em;
   fill: @color_text;
+}
+
+/**
+ * Item details
+ */
+div.information,
+div.item_gallery {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 50%;
+}
+
+div.information a.phone {
+  padding: 0.2em 1em;
+  color: @color_text;
+  font-size: 1.5em;
+}
+
+div.information a.phone:first-of-type {
+  margin-right: 1em;
+}
+
+html[dir="rtl"] div.information a.phone:first-of-type {
+  margin-right: 0;
+  margin-left: 1em;
+}
+
+div.item_gallery {
+  text-align: center;
+}
+
+div.item_gallery div.main_image {
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 600px;
+}
+
+div.item_gallery div.main_image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.3s;
+}
+
+div.item_gallery div.main_image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+div.item_gallery div.main_image img.visible {
+  opacity: 1;
+}
+
+div.item_gallery div.thumbnails {
+  padding: 1em 0em;
+}
+
+div.item_gallery div.thumbnails img {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0em 0.5em;
+  padding: 0.5em;
+  border: 1px solid @color_border;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+div.item_gallery div.thumbnails img:hover {
+  border-color: @color_dark_action;
 }
