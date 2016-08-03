@@ -30,13 +30,24 @@
 @vertical_spacing: 2em;
 
 .action {
+  display: inline-block;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
   padding: 0.3em 0.5em;
   background-image: 
     linear-gradient(180deg, @color_dark_action 0%, @color_bright_action 100%);
   border-radius: @radius;
   z-index: 0;
+}
+
+.action svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0em 0.2em;
+  fill: @color_text;
 }
 
 .action:hover:before {
