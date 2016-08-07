@@ -1,4 +1,3 @@
-
 <document>
   <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
     <a
