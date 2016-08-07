@@ -49,15 +49,18 @@ Site.is_mobile = function() {
  * Handle product thumbnail click event
  */
 Site.handle_product_thumbnail = function(event) {
+	var self = this;
 	var index = event.target.dataset.index;
-	var big_image_container = document.querySelector('div.main_image');
+	var thumbnail_images = document.querySelectorAll('img.thumbnail')
 	var big_images = document.querySelectorAll('img.big_image');
-	
+
 	for (var i=0, count=big_images.length; i<count; i++) {
 		if (index == i) {
 			big_images[i].classList.add('visible');
+			thumbnail_images[i].classList.add('active');
 		} else {
 			big_images[i].classList.remove('visible');
+			thumbnail_images[i].classList.remove('active');
 		}
 	}
 }
@@ -69,7 +72,6 @@ Site.handle_view_controls = function() {
 	var view = this.getAttribute('data-id');
 	var view_controls = document.querySelectorAll('div.display a');
 	var items_container = document.querySelector('div.category_items');
-
 	this.classList.add('active');
 	for(var i = 0,count = view_controls.length; i <count; i++) {
 		if(this != view_controls[i]) {
@@ -99,13 +101,13 @@ Site.on_load = function() {
 	if(document.querySelector('section.item_details')) {
 		var product_thumbnails = document.querySelectorAll('img.thumbnail');
 		var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+		var thumbnail_image = document.querySelectorAll('img.thumbnail')[0].classList.add('active');
 		for (var i = 0, count = product_thumbnails.length; i<count; i++) {
 			product_thumbnails[i].dataset.index = i;
 			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
 		}
 	}
 };
-
 
 // connect document `load` event with handler function
 $(Site.on_load);
