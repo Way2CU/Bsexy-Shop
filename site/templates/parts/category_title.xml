@@ -16,7 +16,7 @@
 
   <!-- Show category title -->
   <cms:if condition="isset($template['page_title'])">
-      <cms:var param="title" multilanguage="yes"/>
+      <cms:var name="strip_tags($params['title'][$language])"/>
   </cms:if>
 
   <!-- Show item page title -->
