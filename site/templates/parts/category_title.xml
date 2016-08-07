@@ -18,4 +18,9 @@
   <cms:if condition="isset($template['page_title'])">
       <cms:var param="title" multilanguage="yes"/>
   </cms:if>
+
+  <!-- Show item page title -->
+  <cms:if condition="isset($template['item_title'])">
+      <cms:var param="name" multilanguage="yes"/>
+  </cms:if>
 </document>
