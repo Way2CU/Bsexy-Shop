@@ -308,6 +308,33 @@ div.item_gallery {
   width: 50%;
 }
 
+div.information {
+  padding-right: 2em;
+}
+
+html[dir="rtl"] div.information {
+  padding-right: 0em;
+  padding-left: 2em;
+}
+
+div.information div.property {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 1em 0em;
+  width: 50%;
+}
+
+div.information p,
+div.information div.property span {
+  font-size: 1.3em;
+}
+
+div.information p {
+  margin: 0;
+  padding: 0em 0em 1em 0em;
+}
+
 div.information a.phone {
   padding: 0.2em 1em;
   color: @color_text;

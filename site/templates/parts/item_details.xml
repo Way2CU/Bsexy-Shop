@@ -3,12 +3,68 @@
   <h2><cms:var param="name" multilanguage="yes"/></h2>
   <!-- Information -->
   <div class="information">
+    <!-- Age property -->
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="age"
+      template="parts/property.xml"
+      cms:eval="item"
+      />
+    <!-- Height property -->
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="height"
+      template="parts/property.xml"
+      cms:eval="item"
+      />
+    <!-- Breast size property -->
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="breast_size"
+      template="parts/property.xml"
+      cms:eval="item"
+      />
+    <!-- Language property -->
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="language"
+      template="parts/property.xml"
+      cms:eval="item"
+      />
+    <!-- Origin property -->
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="origin"
+      template="parts/property.xml"
+      cms:eval="item"
+      />
+
     <cms:markdown param="description" multilanguage="yes"/>
     <!-- Show phone numbers -->
     <cms:module
       name="shop"
-      action="show_property_list"
+      action="show_property"
       item="$params['id']"
+      text_id="phone1"
+      template="parts/phone.xml"
+      cms:eval="item"
+      />
+
+    <cms:module
+      name="shop"
+      action="show_property"
+      item="$params['id']"
+      text_id="phone2"
       template="parts/phone.xml"
       cms:eval="item"
       />
