@@ -178,12 +178,14 @@ div#options {
   padding: 0px calc(~'(100% - 1200px)' / 2);
 }
 
+div#options label.area,
 div#options form {
   display: inline-block;
   vertical-align: middle;
   border: 1px solid @color_border;
 }
 
+div#options label.area,
 div#options form label {
   display: inline-block;
   vertical-align: top;
@@ -191,6 +193,7 @@ div#options form label {
   position: relative;
 }
 
+div#options label.area span,
 div#options form label span {
   display: inline-block;
   vertical-align: middle;
@@ -200,7 +203,7 @@ div#options form label span {
 }
 
 div#options form label input,
-div#options form label select {
+div#options label select {
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -214,8 +217,8 @@ div#options form label select {
   margin: 0;
 }
 
-div#options form label select optgroup,
-div#options form label select option {
+div#options label.area select optgroup,
+div#options label.area select option {
   background-color: @color_background;
 }
 

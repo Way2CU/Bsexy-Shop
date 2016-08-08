@@ -44,19 +44,20 @@
     </nav>
 
     <div id="options">
-      <form action="">
-        <label>
-          <span><cms:text constant="label_areas"/></span>
-          <select name="areas">
-            <cms:module
-              name="shop"
-              action="show_category_list"
-              parent="areas"
-              template="parts/areas_option_group_item.xml"
-              />
-          </select>
-        </label>
+      <!-- Area combobox -->
+      <label class="area">
+        <span><cms:text constant="label_areas"/></span>
+        <select name="areas">
+          <cms:module
+            name="shop"
+            action="show_category_list"
+            parent="areas"
+            template="parts/areas_option_group_item.xml"
+            />
+        </select>
+      </label>
 
+      <form action="">
         <label>
           <span><cms:text constant="label_search"/></span>
           <input type="search"/>
