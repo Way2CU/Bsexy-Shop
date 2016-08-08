@@ -207,12 +207,12 @@ html[dir="rtl"] div.latest div.item:nth-of-type(4n) {
   margin-left: calc(~'(40px / 3)');
 }
 
-div.item[data-priority="1"] {
+div.item[data-priority^="1"] {
   border-color: @color_premium;
   background-color: fade(@color_premium, 20%);
 }
 
-div.item[data-priority="2"] {
+div.item[data-priority^="2"] {
   border-color: @color_classic;
   background-color: fade(@color_classic, 20%);
 }
