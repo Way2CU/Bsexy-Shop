@@ -2,24 +2,14 @@
   <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
     <a
       class="image"
-      href="url_Make('view', 'services', array('id', $params['id']))"
+      href="url_Make('view', 'services', array('service', isset($template['promoted']) ? $template['promoted'] : $_REQUEST['service']), array('id', $params['id']))"
       cms:eval="href"
       >
-      <cms:if condition="isset($template['category_template'])">
-        <img 
-          src="gallery::getGroupThumbnailById($params['gallery'], null, 250,Thumbnail::CONSTRAIN_HEIGHT)"
-          alt="$params['name'][$language]"
-          cms:eval="src,alt"
-          />
-      </cms:if>
-
-      <cms:if condition="!isset($template['category_template'])">
-        <img 
-          src="gallery::getGroupThumbnailById($params['gallery'], null, 190,Thumbnail::CONSTRAIN_HEIGHT)"
-          alt="$params['name'][$language]"
-          cms:eval="src,alt"
-          />
-      </cms:if>
+      <img 
+        src="gallery::getGroupThumbnailById($params['gallery'], null, 250,Thumbnail::CONSTRAIN_HEIGHT)"
+        alt="$params['name'][$language]"
+        cms:eval="src,alt"
+        />
     </a>
     <div>
         <h4><cms:var param="name" multilanguage="yes"/></h4>
