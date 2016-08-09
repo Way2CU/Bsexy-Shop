@@ -49,9 +49,9 @@ section > h2:before {
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
+  right: 0%;
   height: 1px;
-  width: 100%;
+  width: 30%;
   background-color: @color_border;
   transform: translatey(-50%);
   z-index: -2;
@@ -62,16 +62,15 @@ section > h2:after {
   content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 30%;
+  left: 0%;
+  width: calc(~'(30% - 1em)');
   height: 1px;
-  background-color: @color_background;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  background-color: @color_border;
+  z-index: -2;
 }
 
 div.latest > h3:after {
-  width: 50%;
+  width: 30%;
 }
 
 div.latest,
