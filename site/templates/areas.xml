@@ -56,6 +56,16 @@
             <param name="category_template" value=""/>
           </cms:module>
         </div>
+        <!-- Show area page banners -->
+        <div class="commercial">
+          <cms:module
+            name="links"
+            action="show_link_list"
+            group="$_REQUEST['city']"
+            template="parts/commercial.xml"
+            cms:eval="group"
+            />
+        </div>
       </section>
 
       <!-- Bottom section of the site -->
