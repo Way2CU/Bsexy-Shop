@@ -11,6 +11,15 @@
     </language>
   </section>
   <section name="areas">
-    <language name="all" file="areas.xml" />
+    <language name="all">
+      <action name="_default" file="areas.xml"/>
+      <action name="view" file="view.xml"/>
+    </language>
+  </section>
+  <section name="promoted">
+    <language name="all">
+      <action name="_default" file="parts/promoted_items.xml"/>
+      <action name="view" file="view.xml"/>
+    </language>
   </section>
 </document>
