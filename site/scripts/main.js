@@ -46,6 +46,15 @@ Site.is_mobile = function() {
 };
 
 /**
+ * Handle combobox option change event
+ */
+Site.handle_combobox_option = function(event) {
+	var select = this;
+	var option = select.options[select.selectedIndex].value;
+	window.location = option;
+}
+
+/**
  * Handle product thumbnail click event
  */
 Site.handle_product_thumbnail = function(event) {
@@ -107,6 +116,10 @@ Site.on_load = function() {
 			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
 		}
 	}
+
+	// create function for combobox option elements
+	var select_element = document.querySelector('select');
+	select_element.addEventListener('change', Site.handle_combobox_option);
 };
 
 // connect document `load` event with handler function
