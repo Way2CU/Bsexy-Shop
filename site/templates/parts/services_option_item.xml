@@ -1,7 +1,18 @@
 <document>
-  <cms:if condition="$section == 'home' or $section == 'areas'">
+  <cms:if condition="$section == 'home'">
     <option 
-      value="url_Make('','areas', array('city', $params['text_id']))" 
+      value="url_Make('','areas', array('city', $params['text_id']))"
+      cms:eval="value"
+      >
+      <cms:var param="title" multilanguage="yes"/>
+    </option>
+  </cms:if>
+
+  <cms:if condition="$section == 'areas'">
+    <option 
+      value="url_Make('','areas', array('city', $params['text_id']))"
+      selected="$_REQUEST['city'] == $params['text_id'] ? 'true' : ''"
+      cms:optional="selected"
       cms:eval="value"
       >
       <cms:var param="title" multilanguage="yes"/>
@@ -10,7 +21,9 @@
 
   <cms:if condition="$section == 'services'">
     <option 
-      value="url_Make('','services', array('service', $_REQUEST['service']), array('city', $params['text_id']))" 
+      value="url_Make('','services', array('service', $_REQUEST['service']), array('city', $params['text_id']))"
+      selected="$_REQUEST['city'] == $params['text_id'] ? 'true' : ''"
+      cms:optional="selected"
       cms:eval="value"
       >
       <cms:var param="title" multilanguage="yes"/>

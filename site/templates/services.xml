@@ -55,6 +55,16 @@
             cms:eval="category"
             />
         </div>
+        <!-- Show category page banners -->
+        <div class="commercial">
+          <cms:module
+            name="links"
+            action="show_link_list"
+            group="$_REQUEST['service']"
+            template="parts/commercial.xml"
+            cms:eval="group"
+            />
+        </div>
       </section>
       <!-- Bottom section of the site -->
       <cms:template file="parts/footer.xml"/>

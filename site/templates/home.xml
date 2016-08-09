@@ -34,7 +34,7 @@
 							template="parts/promoted_items.xml"
 							/>
 					</div>
-
+					<!-- Show latest items -->
 					<div class="latest">
 						<h3><cms:text constant="title_latest"/></h3>
 						<cms:module
@@ -44,6 +44,16 @@
 							order_by="id"
 							limit="6"
 							template="parts/category_latest_items.xml"
+							/>
+					</div>
+					<!-- Show banners-->
+					<div class="commercial">
+						<cms:module
+							name="links"
+							action="show_link_list"
+							group="banners"
+							limit="2"
+							template="parts/commercial.xml"
 							/>
 					</div>
 				</section>
