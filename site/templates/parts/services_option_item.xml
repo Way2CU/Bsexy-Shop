@@ -1,5 +1,19 @@
 <document>
-  <option value="$params['title'][$language]" cms:eval="value">
-    <cms:var param="title" multilanguage="yes"/>
-  </option>
+  <cms:if condition="$section == 'home' or $section == 'areas'">
+    <option 
+      value="url_Make('','areas', array('city', $params['text_id']))" 
+      cms:eval="value"
+      >
+      <cms:var param="title" multilanguage="yes"/>
+    </option>
+  </cms:if>
+
+  <cms:if condition="$section == 'services'">
+    <option 
+      value="url_Make('','services', array('service', $_REQUEST['service']), array('city', $params['text_id']))" 
+      cms:eval="value"
+      >
+      <cms:var param="title" multilanguage="yes"/>
+    </option>
+  </cms:if>
 </document>
