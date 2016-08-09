@@ -89,8 +89,8 @@ Site.handle_view_controls = function() {
 	}
 
 	if(view == "gallery")
-			items_container.classList.add('gallery'); else
-			items_container.classList.remove('gallery');
+			items_container.classList.remove('gallery'); else
+			items_container.classList.add('gallery');
 }
 
 /**
