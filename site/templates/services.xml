@@ -53,9 +53,7 @@
             order_by="priority"
             template="parts/category_items.xml" 
             cms:eval="category"
-            >
-            <param name="category_template" value=""/>
-          </cms:module>
+            />
         </div>
       </section>
       <!-- Bottom section of the site -->
