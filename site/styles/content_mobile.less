@@ -1,0 +1,157 @@
+/**
+ * Content mobile Style Sheet
+ * Bsexy site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors:Tal Reznic
+ */
+
+section {
+  padding: 1em 0em;
+}
+
+div.latest > h3,
+section > h2 {
+  text-align: center;
+  margin: 0;
+  padding: 1em 0em;
+  position: relative;
+  overflow: hidden;
+}
+
+section.category h2 svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  padding: 0em 0.2em;
+  margin: 0em 0.5em;
+  border: 1px solid @color_border;
+}
+
+section.category h2 span {
+  display: inline-block;
+  vertical-align: top;
+  background-image: url(../images/massage.svg);
+  background-repeat: no-repeat;
+  background-position: center -9px;
+  background-size: 2.5em 2.5em;
+  width: 2.5em;
+  height: 1.3em;
+  fill: @color_text;
+}
+
+div.latest > h3 {
+  padding: 0.5em 0em;
+}
+
+div.latest > h3:before,
+section > h2:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  height: 1px;
+  width: 25%;
+  background-color: @color_border;
+  transform: translatey(-50%);
+  z-index: -2;
+}
+
+div.latest > h3:after,
+section > h2:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 25%;
+  height: 1px;
+  background-color: @color_border;
+  z-index: -2;
+}
+
+/**
+ * Item
+ */
+div.latest,
+div.category_items {
+  text-align: center;
+}
+
+div.item {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  border: 1px solid @color_text;
+  width: 150px;
+  overflow: hidden;
+}
+
+div.item:nth-of-type(2n) {
+  margin-right: 0.5em;
+}
+
+div.item[data-priority^="1"] {
+  border-color: @color_premium;
+  background-color: fade(@color_premium, 20%);
+}
+
+div.item[data-priority^="2"] {
+  border-color: @color_classic;
+  background-color: fade(@color_classic, 20%);
+}
+
+div.item a.image {
+  display: block;
+  text-align: center;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+div.latest div.item a.image {
+  height: 150px;
+}
+
+div.item h4 {
+  margin: 0;
+  padding: 0.2em 0.2em;
+  font-size: 1em;
+}
+
+div.item p {
+  margin: 0;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+div.item a.phone {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  margin-bottom: 0.5em;
+  color: @color_text;
+  font-weight: 700;
+}
+
+div.category_items.gallery div.item a.phone {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+}
+
+div.item a.phone svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.3em;
+  height: 1.3em;
+  padding: 0em 0.2em;
+  fill: @color_text;
+}
