@@ -1,7 +1,7 @@
 <document>
   <cms:if condition="isset($template['big_image'])">
     <img
-      src="gallery::getThumbnailById($params['id'], null, 400, Thumbnail::CONSTRAIN_HEIGHT)"
+      src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 400 : 300, Thumbnail::CONSTRAIN_HEIGHT)"
       alt="$params['title'][$language]"
       class="big_image"
       cms:eval="src,alt"
@@ -10,7 +10,7 @@
 
   <cms:if condition="isset($template['thumbnail_image'])">
     <img
-      src="gallery::getThumbnailById($params['id'], null, 100, Thumbnail::CONSTRAIN_WIDTH)" 
+      src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 100 : 70, Thumbnail::CONSTRAIN_WIDTH)" 
       alt="$params['title'][$language]"
       class="thumbnail"
       cms:eval="src,alt"
