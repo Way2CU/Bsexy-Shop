@@ -78,6 +78,10 @@ div.category_items {
   text-align: center;
 }
 
+div.category_items.gallery {
+  padding: 0em 0.5em;
+}
+
 div.item {
   display: inline-block;
   vertical-align: top;
@@ -88,8 +92,17 @@ div.item {
   overflow: hidden;
 }
 
+div.category_items.gallery div.item {
+  display: block;
+  width: 100%;
+}
+
 div.item:nth-of-type(2n) {
   margin-right: 0.5em;
+}
+
+div.category_items.gallery div.item:nth-of-type(2n) {
+  margin-right: 0em;
 }
 
 div.item[data-priority^="1"] {
@@ -113,8 +126,16 @@ div.item a.image {
   overflow: hidden;
 }
 
-div.latest div.item a.image {
-  height: 150px;
+div.category_items.gallery div.item a.image {
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+}
+
+div.category_items.gallery div.item div {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(~'(100% - 150px)');
 }
 
 div.item h4 {
