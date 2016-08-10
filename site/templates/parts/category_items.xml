@@ -6,7 +6,7 @@
       cms:eval="href"
       >
       <img 
-        src="gallery::getGroupThumbnailById($params['gallery'], null, 250,Thumbnail::CONSTRAIN_HEIGHT)"
+        src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 250 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
         alt="$params['name'][$language]"
         cms:eval="src,alt"
         />
