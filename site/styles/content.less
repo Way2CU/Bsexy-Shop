@@ -429,11 +429,18 @@ section.category div.commercial {
 div.commercial a.add_link {
   display: inline-block;
   vertical-align: middle;
+  box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  border: 1px solid transparent;
   height: 200px;
   width: 45%;
+  transition: all 0.3s;
+}
+
+div.commercial a.add_link:hover {
+  border-color: @color_dark_action;
 }
 
 section.category div.commercial a.add_link {
