@@ -92,7 +92,41 @@ div.display a:hover svg {
   fill: @color_dark_action;
 }
 
+div.intro {
+  margin-top: -50px;
+  padding-top: calc(~'(100vw * 0.78)');
+  text-align: center;
+  background-color: @color_background;
+  background-image: url(../images/mobile-home-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+  position: relative;
+}
 
+div.intro img.logo {
+  position: absolute;
+  top: 125px;
+  left: 50%;
+  width: 35%;
+  transform: translatex(-50%);
+}
+
+div.intro a {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 1em;
+  color: @color_text;
+  font-weight: 700;
+  font-size: 2em;
+  border: 1px solid @color_dark_action;
+}
+
+div.intro article {
+  margin: 0;
+  padding: 0em 1em;
+  border-top: 1px solid @color_text;
+}
 
 /**
  * Item
