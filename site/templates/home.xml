@@ -7,7 +7,7 @@
 			<title><cms:text constant="site_title"/></title>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
-
+		
 		<body>
 			<!-- Top part of the site -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
