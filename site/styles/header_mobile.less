@@ -1,0 +1,189 @@
+/**
+ * Header mobile Style Sheet
+ * Bsexy site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors:Tal Reznic
+ */
+
+.mobile_title {
+  text-align: center;
+  background-color: black;
+  padding: 0.2em 0em;
+}
+
+.mobile_title a.menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 0.5em;
+  transform: translatey(-50%);
+}
+
+.mobile_title a.menu svg {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  fill: @color_text;
+  transition: all 0.3s;
+}
+
+.mobile_title.visible a.menu svg {
+  fill: @color_dark_action;
+}
+
+.mobile_title a.logo {
+  display: inline-block;
+  width: 90px;
+}
+
+.mobile_title a.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.mobile_menu {
+  right: -100%;
+  background-image: url(../images/texture.png);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: 180px 180px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mobile_menu.visible {
+  width: 100%;
+}
+
+.mobile_menu a.phone {
+  font-size: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: @radius;
+  color: @color_text;
+  text-align: center;
+}
+
+.mobile_menu a.phone:after {
+  content: "";
+  display: block;
+  background-image: url(../images/footer-note-vector.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  height: 15px;
+}
+
+.mobile_menu label.area,
+.mobile_menu form {
+  display: block;
+  margin-top: 1em;
+  border: 1px solid @color_border;
+  box-sizing: border-box;
+  margin: 1em 0.5em;
+  position: relative;
+}
+
+.mobile_menu label.area {
+  margin-top: 0;
+}
+
+.mobile_menu label.area span,
+.mobile_menu form label span {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0.7em 1em;
+  line-height: 1.5em;
+  width: 100px;
+  background-color: @color_border;
+}
+
+.mobile_menu form label input,
+.mobile_menu label select {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0.7em 0.2em;
+  line-height: 1.5em;
+  border: none;
+  box-shadow: none;
+  background-color: inherit;
+  color: @color_text;
+  width: calc(~'(100% - 100px)');
+  margin: 0;
+}
+
+.mobile_menu form label input {
+  width: calc(~'(100% - 100px - 3em)');
+}
+
+.mobile_menu label.area select optgroup,
+.mobile_menu label.area select option {
+  background-color: @color_background;
+}
+
+.mobile_menu form button {
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+  width: 3em;
+  height: 2.9em;
+  background-color: @color_dark_action;
+  cursor: pointer;
+}
+
+.mobile_menu form button svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1.5em;
+  height: 1.5em;
+  fill: @color_text;
+}
+
+.mobile_menu div.services {
+  padding: 1em 0em;
+  overflow-y: scroll;
+  text-align: center;
+  height: 300px;
+}
+
+.mobile_menu div.services a {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 1em;
+  color: @color_text;
+  width: 50%;
+}
+
+.mobile_menu div.services a svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2em;
+  height: 2em;
+}
+
+.mobile_menu a.service {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 1em 0em;
+  border-top: 1px solid @color_dark_action;
+  color: @color_text;
+}
+
+.mobile_menu a.service svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0em 0.2em;
+  fill: @color_ac_blue;
+  transition: all 0.3s;
+}
