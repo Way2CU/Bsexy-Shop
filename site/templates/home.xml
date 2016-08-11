@@ -24,6 +24,20 @@
 						<param name="no_icon" value=""/>
 					</cms:module>
 
+					<cms:mobile>
+						<div class="display">
+						  <span><cms:text constant="label_display_options"/></span>
+						  <a data-id="list" href="javascript:void()">
+						    <cms:text constant="label_list"/>
+						    <cms:svg file="site-sprite.svg" symbol="view"/>
+						  </a>
+						  <a class="active" data-id="gallery" href="javascript:void()">
+						    <cms:text constant="label_gallery"/>
+						    <cms:svg file="site-sprite.svg" symbol="gallery"/>
+						  </a>
+						</div>
+					</cms:mobile>
+
 					<!-- Show promoted items -->
 					<div class="category_items">
 						<cms:module

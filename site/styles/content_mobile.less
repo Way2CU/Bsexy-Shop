@@ -23,7 +23,7 @@ div.latest > h3,
 section > h2 {
   text-align: center;
   margin: 0;
-  padding: 1em 0em;
+  padding: 0.5em 0em;
   position: relative;
   overflow: hidden;
 }
@@ -53,6 +53,46 @@ section.category h2 span {
 div.latest > h3 {
   padding: 0.5em 0em;
 }
+
+
+div.display {
+  display: block;
+  padding-bottom: 0.5em;
+}
+
+div.display span,
+div.display a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.display span {
+  padding: 0.8em 1em;
+}
+
+div.display a {
+  text-decoration: none;
+  color: @color_text;
+  padding: 0em 0.5em;
+  line-height: 3em;
+}
+
+div.display a svg {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0em 0.2em;
+  width: 2em;
+  height: 2em;
+  fill: @color_text;
+  transition: all 0.3s;
+}
+
+div.display a.active svg,
+div.display a:hover svg {
+  fill: @color_dark_action;
+}
+
+
 
 /**
  * Item
