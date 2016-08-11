@@ -43,18 +43,20 @@
   height: auto;
 }
 
-.mobile_menu {
+html[dir=rtl] .mobile_menu.mobile_menu {
   right: -100%;
   background-image: url(../images/texture.png);
   background-repeat: repeat;
   background-position: center center;
   background-size: 180px 180px;
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
 }
 
-.mobile_menu.visible {
+html[dir=rtl] .mobile_menu.visible {
   width: 100%;
+  right: 0%;
 }
 
 .mobile_menu a.phone {
