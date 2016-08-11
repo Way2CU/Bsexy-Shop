@@ -9,6 +9,10 @@
 section {
   padding: 1em 0em;
   text-align: center;
+  background-image: url(../images/texture.png);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: 180px 180px;
 }
 
 section.item_details {
@@ -48,31 +52,6 @@ section.category h2 span {
 
 div.latest > h3 {
   padding: 0.5em 0em;
-}
-
-div.latest > h3:before,
-section > h2:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  height: 1px;
-  width: 25%;
-  background-color: @color_border;
-  transform: translatey(-50%);
-  z-index: -2;
-}
-
-div.latest > h3:after,
-section > h2:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: 25%;
-  height: 1px;
-  background-color: @color_border;
-  z-index: -2;
 }
 
 /**
