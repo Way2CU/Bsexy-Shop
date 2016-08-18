@@ -4,5 +4,6 @@
   "/area/{area}/{id}": "view.xml",
   "/service/{service}/{area}": "services.xml",
   "/service/{service}/{area}/{id}": "view.xml",
-  "/promoted/{id}": "view.xml"
+  "/promoted/{id}": "view.xml",
+  "/search": "search.xml"
 }

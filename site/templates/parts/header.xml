@@ -58,7 +58,7 @@
           </select>
         </label>
 
-        <form action="">
+         <form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
           <label>
             <span><cms:text constant="label_search"/></span>
             <input type="search"/>
