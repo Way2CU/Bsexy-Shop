@@ -15,7 +15,9 @@
           >
           <param name="page_title" value=""/>
         </cms:module>
+
         <cms:raw text=" - "/>
+
         <cms:module
           name="shop"
           action="show_category"
@@ -51,13 +53,13 @@
           cms:eval="text_id"
           >
           <param name="icon" value=""/>
-
         </cms:module>
+
         <!-- Show display_view options on mobile version -->
         <cms:mobile>
           <cms:template file="parts/display_view.xml"/>
         </cms:mobile>
-        
+
         <!-- Show category items -->
         <div class="category_items">
           <cms:module
