@@ -1,29 +1,16 @@
 <document>
-  <cms:if condition="$section == 'home'">
+  <cms:if condition="!isset($_REQUEST['service'])">
     <option 
-      value="url_Make('','areas', array('city', $params['text_id']))"
+      value="URL::make(array( 'area' => $params['text_id']))"
       cms:eval="value"
       >
       <cms:var param="title" multilanguage="yes"/>
     </option>
   </cms:if>
 
-  <cms:if condition="$section == 'areas'">
+  <cms:if condition="isset($_REQUEST['service'])">
     <option 
-      value="url_Make('','areas', array('city', $params['text_id']))"
-      selected="$_REQUEST['city'] == $params['text_id'] ? 'true' : ''"
-      cms:optional="selected"
-      cms:eval="value"
-      >
-      <cms:var param="title" multilanguage="yes"/>
-    </option>
-  </cms:if>
-
-  <cms:if condition="$section == 'services'">
-    <option 
-      value="url_Make('','services', array('service', $_REQUEST['service']), array('city', $params['text_id']))"
-      selected="$_REQUEST['city'] == $params['text_id'] ? 'true' : ''"
-      cms:optional="selected"
+      value="URL::make(array('service' => $_REQUEST['service'], 'area' => $params['text_id']))"
       cms:eval="value"
       >
       <cms:var param="title" multilanguage="yes"/>

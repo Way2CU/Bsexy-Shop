@@ -2,7 +2,7 @@
   <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
     <a
       class="image"
-      href="url_Make('view', 'areas', array('id', $params['id']))"
+      href="URL::make(array('area' => $_REQUEST['area'], 'id' => $params['id']))"
       cms:eval="href"
       >
       <img 

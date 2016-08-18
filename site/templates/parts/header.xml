@@ -14,7 +14,7 @@
           />
         <!-- logo -->
         <a 
-          href="url_Make('', 'home')"
+          href="URL::make()"
           class="logo"
           cms:eval="href"
           >

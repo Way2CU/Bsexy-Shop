@@ -8,7 +8,7 @@
       />
     <a
       class="action"
-      href="url_Make('', 'home')"
+      href="URL::make()"
       cms:eval="href"
       >
       <cms:text constant="label_enter"/>
