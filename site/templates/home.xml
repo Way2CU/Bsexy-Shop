@@ -9,8 +9,9 @@
 		</head>
 
 		<body>
-			<!-- Top part of the site -->
+			<!-- User consent -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
+				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
 
 				<!-- Promoted categories section-->
