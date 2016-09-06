@@ -9,7 +9,7 @@
 		</head>
 
 		<body>
-			<!-- User consent -->
+			<!-- Content after consent -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
 				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
@@ -77,7 +77,7 @@
 				</section>
 			</cms:if>
 
-			<!-- condition for showing intro page on first time visiting the site -->
+			<!-- User consent -->
 			<cms:if condition="!isset($_SESSION['intro_displayed'])">
 				<cms:template file="parts/intro.xml"/>
 				<cms:session name="intro_displayed" value="1"/>
