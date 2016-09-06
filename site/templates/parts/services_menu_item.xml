@@ -1,9 +1,9 @@
 <document>
-  <a 
-    href="URL::make(array('service' => $params['text_id'], 'area' => isset($_REQUEST['area']) ? fix_chars($_REQUEST['area']) : 'tel-aviv'))"
-    cms:eval="href"
-    >
-    <cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
-    <cms:var param="title" multilanguage="yes"/>
-  </a>
+	<a 
+		href="URL::make(array('service' => $params['text_id'], 'area' => isset($_REQUEST['area']) ? fix_chars($_REQUEST['area']) : 'tel-aviv'))"
+		cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
+		<cms:var param="title" multilanguage="yes"/>
+	</a>
 </document>

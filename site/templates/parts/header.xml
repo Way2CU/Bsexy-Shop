@@ -1,153 +1,166 @@
 <document>
-  <!-- sprite svg -->
-  <cms:svg file="site-sprite.svg"/>
-  <!-- Desktop version header -->
-  <cms:desktop>
-    <header>
-      <div class="main">
-        <!-- phone link -->
-        <cms:module
-          name="links"
-          action="show"
-          text_id="phone"
-          template="parts/link.xml"
-          />
-        <!-- logo -->
-        <a 
-          href="URL::make()"
-          class="logo"
-          cms:eval="href"
-          >
-          <img src="_BASEURL.'/site/images/logo-vector.svg'" alt="bsexy-logo" cms:eval="src"/>
-        </a>
-        <!-- Links to services outside the site -->
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="shop"/>
-          <cms:text constant="sex_store"/>
-        </a>
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="calls"/>
-          <cms:text constant="erotic_calls"/>
-        </a>
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="rooms"/>
-          <cms:text constant="rooms_for_rent"/>
-        </a>
-      </div>
-      <!-- Services categories menu -->
-      <nav id="categories">
-        <cms:module
-            name="shop"
-            action="show_category_list"
-            parent="services"
-            template="parts/services_menu_item.xml"
-            />
-      </nav>
+	<!-- sprite svg -->
+	<cms:svg file="site-sprite.svg"/>
+	<!-- Desktop version header -->
+	<cms:desktop>
+		<header>
+			<div class="main">
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+				<!-- logo -->
+				<a 
+					href="URL::make()"
+					class="logo"
+					cms:eval="href"
+				>
+					<img 
+						src="_BASEURL.'/site/images/logo-vector.svg'" 
+						alt="bsexy-logo" 
+						cms:eval="src"
+						/>
+				</a>
 
-      <div id="options">
-        <!-- Area combobox -->
-        <label class="area">
-          <span><cms:text constant="label_areas"/></span>
-          <select name="areas">
-            <cms:module
-              name="shop"
-              action="show_category_list"
-              parent="areas"
-              template="parts/areas_option_group_item.xml"
-              />
-          </select>
-        </label>
+				<!-- Links to services outside the site -->
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="shop"/>
+					<cms:text constant="sex_store"/>
+				</a>
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="calls"/>
+					<cms:text constant="erotic_calls"/>
+				</a>
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="rooms"/>
+					<cms:text constant="rooms_for_rent"/>
+				</a>
+			</div>
 
-         <form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
-          <label>
-            <span><cms:text constant="label_search"/></span>
-            <input type="search"/>
-          </label>
+			<!-- Services categories menu -->
+			<nav id="categories">
+				<cms:module
+					name="shop"
+					action="show_category_list"
+					parent="services"
+					template="parts/services_menu_item.xml"
+					/>
+			</nav>
 
-          <button class="action" type="submit">
-              <cms:svg file="site-sprite.svg" symbol="search"/>
-          </button>
-        </form>
+			<div id="options">
+			<!-- Area combobox -->
+				<label class="area">
+					<span><cms:text constant="label_areas"/></span>
+					<select name="areas">
+						<cms:module
+							name="shop"
+							action="show_category_list"
+							parent="areas"
+							template="parts/areas_option_group_item.xml"
+							/>
+					</select>
+				</label>
 
-        <!-- display options -->
-        <cms:if condition="!isset($_REQUEST['id'])">
-          <cms:template file="parts/display_view.xml"/>
-        </cms:if>
-      </div>
-    </header>
-  </cms:desktop>
+				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
+					<label>
+						<span><cms:text constant="label_search"/></span>
+						<input type="search"/>
+					</label>
 
-  <!-- Mobile version header -->
-  <cms:mobile>
-    <header>
-      <div class="mobile_title">
-        <a href="javascript:void(0)" class="menu">
-          <cms:svg file="site-sprite.svg" symbol="menu"/>
-        </a>
-        <!-- logo -->
-        <a 
-          href="URL::make()"
-          class="logo"
-          cms:eval="href"
-          >
-          <img src="_BASEURL.'/site/images/logo-vector.svg'" alt="bsexy-logo" cms:eval="src"/>
-        </a>
-      </div>
-      <nav class="mobile_menu">
-        <!-- phone link -->
-        <cms:module
-          name="links"
-          action="show"
-          text_id="phone"
-          template="parts/link.xml"
-          />
-        <!-- Area combobox -->
-        <label class="area">
-          <span><cms:text constant="label_areas"/></span>
-          <select name="areas">
-            <cms:module
-              name="shop"
-              action="show_category_list"
-              parent="areas"
-              template="parts/areas_option_group_item.xml"
-              />
-          </select>
-        </label>
+					<button class="action" type="submit">
+						<cms:svg file="site-sprite.svg" symbol="search"/>
+					</button>
+				</form>
 
-        <form action="">
-          <label>
-            <span><cms:text constant="label_search"/></span>
-            <input type="search"/>
-          </label>
+				<!-- display options -->
+				<cms:if condition="!isset($_REQUEST['id'])">
+					<cms:template file="parts/display_view.xml"/>
+				</cms:if>
+			</div>
+		</header>
+	</cms:desktop>
 
-          <button class="action" type="submit">
-              <cms:svg file="site-sprite.svg" symbol="search"/>
-          </button>
-        </form>
-        <!-- Services links -->
-        <div class="services">
-          <cms:module
-              name="shop"
-              action="show_category_list"
-              parent="services"
-              template="parts/services_menu_item.xml"
-              />
-         </div>
+	<!-- Mobile version header -->
+	<cms:mobile>
+		<header>
+			<div class="mobile_title">
+				<a href="javascript:void(0)" class="menu">
+					<cms:svg file="site-sprite.svg" symbol="menu"/>
+				</a>
 
-        <!-- Links to services outside the site -->
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="shop"/>
-          <cms:text constant="sex_store"/>
-        </a>
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="calls"/>
-          <cms:text constant="erotic_calls"/>
-        </a>
-        <a href="#" class="service">
-          <cms:svg file="site-sprite.svg" symbol="rooms"/>
-          <cms:text constant="rooms_for_rent"/>
-        </a>
-      </nav>
-    </header>
-  </cms:mobile>
+				<!-- logo -->
+				<a 
+					href="URL::make()"
+					class="logo"
+					cms:eval="href"
+					>
+					<img 
+						src="_BASEURL.'/site/images/logo-vector.svg'" 
+						alt="bsexy-logo" 
+						cms:eval="src"/>
+				</a>
+			</div>
+
+			<nav class="mobile_menu">
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+
+				<!-- Area combobox -->
+				<label class="area">
+					<span><cms:text constant="label_areas"/></span>
+					<select name="areas">
+						<cms:module
+							name="shop"
+							action="show_category_list"
+							parent="areas"
+							template="parts/areas_option_group_item.xml"
+							/>
+					</select>
+				</label>
+
+				<form action="">
+					<label>
+						<span><cms:text constant="label_search"/></span>
+						<input type="search"/>
+					</label>
+
+					<button class="action" type="submit">
+						<cms:svg file="site-sprite.svg" symbol="search"/>
+					</button>
+				</form>
+
+				<!-- Services links -->
+				<div class="services">
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+				</div>
+
+				<!-- Links to services outside the site -->
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="shop"/>
+					<cms:text constant="sex_store"/>
+				</a>
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="calls"/>
+					<cms:text constant="erotic_calls"/>
+				</a>
+				<a href="#" class="service">
+					<cms:svg file="site-sprite.svg" symbol="rooms"/>
+					<cms:text constant="rooms_for_rent"/>
+				</a>
+			</nav>
+		</header>
+	</cms:mobile>
 </document>

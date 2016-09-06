@@ -1,80 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-  <cms:var name="_DOCTYPE"/>
-  <html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
-    <head>
-      <title>
-        <cms:text constant="site_title"/>
-        <cms:raw text=" - "/>
-        <cms:module
-          name="shop"
-          action="show_category"
-          text_id="$_REQUEST['area']"
-          template="parts/page_title.xml"
-          cms:eval="text_id"
-          >
-          <param name="page_title" value=""/>
-        </cms:module>
-      </title>
-      <!-- Page description -->
-      <cms:module
-        name="shop"
-        action="show_category"
-        text_id="$_REQUEST['area']"
-        template="parts/page_description.xml"
-        cms:eval="text_id"
-        />
-      <cms:module name="head_tag" action="print_tag"/>
-    </head>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					>
+					<param name="page_title" value=""/>
+				</cms:module>
+			</title>
+			<!-- Page description -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				text_id="$_REQUEST['area']"
+				template="parts/page_description.xml"
+				cms:eval="text_id"
+				/>
+				<cms:module name="head_tag" action="print_tag"/>
+		</head>
 
-    <body>
-      <!-- Top part of the site -->
-      <cms:template file="parts/header.xml"/>
+		<body>
+			<!-- Top part of the site -->
+			<cms:template file="parts/header.xml"/>
 
-      <section class="category">
-        <cms:module
-          name="shop"
-          action="show_category"
-          text_id="$_REQUEST['area']"
-          template="parts/page_title.xml"
-          cms:eval="text_id"
-          >
-          <param name="no_icon" value=""/>
-        </cms:module>
-        
-        <!-- Show display_view options on mobile version -->
-        <cms:mobile>
-          <cms:template file="parts/display_view.xml"/>
-        </cms:mobile>
+			<section class="category">
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					>
+					<param name="no_icon" value=""/>
+				</cms:module>
 
-        <!-- Show area items-->
-        <div class="category_items">
-          <cms:module
-            name="shop"
-            action="show_item_list"
-            category="$_REQUEST['area']"
-            order_by="priority"
-            template="parts/area_items.xml" 
-            cms:eval="category"
-            >
-            <param name="category_template" value=""/>
-          </cms:module>
-        </div>
-        <!-- Show area page banners -->
-        <div class="commercial">
-          <cms:module
-            name="links"
-            action="show_link_list"
-            group="$_REQUEST['area']"
-            template="parts/commercial.xml"
-            cms:eval="group"
-            />
-        </div>
-      </section>
+				<!-- Show display_view options on mobile version -->
+				<cms:mobile>
+					<cms:template file="parts/display_view.xml"/>
+				</cms:mobile>
 
-      <!-- Bottom section of the site -->
-      <cms:template file="parts/footer.xml"/>
-    </body>
-  </html>
+				<!-- Area items-->
+				<div class="category_items">
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['area']"
+						order_by="priority"
+						template="parts/area_items.xml" 
+						cms:eval="category"
+						>
+						<param name="category_template" value=""/>
+					</cms:module>
+				</div>
+				
+				<!-- Area page banners -->
+				<div class="commercial">
+					<cms:module
+					name="links"
+					action="show_link_list"
+					group="$_REQUEST['area']"
+					template="parts/commercial.xml"
+					cms:eval="group"
+					/>
+				</div>
+			</section>
+
+		<!-- Bottom section of the site -->
+		<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
 </document>

@@ -1,89 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-  <cms:var name="_DOCTYPE"/>
-  <html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
-    <head>
-      <title>
-        <cms:text constant="site_title"/>
-        <cms:module
-          name="shop"
-          action="show_category"
-          text_id="$_REQUEST['service']"
-          template="parts/page_title.xml"
-          cms:eval="text_id"
-          >
-          <param name="page_title" value=""/>
-        </cms:module>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['service']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					>
+					<param name="page_title" value=""/>
+				</cms:module>
 
-        <cms:raw text=" - "/>
+				<cms:raw text=" - "/>
 
-        <cms:module
-          name="shop"
-          action="show_category"
-          text_id="$_REQUEST['area']"
-          template="parts/page_title.xml"
-          cms:eval="text_id"
-          >
-          <param name="page_title" value=""/>
-        </cms:module>
-      </title>
-      <!-- Page description -->
-      <cms:module
-        name="shop"
-        action="show_category"
-        text_id="$_REQUEST['service']"
-        template="parts/page_description.xml"
-        cms:eval="text_id"
-        />
-      <cms:module name="head_tag" action="print_tag"/>
-    </head>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					>
+					<param name="page_title" value=""/>
+				</cms:module>
+			</title>
 
-    <body>
-      <!-- Top part of the site -->
-      <cms:template file="parts/header.xml"/>
+			<!-- Page description -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				text_id="$_REQUEST['service']"
+				template="parts/page_description.xml"
+				cms:eval="text_id"
+				/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
 
-      <section class="category">
-        <!-- Show category title -->
-        <cms:module
-          name="shop"
-          action="show_category"
-          text_id="$_REQUEST['service']"
-          template="parts/page_title.xml"
-          cms:eval="text_id"
-          >
-          <param name="icon" value=""/>
-        </cms:module>
+		<body>
+			<!-- Top part of the site -->
+			<cms:template file="parts/header.xml"/>
 
-        <!-- Show display_view options on mobile version -->
-        <cms:mobile>
-          <cms:template file="parts/display_view.xml"/>
-        </cms:mobile>
+			<section class="category">
+				<!-- Category title -->
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['service']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					>
+					<param name="icon" value=""/>
+				</cms:module>
 
-        <!-- Show category items -->
-        <div class="category_items">
-          <cms:module
-            name="shop"
-            action="show_item_list"
-            category="$_REQUEST['service'].','.$_REQUEST['area']"
-            order_by="priority"
-            template="parts/category_items.xml" 
-            cms:eval="category"
-            />
-        </div>
-        <!-- Show category page banners -->
-        <div class="commercial">
-          <cms:module
-            name="links"
-            action="show_link_list"
-            group="$_REQUEST['service']"
-            template="parts/commercial.xml"
-            cms:eval="group"
-            />
-        </div>
-      </section>
-      <!-- Bottom section of the site -->
-      <cms:template file="parts/footer.xml"/>
-    </body>
-  </html>
+				<!-- Show display_view options on mobile version -->
+				<cms:mobile>
+					<cms:template file="parts/display_view.xml"/>
+				</cms:mobile>
+
+				<!-- Category items -->
+				<div class="category_items">
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['service'].','.$_REQUEST['area']"
+						order_by="priority"
+						template="parts/category_items.xml" 
+						cms:eval="category"
+						/>
+				</div>
+
+				<!-- Category page banners -->
+				<div class="commercial">
+					<cms:module
+						name="links"
+						action="show_link_list"
+						group="$_REQUEST['service']"
+						template="parts/commercial.xml"
+						cms:eval="group"
+						/>
+				</div>
+			</section>
+			
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
 </document>

@@ -1,216 +1,220 @@
 <document>
-  <!-- Item title -->
-  <h2><cms:var param="name" multilanguage="yes"/></h2>
-  <!-- Desktop version of details page -->
-  <cms:desktop>
-    <!-- Information -->
-    <div class="information">
-      <!-- Age property -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="age"
-        template="parts/property.xml"
-        cms:eval="item"
-        />
-      <!-- Height property -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="height"
-        template="parts/property.xml"
-        cms:eval="item"
-        />
-      <!-- Breast size property -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="breast_size"
-        template="parts/property.xml"
-        cms:eval="item"
-        />
-      <!-- Language property -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="language"
-        template="parts/property.xml"
-        cms:eval="item"
-        />
-      <!-- Origin property -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="origin"
-        template="parts/property.xml"
-        cms:eval="item"
-        />
+	<!-- Item title -->
+	<h2><cms:var param="name" multilanguage="yes"/></h2>
 
-      <cms:markdown param="description" multilanguage="yes"/>
-      <!-- Show phone numbers -->
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="phone1"
-        template="parts/phone.xml"
-        cms:eval="item"
-        />
+	<!-- Desktop version of details page -->
+	<cms:desktop>
 
-      <cms:module
-        name="shop"
-        action="show_property"
-        item="$params['id']"
-        text_id="phone2"
-        template="parts/phone.xml"
-        cms:eval="item"
-        />
-    </div>
+		<!-- Information -->
+		<div class="information">
+			<!-- Age property -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="age"
+				template="parts/property.xml"
+				cms:eval="item"
+				/>
+			<!-- Height property -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="height"
+				template="parts/property.xml"
+				cms:eval="item"
+				/>
+			<!-- Breast size property -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="breast_size"
+				template="parts/property.xml"
+				cms:eval="item"
+				/>
+			<!-- Language property -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="language"
+				template="parts/property.xml"
+				cms:eval="item"
+				/>
+			<!-- Origin property -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="origin"
+				template="parts/property.xml"
+				cms:eval="item"
+				/>
 
-    <!-- Item images -->
-    <div class="item_gallery">
-      <!-- Big image container-->
-      <div 
-        class="main_image"
-        style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
-        cms:eval="style"
-        >
-        <cms:module
-          name="gallery"
-          action="show_image_list"
-          group_id="$params['gallery']"
-          limit="4"
-          template="parts/item_images.xml"
-          cms:eval="group_id"
-          >
-          <param name="big_image" value=""/>
-        </cms:module>
-      </div>
-      
-      <!-- Thumbnail images -->
-      <div class="thumbnails">
-        <cms:module
-          name="gallery"
-          action="show_image_list"
-          group_id="$params['gallery']"
-          limit="4"
-          template="parts/item_images.xml"
-          cms:eval="group_id"
-          >
-          <param name="thumbnail_image" value=""/>
-        </cms:module>
-      </div>
-    </div>
-  </cms:desktop>
+			<cms:markdown param="description" multilanguage="yes"/>
+			<!-- Show phone numbers -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="phone1"
+				template="parts/phone.xml"
+				cms:eval="item"
+				/>
 
-  <!-- Mobile version of details page -->
-  <cms:mobile>
-    <!-- Item images -->
-    <div class="item_gallery">
-      <!-- Big image container-->
-      <div 
-        class="main_image"
-        style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
-        cms:eval="style"
-        >
-        <cms:module
-          name="gallery"
-          action="show_image_list"
-          group_id="$params['gallery']"
-          limit="4"
-          template="parts/item_images.xml"
-          cms:eval="group_id"
-          >
-          <param name="big_image" value=""/>
-        </cms:module>
-      </div>
-      
-      <!-- Thumbnail images -->
-      <div class="thumbnails">
-        <cms:module
-          name="gallery"
-          action="show_image_list"
-          group_id="$params['gallery']"
-          limit="4"
-          template="parts/item_images.xml"
-          cms:eval="group_id"
-          >
-          <param name="thumbnail_image" value=""/>
-        </cms:module>
-      </div>
-      <!-- Information -->
-      <div class="information">
-        <!-- Age property -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="age"
-          template="parts/property.xml"
-          cms:eval="item"
-          />
-        <!-- Height property -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="height"
-          template="parts/property.xml"
-          cms:eval="item"
-          />
-        <!-- Breast size property -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="breast_size"
-          template="parts/property.xml"
-          cms:eval="item"
-          />
-        <!-- Language property -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="language"
-          template="parts/property.xml"
-          cms:eval="item"
-          />
-        <!-- Origin property -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="origin"
-          template="parts/property.xml"
-          cms:eval="item"
-          />
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="phone2"
+				template="parts/phone.xml"
+				cms:eval="item"
+				/>
+		</div>
 
-        <cms:markdown param="description" multilanguage="yes"/>
-        <!-- Show phone numbers -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="phone1"
-          template="parts/phone.xml"
-          cms:eval="item"
-          />
+		<!-- Item images -->
+		<div class="item_gallery">
+		<!-- Big image container-->
+				<div 
+				class="main_image"
+				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
+				cms:eval="style"
+				>
+				<cms:module
+					name="gallery"
+					action="show_image_list"
+					group_id="$params['gallery']"
+					limit="4"
+					template="parts/item_images.xml"
+					cms:eval="group_id"
+					>
+					<param name="big_image" value=""/>
+				</cms:module>
+			</div>
 
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="phone2"
-          template="parts/phone.xml"
-          cms:eval="item"
-          />
-      </div>
-    </div>
-  </cms:mobile>
+			<!-- Thumbnail images -->
+			<div class="thumbnails">
+				<cms:module
+					name="gallery"
+					action="show_image_list"
+					group_id="$params['gallery']"
+					limit="4"
+					template="parts/item_images.xml"
+					cms:eval="group_id"
+					>
+					<param name="thumbnail_image" value=""/>
+				</cms:module>
+			</div>
+		</div>
+	</cms:desktop>
+
+	<!-- Mobile version of details page -->
+	<cms:mobile>
+		<!-- Item images -->
+		<div class="item_gallery">
+
+			<!-- Big image container-->
+			<div 
+				class="main_image"
+				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
+				cms:eval="style"
+				>
+				<cms:module
+					name="gallery"
+					action="show_image_list"
+					group_id="$params['gallery']"
+					limit="4"
+					template="parts/item_images.xml"
+					cms:eval="group_id"
+					>
+					<param name="big_image" value=""/>
+				</cms:module>
+			</div>
+
+			<!-- Thumbnail images -->
+			<div class="thumbnails">
+				<cms:module
+					name="gallery"
+					action="show_image_list"
+					group_id="$params['gallery']"
+					limit="4"
+					template="parts/item_images.xml"
+					cms:eval="group_id"
+					>
+					<param name="thumbnail_image" value=""/>
+				</cms:module>
+			</div>
+
+			<!-- Information -->
+			<div class="information">
+				<!-- Age property -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+				<!-- Height property -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="height"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+				<!-- Breast size property -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="breast_size"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+				<!-- Language property -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="language"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+				<!-- Origin property -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="origin"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+
+				<cms:markdown param="description" multilanguage="yes"/>
+				<!-- Show phone numbers -->
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="phone1"
+					template="parts/phone.xml"
+					cms:eval="item"
+					/>
+
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="phone2"
+					template="parts/phone.xml"
+					cms:eval="item"
+					/>
+			</div>
+		</div>
+	</cms:mobile>
 </document>
