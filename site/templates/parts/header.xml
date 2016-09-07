@@ -99,7 +99,7 @@
 					>
 					<img 
 						src="_BASEURL.'/site/images/logo-vector.svg'" 
-						alt="bsexy-logo" 
+						alt="bsexy-logo"
 						cms:eval="src"
 						/>
 				</a>
