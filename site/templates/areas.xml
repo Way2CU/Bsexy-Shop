@@ -55,9 +55,7 @@
 						order_by="priority"
 						template="parts/area_items.xml" 
 						cms:eval="category"
-						>
-						<param name="category_template" value=""/>
-					</cms:module>
+						/>
 				</div>
 				
 				<!-- Area page banners -->
