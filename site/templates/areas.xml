@@ -13,9 +13,7 @@
 					text_id="$_REQUEST['area']"
 					template="parts/page_title.xml"
 					cms:eval="text_id"
-					>
-					<param name="page_title" value=""/>
-				</cms:module>
+					/>
 			</title>
 			<!-- Page description -->
 			<cms:module
@@ -37,7 +35,7 @@
 					name="shop"
 					action="show_category"
 					text_id="$_REQUEST['area']"
-					template="parts/page_title.xml"
+					template="parts/category_title.xml"
 					cms:eval="text_id"
 					>
 					<param name="no_icon" value=""/>

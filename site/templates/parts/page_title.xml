@@ -1,26 +1,3 @@
 <document>
-	<!-- Show category title with related icon if specified -->
-	<cms:if condition="isset($template['icon'])">
-		<h2>
-			<cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
-			<cms:var param="title" multilanguage="yes"/>
-		</h2>
-	</cms:if>
-
-	<!-- Show category title with no icon -->
-	<cms:if condition="isset($template['no_icon'])">
-		<h2>
-			<cms:var param="title" multilanguage="yes"/>
-		</h2>
-	</cms:if>
-
-	<!-- Show category title -->
-	<cms:if condition="isset($template['page_title'])">
-		<cms:var name="strip_tags($params['title'][$language])"/>
-	</cms:if>
-
-	<!-- Show item page title -->
-	<cms:if condition="isset($template['item_title'])">
-		<cms:var param="name" multilanguage="yes"/>
-	</cms:if>
+	<cms:var name="strip_tags($params['title'][$language])"/>
 </document>

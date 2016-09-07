@@ -11,11 +11,9 @@
 					name="shop"
 					action="show_item"
 					id="fix_id($_REQUEST['id'])"
-					template="parts/page_title.xml"
+					template="parts/item_title.xml"
 					cms:eval="id"
-					>
-					<param name="item_title" value=""/>
-				</cms:module>
+					/>
 			</title>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
