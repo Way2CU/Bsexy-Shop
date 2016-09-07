@@ -7,48 +7,41 @@
 			<title><cms:text constant="site_title"/></title>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
-		
+
 		<body>
-			<!-- Top part of the site -->
+			<!-- Content after consent -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
+				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
+
 				<!-- Promoted categories section-->
 				<section>
-					<!-- Show category title -->
+					<!-- Category title -->
 					<cms:module
 						name="shop"
 						action="show_category"
 						text_id="promoted1"
-						template="parts/page_title.xml"
+						template="parts/category_title.xml"
 						>
 						<param name="no_icon" value=""/>
 					</cms:module>
 
 					<cms:mobile>
-						<div class="display">
-						  <span><cms:text constant="label_display_options"/></span>
-						  <a data-id="list" href="javascript:void()">
-						    <cms:text constant="label_list"/>
-						    <cms:svg file="site-sprite.svg" symbol="view"/>
-						  </a>
-						  <a class="active" data-id="gallery" href="javascript:void()">
-						    <cms:text constant="label_gallery"/>
-						    <cms:svg file="site-sprite.svg" symbol="gallery"/>
-						  </a>
-						</div>
+						<cms:template file="parts/display_controls.xml"/>
 					</cms:mobile>
 
-					<!-- Show promoted items -->
+					<!-- Promoted items -->
 					<div class="category_items">
 						<cms:module
-							name="shop"
-							action="show_item_list"
-							category="promoted1"
-							order_by="priority"
-							template="parts/promoted_items.xml"
-							/>
+						name="shop"
+						action="show_item_list"
+						category="promoted1"
+						order_by="priority"
+						template="parts/promoted_items.xml"
+						/>
 					</div>
-					<!-- Show latest items -->
+
+					<!-- Latest items -->
 					<div class="latest">
 						<h3><cms:text constant="title_latest"/></h3>
 						<cms:module
@@ -60,7 +53,8 @@
 							template="parts/category_latest_items.xml"
 							/>
 					</div>
-					<!-- Show banners-->
+
+					<!-- Banners-->
 					<div class="commercial">
 						<cms:module
 							name="links"
@@ -72,8 +66,8 @@
 					</div>
 				</section>
 			</cms:if>
-			
-			<!-- condition for showing intro page on first time visiting the site -->
+
+			<!-- User consent -->
 			<cms:if condition="!isset($_SESSION['intro_displayed'])">
 				<cms:template file="parts/intro.xml"/>
 				<cms:session name="intro_displayed" value="1"/>

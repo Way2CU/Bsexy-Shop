@@ -1,24 +1,25 @@
 <document>
-  <div class="intro">
-    <img 
-      src="_BASEURL.'/site/images/logo-vector'"
-      alt="bsexy-logo"
-      class="logo"
-      cms:eval="src"
-      />
-    <a
-      class="action"
-      href="URL::make()"
-      cms:eval="href"
-      >
-      <cms:text constant="label_enter"/>
-    </a>
-    <!-- terms article -->
-    <cms:module
-      name="articles"
-      action="show"
-      text_id="terms"
-      template="stock/article_generic.xml"
-      />
-  </div>
+	<div class="intro">
+		<img 
+			src="_BASEURL.'/site/images/logo-vector'"
+			alt="bsexy-logo"
+			class="logo"
+			cms:eval="src"
+			/>
+		<a
+			class="action"
+			href="URL::make()"
+			cms:eval="href"
+			>
+			<cms:text constant="label_enter"/>
+		</a>
+
+		<!-- terms article -->
+		<cms:module
+			name="articles"
+			action="show"
+			text_id="terms"
+			template="stock/article_generic.xml"
+			/>
+	</div>
 </document>

@@ -1,53 +1,53 @@
 <document>
-  <footer>
-    <div class="content">
-      <cms:desktop>
-        <img
-          class="logo"
-          src="_BASEURL.'/site/images/logo-vector'"
-          alt="bsexy-logo"
-          cms:eval="src"
-          />
-          
-        <!-- phone link -->
-        <cms:module
-          name="links"
-          action="show"
-          text_id="phone"
-          template="parts/link.xml"
-          />
-          
-        <img
-          class="note"
-          src="_BASEURL.'/site/images/footer-note-vector.svg'"
-          alt="message"
-          cms:eval="src"
-          />
-      </cms:desktop>
+	<footer>
+		<div class="content">
+			<cms:desktop>
+				<img
+					class="logo"
+					src="_BASEURL.'/site/images/logo-vector'"
+					alt="bsexy-logo"
+					cms:eval="src"
+					/>
 
-      <cms:mobile>
-        <!-- phone link -->
-        <cms:module
-          name="links"
-          action="show"
-          text_id="phone"
-          template="parts/link.xml"
-          />
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
 
-        <img
-          class="note"
-          src="_BASEURL.'/site/images/footer-note-vector.svg'"
-          alt="message"
-          cms:eval="src"
-          />
-          
-        <img
-          class="logo"
-          src="_BASEURL.'/site/images/logo-vector'"
-          alt="bsexy-logo"
-          cms:eval="src"
-          />
-      </cms:mobile>
-    </div>
-  </footer>
+				<img
+					class="note"
+					src="_BASEURL.'/site/images/footer-note-vector.svg'"
+					alt="message"
+					cms:eval="src"
+					/>
+			</cms:desktop>
+
+			<cms:mobile>
+				<!-- phone link -->
+				<cms:module
+					name="links"
+					action="show"
+					text_id="phone"
+					template="parts/link.xml"
+					/>
+
+				<img
+				class="note"
+				src="_BASEURL.'/site/images/footer-note-vector.svg'"
+				alt="message"
+				cms:eval="src"
+				/>
+
+				<img
+					class="logo"
+					src="_BASEURL.'/site/images/logo-vector'"
+					alt="bsexy-logo"
+					cms:eval="src"
+					/>
+			</cms:mobile>
+		</div>
+	</footer>
 </document>

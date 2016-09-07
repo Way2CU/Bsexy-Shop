@@ -7,278 +7,278 @@
  */
 
 header {
-  background-image: url(../images/texture.png);
-  background-repeat: repeat;
-  background-position: center center;
-  background-size: 180px 180px;
+	background-image: url(../images/texture.png);
+	background-repeat: repeat;
+	background-position: center center;
+	background-size: 180px 180px;
 }
 
 header div.main {
-  padding: 0.5em 0em;
-  text-align: center;
-  background-color: black;
-  overflow: hidden;
-  white-space: nowrap;
+	padding: 0.5em 0em;
+	text-align: center;
+	background-color: black;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 header div.main a {
-  display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
-  padding: 0em 1.5em;
-  color: @color_text;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	padding: 0em 1.5em;
+	color: @color_text;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
 }
 
 header div.main a.phone {
-  font-size: 1.3em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: @radius;
-  border: 1px solid transparent
+	font-size: 1.3em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: @radius;
+	border: 1px solid transparent;
 }
 
 header div.main a.phone:hover {
-  background-color: @color_dark_action;
-  border-color: @color_text;
+	background-color: @color_dark_action;
+	border-color: @color_text;
 }
 
 header div.main a.phone:after {
-  content: "";
-  display: block;
-  background-image: url(../images/footer-note-vector.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 430px 15px;
-  width: 430px;
-  height: 15px;
+	content: "";
+	display: block;
+	background-image: url(../images/footer-note-vector.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 430px 15px;
+	width: 430px;
+	height: 15px;
 }
 
 header div.main a.logo {
-  width: 150px;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  box-sizing: border-box;
+	width: 150px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	box-sizing: border-box;
 }
 
 header div.main a.logo img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
 }
 
 header div.main a.service {
-  padding-top: 1em;
-  padding-bottom: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 header div.main a.service:after {
-  content: "";
-  position: absolute;
-  top: 90%;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background-color: @color_dark_action;
-  transition: all 0.3s;
+	content: "";
+	position: absolute;
+	top: 90%;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background-color: @color_dark_action;
+	transition: all 0.3s;
 }
 
 header div.main a.service:hover:after {
-  left: 0;
+	left: 0;
 }
 
 header div.main a.service svg {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1.5em;
-  height: 1.5em;
-  padding: 0em 0.2em;
-  fill: @color_ac_blue;
-  transition: all 0.3s;
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0em 0.2em;
+	fill: @color_ac_blue;
+	transition: all 0.3s;
 }
 
 /*
  * Services menu
  */
 nav#categories {
-  padding: 0px calc(~'(100% - 1200px)' / 2);
+	padding: 0px calc(~'(100% - 1200px)' / 2);
 }
 
 nav#categories a {
-  display: inline-block;
-  vertical-align: top;
-  padding: 1em;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 700;
-  color: @color_text;
-  width: calc(~'(100% / 8)');
-  transition: all 0.3s;
-  overflow: hidden;
-  position: relative;
+	display: inline-block;
+	vertical-align: top;
+	padding: 1em;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+	color: @color_text;
+	width: calc(~'(100% / 8)');
+	transition: all 0.3s;
+	overflow: hidden;
+	position: relative;
 }
 
 nav#categories a:after,
 nav#categories a:before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background-color: @color_dark_action;
-  transition: all 0.3s;
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background-color: @color_dark_action;
+	transition: all 0.3s;
 }
 
 nav#categories a:after {
-  left: auto;
-  right: -100%;
-  top: calc(~'(100% - 2px)');
+	left: auto;
+	right: -100%;
+	top: calc(~'(100% - 2px)');
 }
 
 nav#categories a:hover:before {
-  left: 0%;
+	left: 0%;
 }
 
 nav#categories a:hover:after {
-  right: 0%;
+	right: 0%;
 }
 
 nav#categories a svg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 0.5em;
-  width: 3em;
-  height: 3em;
-  position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0.5em;
+	width: 3em;
+	height: 3em;
+	position: relative;
 }
 
 nav#categories a span {
-  display: inline-block;
-  vertical-align: top;
-  background-image: url(../images/massage.svg);
-  background-repeat: no-repeat;
-  background-position: center -9px;
-  background-size: 2.5em 2.5em;
-  width: 2.5em;
-  height: 1.3em;
-  fill: @color_text;
+	display: inline-block;
+	vertical-align: top;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -9px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: @color_text;
 }
 
 /**
  * Header options section
  */
 div#options {
-  padding: 0px calc(~'(100% - 1200px)' / 2);
+	padding: 0px calc(~'(100% - 1200px)' / 2);
 }
 
 div#options label.area,
 div#options form {
-  display: inline-block;
-  vertical-align: middle;
-  border: 1px solid @color_border;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid @color_border;
 }
 
 div#options label.area,
 div#options form label {
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  position: relative;
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	position: relative;
 }
 
 div#options label.area span,
 div#options form label span {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.7em 1em;
-  line-height: 1.5em;
-  background-color: @color_border;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.7em 1em;
+	line-height: 1.5em;
+	background-color: @color_border;
 }
 
 div#options form label input,
 div#options label select {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  padding: 0.7em 0.2em;
-  line-height: 1.5em;
-  border: none;
-  box-shadow: none;
-  background-color: inherit;
-  color: @color_text;
-  width: 220px;
-  margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 0.7em 0.2em;
+	line-height: 1.5em;
+	border: none;
+	box-shadow: none;
+	background-color: inherit;
+	color: @color_text;
+	width: 220px;
+	margin: 0;
 }
 
 div#options label.area select optgroup,
 div#options label.area select option {
-  background-color: @color_background;
+	background-color: @color_background;
 }
 
 div#options form button {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 0;
-  padding: 0em 1em;
-  height: 2.9em;
-  background-color: @color_dark_action;
-  cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 0;
+	padding: 0em 1em;
+	height: 2.9em;
+	background-color: @color_dark_action;
+	cursor: pointer;
 }
 
 div#options form button svg {
-  display: block;
-  width: 1.5em;
-  height: 1.5em;
-  fill: @color_text;
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	fill: @color_text;
 }
 
 div.display {
-  display: inline-block;
-  vertical-align: middle;
-  float: right;
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
 }
 
 html[dir="rtl"] div.display {
-  float: left;
+	float: left;
 }
 
 div.display span,
 div.display a {
-  display: inline-block;
-  vertical-align: middle;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 div.display span {
-  padding: 0.8em 1em;
+	padding: 0.8em 1em;
 }
 
 div.display a {
-  text-decoration: none;
-  color: @color_text;
-  padding: 0em 0.5em;
-  line-height: 3em;
+	text-decoration: none;
+	color: @color_text;
+	padding: 0em 0.5em;
+	line-height: 3em;
 }
 
 div.display a svg {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0em 0.2em;
-  width: 2em;
-  height: 2em;
-  fill: @color_text;
-  transition: all 0.3s;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0em 0.2em;
+	width: 2em;
+	height: 2em;
+	fill: @color_text;
+	transition: all 0.3s;
 }
 
 div.display a.active svg,
 div.display a:hover svg {
-  fill: @color_dark_action;
+	fill: @color_dark_action;
 }

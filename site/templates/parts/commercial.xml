@@ -1,9 +1,9 @@
 <document>
-  <a 
-    class="add_link"
-    style="'background-image: url('.$params['image'].');'"
-    href="$params['url']" 
-    cms:eval="href,style"
-    >
-  </a>
+	<a 
+		class="add_link"
+		style="'background-image: url('.$params['image'].');'"
+		href="$params['url']" 
+		cms:eval="href,style"
+		>
+	</a>
 </document>

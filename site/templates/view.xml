@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-  <cms:var name="_DOCTYPE"/>
-  <html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
-    <head>
-      <title>
-        <cms:text constant="site_title"/>
-        <cms:raw text=" - "/>
-        <cms:module
-          name="shop"
-          action="show_item"
-          id="fix_id($_REQUEST['id'])"
-          template="parts/page_title.xml"
-          cms:eval="id"
-          >
-          <param name="item_title" value=""/>
-        </cms:module>
-      </title>
-      <!-- Page description -->
-      <cms:module name="head_tag" action="print_tag"/>
-    </head>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="shop"
+					action="show_item"
+					id="fix_id($_REQUEST['id'])"
+					template="parts/item_title.xml"
+					cms:eval="id"
+					/>
+			</title>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
 
-    <body>
-      <!-- Top part of the site -->
-      <cms:template file="parts/header.xml"/>
-      
-      <section class="item_details">
-        <cms:module
-          name="shop"
-          action="show_item"
-          id="fix_id($_REQUEST['id'])"
-          template="parts/item_details.xml"
-          cms:eval="id"
-          />
-      </section>
-      <!-- Bottom section of the site -->
-      <cms:template file="parts/footer.xml"/>
-    </body>
-  </html>
+		<body>
+			<!-- Top part of the site -->
+			<cms:template file="parts/header.xml"/>
+
+			<section class="item_details">
+				<cms:module
+					name="shop"
+					action="show_item"
+					id="fix_id($_REQUEST['id'])"
+					template="parts/item_details.xml"
+					cms:eval="id"
+					/>
+			</section>
+
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
 </document>

@@ -1,29 +1,33 @@
 <document>
-  <div class="item" data-priority="$params['priority']" cms:eval="data-priority">
-    <a
-      class="image"
-      href="URL::make(array('id' => $params['id']))"
-      cms:eval="href"
-      >
-      <img 
-        src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 190 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
-        alt="$params['name'][$language]"
-        cms:eval="src,alt"
-        />
-    </a>
-    <div>
-        <h4><cms:var param="name" multilanguage="yes"/></h4>
-        <cms:markdown param="description" multilanguage="yes"/>
+	<div 
+		class="item" 
+		data-priority="$params['priority']" 
+		cms:eval="data-priority"
+		>
+		<a
+			class="image"
+			href="URL::make(array('id' => $params['id']))"
+			cms:eval="href"
+			>
+			<img 
+				src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 190 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
+				alt="$params['name'][$language]"
+				cms:eval="src,alt"
+				/>
+		</a>
+		<div>
+			<h4><cms:var param="name" multilanguage="yes"/></h4>
+			<cms:markdown param="description" multilanguage="yes"/>
 
-        <!-- Show phone numbers -->
-        <cms:module
-          name="shop"
-          action="show_property"
-          item="$params['id']"
-          text_id="phone1"
-          template="parts/phone.xml"
-          cms:eval="item"
-          />
-    </div>
-  </div>
+			<!-- Show phone numbers -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="phone1"
+				template="parts/phone.xml"
+				cms:eval="item"
+				/>
+		</div>
+	</div>
 </document>
