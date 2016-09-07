@@ -43,9 +43,9 @@
 					<param name="no_icon" value=""/>
 				</cms:module>
 
-				<!-- Show display_view options on mobile version -->
+				<!-- Show display controls options on mobile version -->
 				<cms:mobile>
-					<cms:template file="parts/display_view.xml"/>
+					<cms:template file="parts/display_controls.xml"/>
 				</cms:mobile>
 
 				<!-- Area items-->

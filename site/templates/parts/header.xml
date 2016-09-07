@@ -75,9 +75,9 @@
 					</button>
 				</form>
 
-				<!-- display options -->
+				<!-- display controls -->
 				<cms:if condition="!isset($_REQUEST['id'])">
-					<cms:template file="parts/display_view.xml"/>
+					<cms:template file="parts/display_controls.xml"/>
 				</cms:if>
 			</div>
 		</header>
