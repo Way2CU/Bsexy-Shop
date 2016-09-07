@@ -253,6 +253,7 @@ div.item a.image:hover img {
 div.category_items.gallery div.item div {
 	display: inline-block;
 	vertical-align: top;
+	width: calc(~'(100% - 250px)');
 }
 
 div.item h4 {
@@ -422,6 +423,11 @@ section.category div.commercial {
 	display: inline-block;
 	vertical-align: top;
 	width: 380px;
+	margin-left: 20px;
+}
+
+html[dir="rtl"] section.category div.commercial {
+	margin-left: 0;
 	margin-right: 20px;
 }
 
@@ -452,6 +458,11 @@ section.category div.commercial a.add_link {
 }
 
 div.commercial a.add_link:nth-of-type(2n) {
+	margin-left: 10%;
+}
+
+html[dir="rtl"] div.commercial a.add_link:nth-of-type(2n) {
+	margin-left: 0;
 	margin-right: 10%;
 }
 
