@@ -35,11 +35,11 @@
 					/>
 
 				<img
-				class="note"
-				src="_BASEURL.'/site/images/footer-note-vector.svg'"
-				alt="message"
-				cms:eval="src"
-				/>
+					class="note"
+					src="_BASEURL.'/site/images/footer-note-vector.svg'"
+					alt="message"
+					cms:eval="src"
+					/>
 
 				<img
 					class="logo"
