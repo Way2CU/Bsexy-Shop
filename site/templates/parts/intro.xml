@@ -1,7 +1,7 @@
 <document>
 	<div class="intro">
 		<img 
-			src="_BASEURL.'/site/images/logo-vector'"
+			src="_BASEURL.'/site/images/logo-vector.svg'"
 			alt="bsexy-logo"
 			class="logo"
 			cms:eval="src"
