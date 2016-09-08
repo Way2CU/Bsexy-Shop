@@ -13,7 +13,7 @@
 					template="parts/link.xml"
 					/>
 				<!-- logo -->
-				<a 
+				<a
 					href="URL::make()"
 					class="logo"
 					cms:eval="href"
@@ -64,7 +64,7 @@
 					</select>
 				</label>
 
-				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
+				<form>
 					<label>
 						<span><cms:text constant="label_search"/></span>
 						<input type="search"/>
@@ -127,7 +127,7 @@
 					</select>
 				</label>
 
-				<form action="">
+				<form>
 					<label>
 						<span><cms:text constant="label_search"/></span>
 						<input type="search"/>
