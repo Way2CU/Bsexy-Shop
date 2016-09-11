@@ -1,5 +1,5 @@
 <document>
-	<a 
+	<a
 		href="URL::make(array('service' => $params['text_id'], 'area' => isset($_REQUEST['area']) ? fix_chars($_REQUEST['area']) : 'tel-aviv'))"
 		cms:eval="href"
 		>
