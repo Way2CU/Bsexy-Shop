@@ -43,7 +43,7 @@
 
 				<img
 					class="logo"
-					src="_BASEURL.'/site/images/logo-vector'"
+					src="_BASEURL.'/site/images/logo-vector.svg'"
 					alt="bsexy-logo"
 					cms:eval="src"
 					/>
