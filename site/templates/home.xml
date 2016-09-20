@@ -37,6 +37,7 @@
 						action="show_item_list"
 						category="promoted1"
 						order_by="priority"
+						limit="8"
 						template="parts/promoted_items.xml"
 						/>
 					</div>
