@@ -2,12 +2,10 @@
 	<!-- Item title -->
 	<h2><cms:var param="name" multilanguage="yes"/></h2>
 
-	<!-- Desktop version of details page -->
 	<cms:desktop>
-
 		<!-- Information -->
 		<div class="information">
-			<!-- Age property -->
+			<!-- Age -->
 			<cms:module
 				name="shop"
 				action="show_property"
@@ -16,7 +14,8 @@
 				template="parts/property.xml"
 				cms:eval="item"
 				/>
-			<!-- Height property -->
+
+			<!-- Height -->
 			<cms:module
 				name="shop"
 				action="show_property"
@@ -25,7 +24,8 @@
 				template="parts/property.xml"
 				cms:eval="item"
 				/>
-			<!-- Breast size property -->
+
+			<!-- Breast size -->
 			<cms:module
 				name="shop"
 				action="show_property"
@@ -34,7 +34,8 @@
 				template="parts/property.xml"
 				cms:eval="item"
 				/>
-			<!-- Language property -->
+
+			<!-- Language -->
 			<cms:module
 				name="shop"
 				action="show_property"
@@ -43,7 +44,8 @@
 				template="parts/property.xml"
 				cms:eval="item"
 				/>
-			<!-- Origin property -->
+
+			<!-- Origin -->
 			<cms:module
 				name="shop"
 				action="show_property"
@@ -54,6 +56,7 @@
 				/>
 
 			<cms:markdown param="description" multilanguage="yes"/>
+
 			<!-- Show phone numbers -->
 			<cms:module
 				name="shop"
@@ -76,8 +79,8 @@
 
 		<!-- Item images -->
 		<div class="item_gallery">
-		<!-- Big image container-->
-				<div 
+			<!-- Big image container-->
+			<div
 				class="main_image"
 				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
 				cms:eval="style"
@@ -110,13 +113,11 @@
 		</div>
 	</cms:desktop>
 
-	<!-- Mobile version of details page -->
 	<cms:mobile>
 		<!-- Item images -->
 		<div class="item_gallery">
-
 			<!-- Big image container-->
-			<div 
+			<div
 				class="main_image"
 				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
 				cms:eval="style"
@@ -149,7 +150,7 @@
 
 			<!-- Information -->
 			<div class="information">
-				<!-- Age property -->
+				<!-- Age -->
 				<cms:module
 					name="shop"
 					action="show_property"
@@ -158,7 +159,8 @@
 					template="parts/property.xml"
 					cms:eval="item"
 					/>
-				<!-- Height property -->
+
+				<!-- Height -->
 				<cms:module
 					name="shop"
 					action="show_property"
@@ -167,7 +169,8 @@
 					template="parts/property.xml"
 					cms:eval="item"
 					/>
-				<!-- Breast size property -->
+
+				<!-- Breast size -->
 				<cms:module
 					name="shop"
 					action="show_property"
@@ -176,7 +179,8 @@
 					template="parts/property.xml"
 					cms:eval="item"
 					/>
-				<!-- Language property -->
+
+				<!-- Language -->
 				<cms:module
 					name="shop"
 					action="show_property"
@@ -185,7 +189,8 @@
 					template="parts/property.xml"
 					cms:eval="item"
 					/>
-				<!-- Origin property -->
+
+				<!-- Origin -->
 				<cms:module
 					name="shop"
 					action="show_property"
@@ -196,6 +201,7 @@
 					/>
 
 				<cms:markdown param="description" multilanguage="yes"/>
+
 				<!-- Show phone numbers -->
 				<cms:module
 					name="shop"

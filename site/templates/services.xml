@@ -13,9 +13,7 @@
 					template="parts/page_title.xml"
 					cms:eval="text_id"
 					/>
-
 				<cms:raw text=" - "/>
-
 				<cms:module
 					name="shop"
 					action="show_category"
@@ -64,7 +62,8 @@
 						action="show_item_list"
 						category="$_REQUEST['service'].','.$_REQUEST['area']"
 						order_by="priority"
-						template="parts/category_items.xml" 
+						show_expired="0"
+						template="parts/category_items.xml"
 						cms:eval="category"
 						/>
 				</div>
@@ -80,7 +79,7 @@
 						/>
 				</div>
 			</section>
-			
+
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
 		</body>

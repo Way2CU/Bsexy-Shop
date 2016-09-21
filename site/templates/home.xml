@@ -21,6 +21,8 @@
 						name="shop"
 						action="show_category"
 						text_id="promoted1"
+						limit="8"
+						show_expired="0"
 						template="parts/category_title.xml"
 						>
 						<param name="no_icon" value=""/>
@@ -38,6 +40,7 @@
 						category="promoted1"
 						order_by="priority"
 						limit="8"
+						show_expired="0"
 						template="parts/promoted_items.xml"
 						/>
 					</div>
@@ -51,6 +54,7 @@
 							category="promoted1"
 							order_by="id"
 							limit="6"
+							show_expired="0"
 							template="parts/category_latest_items.xml"
 							/>
 					</div>
