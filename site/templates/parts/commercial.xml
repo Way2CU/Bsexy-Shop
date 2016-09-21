@@ -1,8 +1,8 @@
 <document>
-	<a 
+	<a
 		class="add_link"
 		style="'background-image: url('.$params['image'].');'"
-		href="$params['url']" 
+		href="$params['url']"
 		cms:eval="href,style"
 		>
 	</a>
