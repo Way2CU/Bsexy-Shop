@@ -10,7 +10,7 @@
 
 	<cms:if condition="isset($template['thumbnail_image'])">
 		<img
-			src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 100 : 70, Thumbnail::CONSTRAIN_WIDTH)" 
+			src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 100 : 70, Thumbnail::CONSTRAIN_WIDTH)"
 			alt="$params['title'][$language]"
 			class="thumbnail"
 			cms:eval="src,alt"

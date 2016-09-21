@@ -53,11 +53,12 @@
 						action="show_item_list"
 						category="$_REQUEST['area']"
 						order_by="priority"
-						template="parts/area_items.xml" 
+						show_expired="0"
+						template="parts/area_items.xml"
 						cms:eval="category"
 						/>
 				</div>
-				
+
 				<!-- Area page banners -->
 				<div class="commercial">
 					<cms:module

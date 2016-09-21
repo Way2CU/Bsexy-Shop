@@ -1,6 +1,6 @@
 <document>
 	<cms:if condition="!isset($_REQUEST['service'])">
-		<option 
+		<option
 			value="URL::make(array( 'area' => $params['text_id']))"
 			selected="($params['text_id'] == (isset($_REQUEST['area']) ? $_REQUEST['area'] : 'tel-aviv')) ? 'selected' : false"
 			cms:optional="selected"
@@ -11,7 +11,7 @@
 	</cms:if>
 
 	<cms:if condition="isset($_REQUEST['service'])">
-		<option 
+		<option
 			value="URL::make(array('service' => $_REQUEST['service'], 'area' => $params['text_id']))"
 			selected="isset($_REQUEST['area']) and $_REQUEST['area'] == $params['text_id'] ? 'selected' : false"
 			cms:optional="selected"

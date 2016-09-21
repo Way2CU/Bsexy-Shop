@@ -6,7 +6,7 @@
 			<cms:text constant="label_list"/>
 			<cms:svg file="site-sprite.svg" symbol="view"/>
 		</a>
-		
+
 		<a class="active" data-id="gallery" href="javascript:void()">
 			<cms:text constant="label_gallery"/>
 			<cms:svg file="site-sprite.svg" symbol="gallery"/>

@@ -1,7 +1,7 @@
 <document>
-	<a 
-		class="$params['text_id']" 
-		href="$params['url']" 
+	<a
+		class="$params['text_id']"
+		href="$params['url']"
 		cms:eval="href,class"
 		>
 		<cms:var param="description" multilanguage="yes"/>

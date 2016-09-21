@@ -18,9 +18,9 @@
 					class="logo"
 					cms:eval="href"
 					>
-					<img 
-						src="_BASEURL.'/site/images/logo-vector.svg'" 
-						alt="bsexy-logo" 
+					<img
+						src="_BASEURL.'/site/images/logo-vector.svg'"
+						alt="bsexy-logo"
 						cms:eval="src"
 						/>
 				</a>
@@ -92,13 +92,13 @@
 				</a>
 
 				<!-- logo -->
-				<a 
+				<a
 					href="URL::make()"
 					class="logo"
 					cms:eval="href"
 					>
-					<img 
-						src="_BASEURL.'/site/images/logo-vector.svg'" 
+					<img
+						src="_BASEURL.'/site/images/logo-vector.svg'"
 						alt="bsexy-logo"
 						cms:eval="src"
 						/>

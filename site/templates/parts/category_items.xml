@@ -1,7 +1,7 @@
 <document>
 	<div
-		class="item" 
-		data-priority="$params['priority']" 
+		class="item"
+		data-priority="$params['priority']"
 		cms:eval="data-priority"
 		>
 		<a
@@ -9,7 +9,7 @@
 			href="URL::make(array( 'service' => $_REQUEST['service'], 'area' => $_REQUEST['area'], 'id' => $params['id']))"
 			cms:eval="href"
 			>
-			<img 
+			<img
 				src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 250 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
 				alt="$params['name'][$language]"
 				cms:eval="src,alt"
