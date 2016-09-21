@@ -73,7 +73,7 @@
 					<cms:module
 						name="links"
 						action="show_link_list"
-						group="$_REQUEST['service']"
+						group="$_REQUEST['service'].','.$_REQUEST['area']"
 						template="parts/commercial.xml"
 						cms:eval="group"
 						/>
