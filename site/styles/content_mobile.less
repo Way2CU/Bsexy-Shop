@@ -185,7 +185,16 @@ div.category_items.gallery div.item a.image {
 	width: 150px;
 }
 
-div.category_items.gallery div.item div {
+div.item div.description {
+	position: relative;
+	height: 150px;
+}
+
+div.latest div.item div.description {
+	height: 100px;
+}
+
+div.category_items.gallery div.item div.description {
 	display: inline-block;
 	vertical-align: top;
 	width: calc(~'(100% - 150px)');
@@ -205,20 +214,22 @@ div.item p {
 }
 
 div.item a.phone {
-	display: block;
+	position: absolute;
 	text-align: center;
 	text-decoration: none;
-	padding: 0.5em 0.5em;
-	margin-left: 0.2em;
-	margin-right: 0.2em;
-	margin-bottom: 0.5em;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	color: @color_text;
 	font-weight: 700;
+	white-space: nowrap;
+	border-radius: 0;
 }
 
 div.category_items.gallery div.item a.phone {
-	display: inline-block;
-	padding: 0.5em 1.5em;
+	left: 1em;
+	right: 1em;
+	bottom: 1em;
 }
 
 div.item a.phone svg {
