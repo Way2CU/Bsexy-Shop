@@ -15,7 +15,7 @@
 				cms:eval="src,alt"
 			/>
 		</a>
-		<div>
+		<div class="description">
 			<h4><cms:var param="name" multilanguage="yes"/></h4>
 			<cms:markdown param="description" multilanguage="yes" chars="50"/>
 
