@@ -80,17 +80,20 @@ Site.handle_product_thumbnail = function(event) {
 Site.handle_view_controls = function() {
 	var view = this.getAttribute('data-id');
 	var view_controls = document.querySelectorAll('div.display a');
-	var items_container = document.querySelector('div.category_items');
+	var items_container = document.querySelectorAll('div.category_items');
 	this.classList.add('active');
 	for(var i = 0,count = view_controls.length; i <count; i++) {
-		if(this != view_controls[i]) {
+		if(this != view_controls[i])
 			view_controls[i].classList.remove('active');
-		}
 	}
 
-	if(view == "gallery")
-			items_container.classList.remove('gallery'); else
-			items_container.classList.add('gallery');
+	if(view == "gallery") {
+		for(var i = 0; i < items_container.length; i++)
+			items_container[i].classList.remove('gallery');
+	} else {
+		for(var i = 0; i < items_container.length; i++)
+			items_container[i].classList.add('gallery');
+	}
 }
 
 /**
