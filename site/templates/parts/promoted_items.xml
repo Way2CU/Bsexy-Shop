@@ -1,9 +1,5 @@
 <document>
-	<div
-		class="item"
-		data-priority="$params['priority']"
-		cms:eval="data-priority"
-		>
+	<div class="item">
 		<a
 			class="image"
 			href="URL::make(array('id' => $params['id']))"

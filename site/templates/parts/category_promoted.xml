@@ -1,0 +1,65 @@
+<document>
+	<!-- Promoted category-->
+	<section>
+		<!-- Category title -->
+		<cms:module
+			name="shop"
+			action="show_category"
+			text_id="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+			limit="8"
+			show_expired="0"
+			template="parts/category_title.xml"
+			cms:eval="text_id"
+			>
+			<param name="no_icon" value=""/>
+		</cms:module>
+
+		<cms:mobile>
+			<cms:template file="parts/display_controls.xml"/>
+		</cms:mobile>
+
+		<!-- Promoted items -->
+		<div class="category_items">
+			<cms:module
+			name="shop"
+			action="show_item_list"
+			category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+			order_by="priority"
+			order_asc="0"
+			limit="8"
+			show_expired="0"
+			template="parts/promoted_items.xml"
+			cms:eval="category"
+			/>
+		</div>
+
+		<!-- Latest items -->
+		<div class="latest">
+			<h3><cms:text constant="title_latest"/></h3>
+			<cms:module
+				name="shop"
+				action="show_item_list"
+				category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+				order_by="id"
+				order_asc="0"
+				limit="6"
+				show_expired="0"
+				template="parts/category_latest_items.xml"
+				cms:eval="category"
+				/>
+		</div>
+
+		<!-- Banners-->
+		<div class="commercial">
+			<cms:module
+				name="links"
+				action="show_link_list"
+				group="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+				limit="2"
+				show_expired="0"
+				template="parts/commercial.xml"
+				cms:eval="group"
+				/>
+		</div>
+	</section>
+</document>
