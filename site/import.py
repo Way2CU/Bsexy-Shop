@@ -74,7 +74,8 @@ class Downloader(Worker):
 			self.log('Error opening {}'.format(url))
 
 		else:
-			with open(os.path.join(os.path.abspath(self.DESTINATION), file_name), 'wb') as local_file:
+			full_path = os.path.join(os.path.abspath(self.DESTINATION), file_name)
+			with open(file_path, 'wb') as local_file:
 				local_file.write(data)
 				result = True
 
@@ -275,8 +276,9 @@ class Inserter(Worker):
 
 		# store image file names associated with this item
 		for image in Import.images_to_download:
-			if image in data:
-				self.item_images[data[image]] = item_id
+			image_file = image.lower()
+			if image_file in data:
+				self.item_images[data[image_file]] = item_id
 
 		# commit transaction
 		cursor.close()
@@ -411,7 +413,7 @@ class Import:
 				# add data to the queue
 				file_name = data[group_name]
 				url = self.AD_IMAGE_URL_TEMPLATE.format(file_name)
-				self._image_queue.put_nowait((url, file_name))
+				self._image_queue.put_nowait((url, file_name.lower()))
 
 		Import.log('Parsing complete. Waiting for threads to finish.')
 
