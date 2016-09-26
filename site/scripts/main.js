@@ -105,7 +105,7 @@ Site.on_load = function() {
 
 	// create function for displaying category items view
 	var view_controls = document.querySelectorAll('div.display a');
-	for(var i = 0,count = view_controls.length; i <count; i++) {
+	for(var i = 0,count = view_controls.length; i < count; i++) {
 		view_controls[i].addEventListener('click', Site.handle_view_controls);
 	}
 
