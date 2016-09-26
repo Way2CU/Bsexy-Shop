@@ -15,9 +15,7 @@
 				<cms:template file="parts/header.xml"/>
 
 				<!-- Promoted categories -->
-				<cms:template file="parts/category_promoted.xml">
-					<param name="promoted" value="promoted_gold"/>
-				</cms:template>
+				<cms:template file="parts/category_promoted.xml"/>
 			</cms:if>
 
 			<!-- User consent -->
