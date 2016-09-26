@@ -5,7 +5,7 @@
 		<cms:module
 			name="shop"
 			action="show_category"
-			text_id="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular')"
+			text_id="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
 			limit="8"
 			show_expired="0"
 			template="parts/category_title.xml"
@@ -23,8 +23,9 @@
 			<cms:module
 			name="shop"
 			action="show_item_list"
-			category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular')"
+			category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
 			order_by="priority"
+			order_asc="0"
 			limit="8"
 			show_expired="0"
 			template="parts/promoted_items.xml"
@@ -38,8 +39,9 @@
 			<cms:module
 				name="shop"
 				action="show_item_list"
-				category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular')"
+				category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
 				order_by="id"
+				order_asc="0"
 				limit="6"
 				show_expired="0"
 				template="parts/category_latest_items.xml"
@@ -52,7 +54,7 @@
 			<cms:module
 				name="links"
 				action="show_link_list"
-				group="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular')"
+				group="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
 				limit="2"
 				show_expired="0"
 				template="parts/commercial.xml"
