@@ -2,12 +2,12 @@
 	<div class="display">
 		<span><cms:text constant="label_display_options"/></span>
 
-		<a data-id="list" href="javascript:void()">
+		<a data-id="list" href="javascript:void(0)">
 			<cms:text constant="label_list"/>
 			<cms:svg file="site-sprite.svg" symbol="view"/>
 		</a>
 
-		<a class="active" data-id="gallery" href="javascript:void()">
+		<a class="active" data-id="gallery" href="javascript:void(0)">
 			<cms:text constant="label_gallery"/>
 			<cms:svg file="site-sprite.svg" symbol="gallery"/>
 		</a>
