@@ -14,7 +14,17 @@
 				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
 
-				<!-- Promoted categories -->
+				<!-- Promoted_gold -->
+				<cms:template file="parts/category_promoted.xml">
+					<param name="promoted" value="promoted_gold"/>
+				</cms:template>
+
+				<!-- Promoted_premium -->
+				<cms:template file="parts/category_promoted.xml">
+					<param name="promoted" value="promoted_premium"/>
+				</cms:template>
+
+				<!-- Promoted regular -->
 				<cms:template file="parts/category_promoted.xml"/>
 			</cms:if>
 
