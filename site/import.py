@@ -75,7 +75,7 @@ class Downloader(Worker):
 
 		else:
 			full_path = os.path.join(os.path.abspath(self.DESTINATION), file_name)
-			with open(file_path, 'wb') as local_file:
+			with open(full_path, 'wb') as local_file:
 				local_file.write(data)
 				result = True
 
@@ -319,7 +319,7 @@ class Import:
 	data into final database.
 	"""
 	AD_IMAGE_URL_TEMPLATE = 'http://bsexy.co.il/images/pics/{}'
-	THREAD_COUNT = 1
+	THREAD_COUNT = 10
 
 	stdout_lock = Lock()
 	images_to_download = (
@@ -454,7 +454,7 @@ class Import:
 
 if __name__ == '__main__':
 	Import.set_config({
-		'download': False
+		'download': True
 		})
 
 	Import()
