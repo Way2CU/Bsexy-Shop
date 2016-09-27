@@ -1,6 +1,3 @@
 <document>
-	<div class="property">
-		<span><cms:var param="name" multilanguage="yes"/></span>
-		<span><cms:var param="value"/></span>
-	</div>
+	<span><cms:var param="value"/></span>
 </document>
