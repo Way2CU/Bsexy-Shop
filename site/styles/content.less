@@ -147,7 +147,7 @@ div.item {
 	box-sizing: border-box;
 	border: 1px solid @color_text;
 	width: 190px;
-	height: 415px;
+	height: 413px;
 	position: relative;
 	overflow: hidden;
 }
@@ -172,7 +172,7 @@ div.latest div.item {
 	width: 120px;
 	height: 200px;
 	margin: 0;
-	margin-bottom: 15px;
+	margin-bottom: calc(~'(40px / 3)');
 }
 
 div.item:nth-of-type(1n) {
@@ -185,12 +185,13 @@ html[dir="rtl"] div.item:nth-of-type(1n) {
 }
 
 div.latest div.item:nth-of-type(1n) {
-	margin-right: calc(~'(20px / 2)');
+	margin-right: 0;
+	margin-left: 0;
 }
 
-html[dir="rtl"] div.latest div.item:nth-of-type(1n) {
-	margin-left: calc(~'(20px / 2)');
-	margin-right: 0;
+div.latest div.item:nth-of-type(3n) {
+	margin-right: calc(~'20px / 2');
+	margin-left: calc(~'20px / 2');
 }
 
 section.category div.item:nth-of-type(1n) {
@@ -202,14 +203,12 @@ html[dir="rtl"] section.category div.item:nth-of-type(1n) {
 	margin-left: calc(~'(50px / 2)');
 }
 
-section.category div.item:nth-of-type(3n),
-div.latest div.item:nth-of-type(4n) {
+section.category div.item:nth-of-type(3n) {
 	margin-right: 0;
 	margin-left: auto;
 }
 
-html[dir="rtl"] section.category div.item:nth-of-type(3n),
-html[dir="rtl"] div.latest div.item:nth-of-type(4n) {
+html[dir="rtl"] section.category div.item:nth-of-type(3n) {
 	margin-left: 0;
 	margin-right: auto;
 }
