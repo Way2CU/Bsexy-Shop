@@ -35,7 +35,9 @@
 
 		<!-- Latest items -->
 		<div class="latest">
-			<h3><cms:text constant="title_latest"/></h3>
+			<div class="title">
+				<h3><cms:text constant="title_latest"/></h3>
+			</div>
 			<cms:module
 				name="shop"
 				action="show_item_list"
