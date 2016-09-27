@@ -9,5 +9,10 @@
   "label_display_options": "שינוי תצוגה:",
   "label_list": "רשימה",
   "label_gallery": "גלריה",
-  "title_latest": "חדשות באתר"
+  "title_latest": "חדשות באתר",
+  "property_age": "גיל:",
+  "property_height": "גובה:",
+  "property_breast_size": "מידת חזה:",
+  "property_language": "שפה:",
+  "property_origin": "מוצא:"
 }
