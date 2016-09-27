@@ -6,54 +6,69 @@
 		<!-- Information -->
 		<div class="information">
 			<!-- Age -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="age"
-				template="parts/property.xml"
-				cms:eval="item"
-				/>
+			<div class="property">
+				<span><cms:text constant="property_age"/></span>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<!-- Height -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="height"
-				template="parts/property.xml"
-				cms:eval="item"
-				/>
+			<div class="property">
+				<span><cms:text constant="property_height"/></span>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<!-- Breast size -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="breast_size"
-				template="parts/property.xml"
-				cms:eval="item"
-				/>
+			<div class="property">
+				<span><cms:text constant="property_breast_size"/></span>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<!-- Language -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="language"
-				template="parts/property.xml"
-				cms:eval="item"
-				/>
+			<div class="property">
+				<span><cms:text constant="property_language"/></span>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<!-- Origin -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="origin"
-				template="parts/property.xml"
-				cms:eval="item"
-				/>
+			<div class="property">
+				<span><cms:text constant="property_origin"/></span>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="age"
+					template="parts/property.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<cms:markdown param="description" multilanguage="yes"/>
 
