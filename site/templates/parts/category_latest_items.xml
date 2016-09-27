@@ -12,7 +12,7 @@
 				/>
 		</a>
 		<div class="description">
-			<h4><cms:var param="name" multilanguage="yes"/></h4>
+			<h5><cms:var param="name" multilanguage="yes"/></h5>
 
 			<!-- Show phone numbers -->
 			<cms:module
