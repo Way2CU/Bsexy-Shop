@@ -74,7 +74,8 @@ class Downloader(Worker):
 			self.log('Error opening {}'.format(url))
 
 		else:
-			with open(os.path.join(os.path.abspath(self.DESTINATION), file_name), 'wb') as local_file:
+			full_path = os.path.join(os.path.abspath(self.DESTINATION), file_name)
+			with open(full_path, 'wb') as local_file:
 				local_file.write(data)
 				result = True
 
@@ -95,54 +96,27 @@ class Inserter(Worker):
 	item_images = {}
 
 	category_index = {
-			1: 'apartments',
-			3: 'vip',
-			4: 'escort',
-			6: 'private',
-			7: 'massage',
-			8: 'spa',
-			9: 'transgender',
-			10: 'gays',
-			13: 'sado',
-			16: 'porn',
-			18: 'required',
-			19: 'forum',
-			21: 'webcam'
+			22: 'apartments',
+			16: 'apartments',
+			15: 'vip',
+			1:  'escort',
+			6:  'massage',
+			12: 'spa',
+			13: 'transgender',
+			9:  'gays',
+			8:  'sado',
+			14: 'required'
 			}
 	category_map = {}
 
 	location_index = {
-			1: 'tel-aviv',
-			2: 'ramat-gan',
-			3: 'rehovot',
-			4: 'lod',
-			5: 'bat-yam',
-			6: 'petah-tikva',
-			7: 'rishon',
-			8: 'givataim',
-			9: 'holon',
-			10: 'eilat',
-			11: 'ashdod',
-			12: 'ashkelon',
-			13: 'bear-sheva',
-			14: 'dimona',
-			15: 'haifa',
-			16: 'krayot',
-			17: 'akko',
-			18: 'nahariya',
-			19: 'galil',
-			20: 'tiberius',
-			21: 'carmiel',
-			22: 'north-settelment',
-			23: 'hadera',
-			24: 'natanya',
-			25: 'herzeliya',
-			26: 'ramat-hasharon',
-			27: 'rannana',
-			28: 'kefar-saba',
-			29: 'hod-hasharon',
-			30: 'jerusalem',
-			31: 'modiin'
+			1: ('tel_aviv', 'ramat_gan', 'lod', 'bat_yam', 'petah_tikva', 'rishon',
+				'givataim', 'holon', 'hadera', 'natanya', 'herzeliya', 'ramat_hasharon',
+				'rannana', 'kefar_saba', 'hod_hasharon'),
+			5: ('eilat',),
+			4: ('rehovot', 'ashdod', 'ashkelon', 'bear_sheva', 'dimona'),
+			2: ('haifa', 'krayot', 'akko', 'nahariya', 'galil', 'tiberius', 'carmiel', 'north_settelment'),
+			3: ('jerusalem', 'modiin')
 			}
 
 	def run(self):
@@ -280,9 +254,10 @@ class Inserter(Worker):
 
 		# assign location cateogry
 		if location_id is not None and self.location_index.has_key(location_id):
-			location_text_id = self.location_index[location_id]
+			location_text_ids = self.location_index[location_id]
+			location_text_ids = filter(lambda text_id: text_id in self.category_map, location_text_ids)
 
-			if location_text_id in self.category_map:
+			for location_text_id in location_text_ids:
 				category_id = self.category_map[location_text_id]
 				category_sql = 'INSERT INTO `shop_item_membership`(`category`, `item`) VALUES (%s, %s)'
 				cursor.execute(category_sql, (category_id, item_id))
@@ -301,8 +276,9 @@ class Inserter(Worker):
 
 		# store image file names associated with this item
 		for image in Import.images_to_download:
-			if image in data:
-				self.item_images[data[image]] = item_id
+			image_file = image.lower()
+			if image_file in data:
+				self.item_images[data[image_file]] = item_id
 
 		# commit transaction
 		cursor.close()
@@ -343,7 +319,7 @@ class Import:
 	data into final database.
 	"""
 	AD_IMAGE_URL_TEMPLATE = 'http://bsexy.co.il/images/pics/{}'
-	THREAD_COUNT = 1
+	THREAD_COUNT = 10
 
 	stdout_lock = Lock()
 	images_to_download = (
@@ -437,7 +413,7 @@ class Import:
 				# add data to the queue
 				file_name = data[group_name]
 				url = self.AD_IMAGE_URL_TEMPLATE.format(file_name)
-				self._image_queue.put_nowait((url, file_name))
+				self._image_queue.put_nowait((url, file_name.lower()))
 
 		Import.log('Parsing complete. Waiting for threads to finish.')
 
@@ -478,7 +454,7 @@ class Import:
 
 if __name__ == '__main__':
 	Import.set_config({
-		'download': False
+		'download': True
 		})
 
 	Import()
