@@ -139,7 +139,9 @@ div.item {
 	display: inline-block;
 	vertical-align: top;
 	box-sizing: border-box;
-	margin-bottom: 0.5em;
+	margin-right: 0.2em;
+	margin-left: 0.2em;
+	margin-bottom: 0.4em;
 	border: 1px solid @color_text;
 	width: 150px;
 	overflow: hidden;
@@ -148,14 +150,6 @@ div.item {
 div.category_items.gallery div.item {
 	display: block;
 	width: 100%;
-}
-
-div.item:nth-of-type(2n) {
-	margin-right: 0.5em;
-}
-
-div.category_items.gallery div.item:nth-of-type(2n) {
-	margin-right: 0em;
 }
 
 div.item[data-priority^="1"] {
@@ -183,6 +177,10 @@ div.category_items.gallery div.item a.image {
 	display: inline-block;
 	vertical-align: top;
 	width: 150px;
+}
+
+div.latest div.item a.image {
+	height: 100px;
 }
 
 div.item div.description {
@@ -342,7 +340,7 @@ div.commercial a.add_link {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
-	height: 150px;
+	height: 115px;
 }
 
 div.commercial a.add_link {
