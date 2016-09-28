@@ -154,7 +154,7 @@ div.item {
 
 section.category div.item {
 	width: 250px;
-	height: 500px;
+	height: 525px;
 	margin-bottom: calc(~'(50px / 2)');
 }
 
@@ -454,15 +454,12 @@ section.category div.commercial {
 	display: inline-block;
 	vertical-align: top;
 	width: 380px;
-	height: 250px;
-	margin-left: 20px;
-	margin-bottom: calc(~'50 / 2');
-	border: 1px solid white;
+	margin-left: calc(~'20px - 2px');
 }
 
 html[dir="rtl"] section.category div.commercial {
 	margin-left: 0;
-	margin-right: 20px;
+	margin-right: calc(~'20px - 2px');
 }
 
 div.commercial a.add_link {
@@ -472,7 +469,7 @@ div.commercial a.add_link {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
-	border: 1px solid transparent;
+	border: 1px solid @color_text;
 	height: 200px;
 	width: 590px;
 	transition: all 0.3s;
@@ -486,8 +483,9 @@ section.category div.commercial a.add_link {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 1em;
-	width: 100%;
+	margin-bottom: calc(~'50px / 2');
+	width: 380px;
+	height: 250px;
 }
 
 div.commercial a.add_link:nth-of-type(2n) {
