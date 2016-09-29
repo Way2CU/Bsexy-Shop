@@ -1,0 +1,21 @@
+<document>
+	<document>
+		<!-- Promoted category-->
+		<section>
+			<!-- Category title -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				category="$_REQUEST['service']"
+				template="parts/category_title.xml"
+				cms:eval="category"
+				>
+				<param name="no_icon" value=""/>
+			</cms:module>
+
+			<cms:mobile>
+				<cms:template file="parts/display_controls.xml"/>
+			</cms:mobile>
+		</section>
+	</document>
+</document>

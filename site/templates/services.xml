@@ -13,14 +13,6 @@
 					template="parts/page_title.xml"
 					cms:eval="text_id"
 					/>
-				<cms:raw text=" - "/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="$_REQUEST['area']"
-					template="parts/page_title.xml"
-					cms:eval="text_id"
-					/>
 			</title>
 
 			<!-- Page description -->
@@ -64,25 +56,22 @@
 					<cms:template file="parts/display_controls.xml"/>
 				</cms:mobile>
 
-				<!-- Category items -->
-				<div class="category_items">
-					<cms:module
-						name="shop"
-						action="show_item_list"
-						category="$_REQUEST['service'].','.$_REQUEST['area']"
-						order_by="priority"
-						show_expired="0"
-						template="parts/category_items.xml"
-						cms:eval="category"
-						/>
-				</div>
+				<cms:module
+					name="shop"
+					action="show_category_list"
+					parent="$_REQUEST['service']"
+					limit="8"
+					show_expired="0"
+					template="parts/category_preview.xml"
+					cms:eval="parent"
+					/>
 
 				<!-- Category page banners -->
 				<div class="commercial">
 					<cms:module
 						name="links"
 						action="show_link_list"
-						group="$_REQUEST['service'].','.$_REQUEST['area']"
+						group="$_REQUEST['service']"
 						template="parts/commercial.xml"
 						cms:eval="group"
 						/>
