@@ -50,6 +50,17 @@
 					<param name="icon" value=""/>
 				</cms:module>
 
+				<!-- Category description -->
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['service']"
+					template="parts/category_description.xml"
+					cms:eval="text_id"
+					>
+					<param name="icon" value=""/>
+				</cms:module>
+
 				<!-- Show display controls options on mobile version -->
 				<cms:mobile>
 					<cms:template file="parts/display_controls.xml"/>
