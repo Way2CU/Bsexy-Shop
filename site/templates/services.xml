@@ -57,9 +57,7 @@
 					text_id="$_REQUEST['service']"
 					template="parts/category_description.xml"
 					cms:eval="text_id"
-					>
-					<param name="icon" value=""/>
-				</cms:module>
+					/>
 
 				<!-- Show display controls options on mobile version -->
 				<cms:mobile>
