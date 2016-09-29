@@ -30,7 +30,7 @@
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
-			<section class="category">
+			<section>
 				<!-- Category title -->
 				<cms:module
 					name="shop"
@@ -60,22 +60,11 @@
 					name="shop"
 					action="show_category_list"
 					parent="$_REQUEST['service']"
-					limit="8"
-					show_expired="0"
 					template="parts/category_preview.xml"
 					cms:eval="parent"
-					/>
-
-				<!-- Category page banners -->
-				<div class="commercial">
-					<cms:module
-						name="links"
-						action="show_link_list"
-						group="$_REQUEST['service']"
-						template="parts/commercial.xml"
-						cms:eval="group"
-						/>
-				</div>
+					>
+					<param name="limit" value=""/>
+				</cms:module>
 			</section>
 
 			<!-- Bottom section of the site -->
