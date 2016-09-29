@@ -78,7 +78,6 @@ html[dir=rtl] .mobile_menu.visible {
 	height: 15px;
 }
 
-.mobile_menu label.area,
 .mobile_menu form {
 	display: block;
 	margin-top: 1em;
@@ -88,11 +87,6 @@ html[dir=rtl] .mobile_menu.visible {
 	position: relative;
 }
 
-.mobile_menu label.area {
-	margin-top: 0;
-}
-
-.mobile_menu label.area span,
 .mobile_menu form label span {
 	display: inline-block;
 	vertical-align: middle;
@@ -104,8 +98,7 @@ html[dir=rtl] .mobile_menu.visible {
 	color: @color_text;
 }
 
-.mobile_menu form label input,
-.mobile_menu label select {
+.mobile_menu form label input {
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
@@ -121,11 +114,6 @@ html[dir=rtl] .mobile_menu.visible {
 
 .mobile_menu form label input {
 	width: calc(~'(100% - 100px - 3em)');
-}
-
-.mobile_menu label.area select optgroup,
-.mobile_menu label.area select option {
-	background-color: @color_background;
 }
 
 .mobile_menu form button {
