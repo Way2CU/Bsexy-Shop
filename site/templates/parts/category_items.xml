@@ -6,8 +6,9 @@
 		>
 		<a
 			class="image"
+			title="$params['name'][$language]"
 			href="URL::make(array( 'service' => $_REQUEST['service'], 'area' => $_REQUEST['area'], 'id' => $params['id']))"
-			cms:eval="href"
+			cms:eval="href,title"
 			>
 			<img
 				src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 250 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
