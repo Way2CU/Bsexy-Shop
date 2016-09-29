@@ -13,14 +13,6 @@
 					template="parts/page_title.xml"
 					cms:eval="text_id"
 					/>
-				<cms:raw text=" - "/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="$_REQUEST['area']"
-					template="parts/page_title.xml"
-					cms:eval="text_id"
-					/>
 			</title>
 
 			<!-- Page description -->
@@ -60,7 +52,7 @@
 					<cms:module
 						name="shop"
 						action="show_item_list"
-						category="$_REQUEST['service'].','.$_REQUEST['area']"
+						category="$_REQUEST['service']"
 						order_by="priority"
 						show_expired="0"
 						template="parts/category_items.xml"
@@ -73,7 +65,7 @@
 					<cms:module
 						name="links"
 						action="show_link_list"
-						group="$_REQUEST['service'].','.$_REQUEST['area']"
+						group="$_REQUEST['service']"
 						template="parts/commercial.xml"
 						cms:eval="group"
 						/>
