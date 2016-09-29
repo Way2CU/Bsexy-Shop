@@ -2,17 +2,7 @@
 	<!-- Promoted category-->
 	<section>
 		<!-- Category title -->
-		<cms:module
-			name="shop"
-			action="show_category"
-			text_id="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
-			limit="8"
-			show_expired="0"
-			template="parts/category_title.xml"
-			cms:eval="text_id"
-			>
-			<param name="no_icon" value=""/>
-		</cms:module>
+		<h1><cms:var param="title" multilanguage="yes"/></h1>
 
 		<cms:mobile>
 			<cms:template file="parts/display_controls.xml"/>
@@ -23,25 +13,25 @@
 			<cms:module
 			name="shop"
 			action="show_item_list"
-			category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+			category_id="$params['id']"
 			order_by="priority"
 			order_asc="0"
 			limit="8"
 			show_expired="0"
 			template="parts/promoted_items.xml"
-			cms:eval="category"
+			cms:eval="category_id"
 			/>
 		</div>
 
 		<!-- Latest items -->
 		<div class="latest">
 			<div class="title">
-				<h3><cms:text constant="title_latest"/></h3>
+				<span><cms:text constant="title_latest"/></span>
 			</div>
 			<cms:module
 				name="shop"
 				action="show_item_list"
-				category="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+				category="$params['id']"
 				order_by="id"
 				order_asc="0"
 				limit="6"
@@ -56,7 +46,7 @@
 			<cms:module
 				name="links"
 				action="show_link_list"
-				group="isset($template['promoted']) ? $template['promoted'] : 'promoted_regular'"
+				group="$params['id']"
 				limit="2"
 				show_expired="0"
 				template="parts/commercial.xml"

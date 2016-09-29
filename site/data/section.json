@@ -1,7 +1,8 @@
 {
 	"/": "home.xml",
-	"/service/{service}": "services.xml",
-	"/service/{service}/{id}": "view.xml",
+	"/{service}": "services.xml",
+	"/{service}/{area}": "services.xml",
+	"/{service}/{area}/{id}": "view.xml",
 	"/promoted/{id}": "view.xml",
 	"/search": "search.xml"
 }
