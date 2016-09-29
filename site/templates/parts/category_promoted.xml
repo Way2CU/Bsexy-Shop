@@ -36,7 +36,7 @@
 		<!-- Latest items -->
 		<div class="latest">
 			<div class="title">
-				<h3><cms:text constant="title_latest"/></h3>
+				<span><cms:text constant="title_latest"/></span>
 			</div>
 			<cms:module
 				name="shop"
