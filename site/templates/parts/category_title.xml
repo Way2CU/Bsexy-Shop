@@ -1,16 +1,16 @@
 <document>
 	<!-- Show category title with related icon if specified -->
 	<cms:if condition="isset($template['icon'])">
-		<h2>
+		<h1>
 			<cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
 			<cms:var param="title" multilanguage="yes"/>
-		</h2>
+		</h1>
 	</cms:if>
 
 	<!-- Show category title with no icon -->
 	<cms:if condition="isset($template['no_icon'])">
-		<h2>
+		<h1>
 			<cms:var param="title" multilanguage="yes"/>
-		</h2>
+		</h1>
 	</cms:if>
 </document>

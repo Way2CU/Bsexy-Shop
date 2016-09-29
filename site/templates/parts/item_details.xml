@@ -1,6 +1,6 @@
 <document>
 	<!-- Item title -->
-	<h2><cms:var param="name" multilanguage="yes"/></h2>
+	<h1><cms:var param="name" multilanguage="yes"/></h1>
 
 	<cms:desktop>
 		<!-- Information -->
