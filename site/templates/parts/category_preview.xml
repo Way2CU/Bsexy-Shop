@@ -13,13 +13,13 @@
 			<cms:module
 			name="shop"
 			action="show_item_list"
-			category_id="$params['id']"
+			category="$params['id']"
 			order_by="priority"
 			order_asc="0"
-			limit="8"
+			limit="isset($template['limit']) ? '4' : '8'"
 			show_expired="0"
 			template="parts/promoted_items.xml"
-			cms:eval="category_id"
+			cms:eval="category,limit"
 			/>
 		</div>
 
@@ -34,10 +34,10 @@
 				category="$params['id']"
 				order_by="id"
 				order_asc="0"
-				limit="6"
+				limit="isset($template['limit']) ? '3' : '6'"
 				show_expired="0"
 				template="parts/category_latest_items.xml"
-				cms:eval="category"
+				cms:eval="category,limit"
 				/>
 		</div>
 
@@ -46,7 +46,7 @@
 			<cms:module
 				name="links"
 				action="show_link_list"
-				group="$params['id']"
+				group="$params['text_id']"
 				limit="2"
 				show_expired="0"
 				template="parts/commercial.xml"
