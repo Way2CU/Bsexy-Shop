@@ -1,57 +1,126 @@
 <document>
-	<!-- Promoted category-->
-	<section>
-		<!-- Category title -->
-		<h1><cms:var param="title" multilanguage="yes"/></h1>
+	<cms:if condition="!isset($template['service_area'])">
+		<section>
+			<!-- Category title -->
+			<h1><cms:var param="title" multilanguage="yes"/></h1>
 
-		<cms:mobile>
-			<cms:template file="parts/display_controls.xml"/>
-		</cms:mobile>
+			<cms:mobile>
+				<cms:template file="parts/display_controls.xml"/>
+			</cms:mobile>
 
-		<!-- Promoted items -->
-		<div class="category_items">
-			<cms:module
-			name="shop"
-			action="show_item_list"
-			category="$params['id']"
-			order_by="priority"
-			order_asc="0"
-			limit="isset($template['limit']) ? '4' : '8'"
-			show_expired="0"
-			template="parts/promoted_items.xml"
-			cms:eval="category,limit"
-			/>
-		</div>
-
-		<!-- Latest items -->
-		<div class="latest">
-			<div class="title">
-				<span><cms:text constant="title_latest"/></span>
-			</div>
-			<cms:module
+			<!-- Promoted items -->
+			<div class="category_items">
+				<cms:module
 				name="shop"
 				action="show_item_list"
 				category="$params['id']"
-				order_by="id"
+				order_by="priority"
 				order_asc="0"
-				limit="isset($template['limit']) ? '3' : '6'"
+				limit="8"
 				show_expired="0"
-				template="parts/category_latest_items.xml"
-				cms:eval="category,limit"
+				template="parts/promoted_items.xml"
+				cms:eval="category"
 				/>
-		</div>
+			</div>
 
-		<!-- Banners-->
-		<div class="commercial">
-			<cms:module
-				name="links"
-				action="show_link_list"
-				group="$params['text_id']"
-				limit="2"
-				show_expired="0"
-				template="parts/commercial.xml"
-				cms:eval="group"
-				/>
-		</div>
-	</section>
+			<!-- Latest items -->
+			<div class="latest">
+				<div class="title">
+					<span><cms:text constant="title_latest"/></span>
+				</div>
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					category="$params['id']"
+					order_by="id"
+					order_asc="0"
+					limit="6"
+					show_expired="0"
+					template="parts/category_latest_items.xml"
+					cms:eval="category"
+					/>
+			</div>
+
+			<!-- Banners-->
+			<div class="commercial">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="$params['text_id']"
+					limit="2"
+					show_expired="0"
+					template="parts/commercial.xml"
+					cms:eval="group"
+					/>
+			</div>
+		</section>
+	</cms:if>
+
+	<cms:if condition="isset($template['service_area'])">
+		<section>
+			<!-- Category title -->
+			<h3><cms:var param="title" multilanguage="yes"/></h3>
+
+			<cms:mobile>
+				<cms:template file="parts/display_controls.xml"/>
+			</cms:mobile>
+
+			<!-- Promoted items -->
+			<div class="category_items">
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					category="$params['id']"
+					order_by="priority"
+					order_asc="0"
+					limit="4"
+					show_expired="0"
+					template="parts/promoted_items.xml"
+					cms:eval="category"
+					>
+					<transfer target="area" name="text_id"/>
+				</cms:module>
+				<a
+					href="URL::make(array('service' => $_REQUEST['service'], 'area' => $params['text_id']))"
+					class="show action"
+					cms:eval="href"
+					>
+					<cms:text constant="button_show_more"/>
+				</a>
+			</div>
+
+			<!-- Latest items -->
+			<div class="latest">
+				<div class="title">
+					<span><cms:text constant="title_latest"/></span>
+				</div>
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					category="$params['id']"
+					order_by="id"
+					order_asc="0"
+					limit="3"
+					show_expired="0"
+					template="parts/category_latest_items.xml"
+					cms:eval="category"
+					>
+					<transfer target="area" name="text_id"/>
+				</cms:module>
+			</div>
+
+			<!-- Banners-->
+			<div class="commercial">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="$params['text_id']"
+					limit="2"
+					show_expired="0"
+					template="parts/commercial.xml"
+					cms:eval="group"
+					/>
+			</div>
+		</section>
+	</cms:if>
 </document>

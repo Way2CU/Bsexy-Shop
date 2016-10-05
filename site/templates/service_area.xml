@@ -9,7 +9,7 @@
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="$_REQUEST['service']"
+					text_id="$_REQUEST['area']"
 					template="parts/page_title.xml"
 					cms:eval="text_id"
 					/>
@@ -19,7 +19,7 @@
 			<cms:module
 				name="shop"
 				action="show_category"
-				text_id="$_REQUEST['service']"
+				text_id="$_REQUEST['area']"
 				template="parts/page_description.xml"
 				cms:eval="text_id"
 				/>
@@ -30,23 +30,23 @@
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
-			<section>
+			<section class="category">
 				<!-- Category title -->
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="$_REQUEST['service']"
+					text_id="$_REQUEST['area']"
 					template="parts/category_title.xml"
 					cms:eval="text_id"
 					>
-					<param name="icon" value=""/>
+					<param name="no_icon" value=""/>
 				</cms:module>
 
 				<!-- Category description -->
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="$_REQUEST['service']"
+					text_id="$_REQUEST['area']"
 					template="parts/category_description.xml"
 					cms:eval="text_id"
 					/>
@@ -56,15 +56,29 @@
 					<cms:template file="parts/display_controls.xml"/>
 				</cms:mobile>
 
-				<cms:module
-					name="shop"
-					action="show_category_list"
-					parent="$_REQUEST['service']"
-					template="parts/category_preview.xml"
-					cms:eval="parent"
-					>
-					<param name="service_area" value=""/>
-				</cms:module>
+				<!-- Category items -->
+				<div class="category_items">
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['area']"
+						order_by="priority"
+						show_expired="0"
+						template="parts/category_items.xml"
+						cms:eval="category"
+						/>
+				</div>
+
+				<!-- Category page banners -->
+				<div class="commercial">
+					<cms:module
+						name="links"
+						action="show_link_list"
+						group="$_REQUEST['area']"
+						template="parts/commercial.xml"
+						cms:eval="group"
+						/>
+				</div>
 			</section>
 
 			<!-- Bottom section of the site -->

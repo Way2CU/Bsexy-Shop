@@ -3,7 +3,7 @@
 		<a
 			class="image"
 			title="$params['name'][$language]"
-			href="URL::make(array('id' => $params['id']))"
+			href="isset($template['area']) ? URL::make(array('service' => $_REQUEST['service'], 'area' => $template['area'], 'id' => $params['id'])) : URL::make(array('id' => $params['id']))"
 			cms:eval="href,title"
 			>
 			<img
