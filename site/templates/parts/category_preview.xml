@@ -92,7 +92,7 @@
 					category="$params['id']"
 					order_by="id"
 					order_asc="0"
-					limit="3"
+					limit="6"
 					show_expired="0"
 					template="parts/category_latest_items.xml"
 					cms:eval="category"
