@@ -14,6 +14,10 @@
 				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
 
+				<cms:mobile>
+					<cms:template file="parts/display_controls.xml"/>
+				</cms:mobile>
+
 				<!-- promoted categories -->
 				<cms:module
 					name="shop"

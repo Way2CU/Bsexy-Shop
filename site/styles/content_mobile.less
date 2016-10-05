@@ -27,7 +27,7 @@ section > h1 {
 	overflow: hidden;
 }
 
-section.category h1 svg {
+section h1 svg {
 	display: inline-block;
 	vertical-align: middle;
 	width: 2em;
@@ -37,7 +37,7 @@ section.category h1 svg {
 	border: 1px solid @color_border;
 }
 
-section.category h1 span {
+section h1 span {
 	display: inline-block;
 	vertical-align: top;
 	background-image: url(../images/massage.svg);
@@ -57,6 +57,7 @@ div.latest span {
 
 div.display {
 	display: block;
+	text-align: center;
 	padding-bottom: 0.5em;
 }
 
@@ -196,6 +197,17 @@ div.category_items.gallery div.item div.description {
 	display: inline-block;
 	vertical-align: top;
 	width: calc(~'(100% - 150px)');
+}
+
+div.category_items a.show {
+	box-sizing: border-box;
+	margin-top: 0.3em;
+	padding: 0.7em 0em;
+	color: @color_text;
+	border-radius: 0;
+	text-align: center;
+	font-weight: 700;
+	width: 50%;
 }
 
 div.item h2 {

@@ -4,10 +4,6 @@
 			<!-- Category title -->
 			<h1><cms:var param="title" multilanguage="yes"/></h1>
 
-			<cms:mobile>
-				<cms:template file="parts/display_controls.xml"/>
-			</cms:mobile>
-
 			<!-- Promoted items -->
 			<div class="category_items">
 				<cms:module
@@ -60,10 +56,6 @@
 		<section>
 			<!-- Category title -->
 			<h3><cms:var param="title" multilanguage="yes"/></h3>
-
-			<cms:mobile>
-				<cms:template file="parts/display_controls.xml"/>
-			</cms:mobile>
 
 			<!-- Promoted items -->
 			<div class="category_items">
