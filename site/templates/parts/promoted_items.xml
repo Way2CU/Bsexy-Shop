@@ -1,5 +1,9 @@
 <document>
-		<div class="item">
+		<div
+			class="item"
+			data-priority="isset($template['area']) ? $params['priority'] : false"
+			cms:optional="data-priority"
+			>
 			<a
 				class="image"
 				title="$params['name'][$language]"

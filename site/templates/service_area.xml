@@ -63,7 +63,7 @@
 						action="show_item_list"
 						category="$_REQUEST['area']"
 						order_by="priority"
-						show_expired="0"
+						order_asc="0"
 						template="parts/category_items.xml"
 						cms:eval="category"
 						/>
