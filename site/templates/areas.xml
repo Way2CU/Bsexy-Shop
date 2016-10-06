@@ -15,15 +15,7 @@
 					cms:eval="text_id"
 					/>
 			</title>
-			<!-- Page description -->
-			<cms:module
-				name="shop"
-				action="show_category"
-				text_id="$_REQUEST['area']"
-				template="parts/page_description.xml"
-				cms:eval="text_id"
-				/>
-				<cms:module name="head_tag" action="print_tag"/>
+			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body>
