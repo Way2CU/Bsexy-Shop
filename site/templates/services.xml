@@ -56,6 +56,16 @@
 					<cms:template file="parts/display_controls.xml"/>
 				</cms:mobile>
 
+				<div class="area_menu">
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						parent="$_REQUEST['service']"
+						template="parts/area_menu.xml"
+						cms:eval="parent"
+						/>
+				</div>
+
 				<cms:module
 					name="shop"
 					action="show_category_list"

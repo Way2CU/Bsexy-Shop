@@ -30,7 +30,7 @@
 					category="$params['id']"
 					order_by="id"
 					order_asc="0"
-					limit="6"
+					limit="12"
 					show_expired="0"
 					template="parts/category_latest_items.xml"
 					cms:eval="category"
@@ -58,7 +58,7 @@
 			<h3><cms:var param="title" multilanguage="yes"/></h3>
 
 			<!-- Promoted items -->
-			<div class="category_items">
+			<div class="category_items" id="$params['text_id']" cms:eval="id">
 				<cms:module
 					name="shop"
 					action="show_item_list"
@@ -72,6 +72,7 @@
 					>
 					<transfer target="area" name="text_id"/>
 				</cms:module>
+				<br/>
 				<a
 					href="URL::make(array('service' => $_REQUEST['service'], 'area' => $params['text_id']))"
 					class="show action"
