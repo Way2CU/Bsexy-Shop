@@ -30,7 +30,7 @@
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
-			<section>
+			<section class="category_areas">
 				<!-- Category title -->
 				<cms:module
 					name="shop"

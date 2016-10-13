@@ -74,6 +74,27 @@ section > p {
 	text-align: center;
 }
 
+section div.title {
+	display: block;
+	position: relative;
+	width: 800px;
+}
+
+section div.title a.action.show {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translatey(-50%);
+	color: @color_text;
+	padding: 0.5em;
+	border-radius: 0;
+}
+
+html[dir="rtl"] section div.title a.action.show {
+	right: auto;
+	left: 0;
+}
+
 div.latest,
 div.category_items {
 	display: inline-block;
@@ -482,10 +503,12 @@ div.commercial {
 	padding: 1em 0em;
 }
 
+section.category_areas div.commercial,
 section.category div.commercial {
 	padding: 0em;
 }
 
+section.category_areas div.commercial,
 section.category div.commercial {
 	display: inline-block;
 	vertical-align: top;
@@ -493,6 +516,7 @@ section.category div.commercial {
 	margin-left: calc(~'20px - 2px');
 }
 
+html[dir="rtl"] section.category_areas div.commercial,
 html[dir="rtl"] section.category div.commercial {
 	margin-left: 0;
 	margin-right: calc(~'20px - 2px');
@@ -524,6 +548,12 @@ section.category div.commercial a.add_link {
 	height: 250px;
 }
 
+section.category_areas div.commercial a.add_link {
+	width: 380px;
+	height: 200px;
+	margin-bottom: calc(~'40px / 3');
+}
+
 div.commercial a.add_link:nth-of-type(2n) {
 	margin-left: 20px;
 	margin-right: 0;
@@ -534,6 +564,7 @@ html[dir="rtl"] div.commercial a.add_link:nth-of-type(2n) {
 	margin-right: 20px;
 }
 
+section.category_areas div.commercial a.add_link:nth-of-type(2n),
 section.category div.commercial a.add_link:nth-of-type(2n) {
 	margin-left: auto;
 	margin-right: auto;
