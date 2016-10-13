@@ -21,7 +21,7 @@
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
-			<section>
+			<section class="category_areas">
 				<!-- Category title -->
 				<cms:module
 					name="shop"
@@ -46,6 +46,16 @@
 				<cms:mobile>
 					<cms:template file="parts/display_controls.xml"/>
 				</cms:mobile>
+
+				<div class="area_menu">
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						parent="$_REQUEST['service']"
+						template="parts/area_menu.xml"
+						cms:eval="parent"
+						/>
+				</div>
 
 				<cms:module
 					name="shop"

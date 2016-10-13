@@ -49,6 +49,20 @@ section h1 span {
 	fill: @color_text;
 }
 
+section div.title {
+	display: block;
+	position: relative;
+	text-align: center
+}
+
+section div.title a.action.show {
+	display: inline-block;
+	transform: translatey(-50%);
+	color: @color_text;
+	padding: 0.5em;
+	border-radius: 0;
+}
+
 div.latest span {
 	display: inline-block;
 	font-size: 1.5em;
@@ -127,6 +141,23 @@ div.intro article {
 	margin: 0;
 	padding: 0em 1em;
 	border-top: 1px solid @color_text;
+}
+
+/**
+ * Area menu
+ */
+
+div.area_menu a {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	margin-bottom: 0.2em;
+	padding: 0.5em;
+	color: @color_text;
+	border-radius: 0;
+	background-image: none;
+	background-color: @color_border;
 }
 
 /**

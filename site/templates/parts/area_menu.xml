@@ -1,0 +1,9 @@
+<document>
+	<a
+		class="action"
+		href="'#'.$params['text_id']"
+		cms:eval="href"
+		>
+		<cms:var param="title" multilanguage="yes"/>
+	</a>
+</document>
