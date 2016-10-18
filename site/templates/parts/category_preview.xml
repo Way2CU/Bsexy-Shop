@@ -53,7 +53,7 @@
 	</cms:if>
 
 	<cms:if condition="isset($template['service_area'])">
-		<section>
+		<section id="$params['text_id']" cms:eval="id">
 			<!-- Category title -->
 			<div class="title">
 				<h3><cms:var param="title" multilanguage="yes"/></h3>
@@ -67,7 +67,7 @@
 			</div>
 
 			<!-- Promoted items -->
-			<div class="category_items" id="$params['text_id']" cms:eval="id">
+			<div class="category_items">
 				<cms:module
 					name="shop"
 					action="show_item_list"
