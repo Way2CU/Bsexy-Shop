@@ -69,6 +69,7 @@
 					cms:eval="item"
 					/>
 			</div>
+			<br/>
 
 			<cms:markdown param="description" multilanguage="yes"/>
 
