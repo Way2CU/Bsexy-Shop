@@ -67,12 +67,6 @@ section > h1:after {
 	z-index: -2;
 }
 
-section div.title {
-	display: block;
-	position: relative;
-	width: 800px;
-}
-
 section div.title a.action.show {
 	position: absolute;
 	right: 0;
@@ -86,6 +80,30 @@ section div.title a.action.show {
 html[dir="rtl"] section div.title a.action.show {
 	right: auto;
 	left: 0;
+}
+
+section.category_areas > p {
+	margin-top: 0;
+}
+
+section.subcategory {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+section.subcategory div.title {
+	display: block;
+	position: relative;
+	width: 800px;
+}
+
+section.subcategory p {
+	margin-top: 0;
+}
+
+section.subcategory div.title h3 {
+	margin: 0;
+	padding: 1em 0em;
 }
 
 div.latest,
@@ -200,6 +218,10 @@ section.category div.item {
 	width: 250px;
 	height: 525px;
 	margin-bottom: calc(~'(50px / 2)');
+}
+
+section.subcategory div.item {
+	margin-bottom: 0;
 }
 
 div.category_items.gallery div.item {
