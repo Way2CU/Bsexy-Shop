@@ -83,8 +83,15 @@
 					>
 					<transfer target="area" name="text_id"/>
 				</cms:module>
-			</div>
 
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="$params['text_id']"
+					template="stock/article_generic.xml"
+					cms:eval="text_id"
+					/>
+			</div>
 
 			<!-- Banners-->
 			<div class="commercial">
