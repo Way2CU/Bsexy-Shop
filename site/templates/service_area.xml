@@ -14,6 +14,14 @@
 					cms:eval="text_id"
 					/>
 			</title>
+			<!-- Page description -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				text_id="$_REQUEST['area']"
+				template="parts/page_description.xml"
+				cms:eval="text_id"
+				/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
@@ -57,6 +65,14 @@
 						order_asc="0"
 						template="parts/category_items.xml"
 						cms:eval="category"
+						/>
+
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="$_REQUEST['area']"
+						template="stock/article_generic.xml"
+						cms:eval="text_id"
 						/>
 				</div>
 
