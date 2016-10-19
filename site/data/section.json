@@ -4,5 +4,6 @@
 	"/{service}": "services.xml",
 	"/{service}/{area}": "service_area.xml",
 	"/{service}/{area}/{id}": "view.xml",
-	"/search": "search.xml"
+	"/search": "search.xml",
+	"/search?query={query}": "search.xml"
 }

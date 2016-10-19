@@ -55,7 +55,7 @@
 				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
 					<label>
 						<span><cms:text constant="label_search"/></span>
-						<input type="search"/>
+						<input type="search" name="query"/>
 					</label>
 
 					<button class="action" type="submit">

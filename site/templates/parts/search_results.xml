@@ -1,0 +1,9 @@
+<document>
+	<cms:module
+		name="shop"
+		action="show_item"
+		id="$params['id']"
+		template="parts/category_items.xml"
+		cms:eval="id"
+	/>
+</document>
