@@ -55,7 +55,12 @@
 				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
 					<label>
 						<span><cms:text constant="label_search"/></span>
-						<input type="search" name="query"/>
+						<input
+							type="search"
+							name="query"
+							value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+							cms:optional="value"
+							/>
 					</label>
 
 					<button class="action" type="submit">
