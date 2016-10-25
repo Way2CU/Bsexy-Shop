@@ -24,7 +24,7 @@
 					module_list="shop"
 					threshold="10"
 					limit="50"
-					template="parts/search_result.xml"
+					template="parts/search_results.xml"
 					cms:eval="query"
 				/>
 			</section>

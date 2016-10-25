@@ -11,6 +11,7 @@
 	<module name="articles" order="6" preload="no"/>
 	<module name="gallery" order="7" preload="no"/>
 	<module name="shop" order="8" preload="no"/>
+	<module name="search" order="9" preload="no"/>
 
 	<user
 		fullname="Administrator"
