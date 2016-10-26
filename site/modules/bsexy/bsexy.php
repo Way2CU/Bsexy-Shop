@@ -17,7 +17,8 @@ use \Modules\Shop\Transaction as Transaction;
 
 class bsexy extends Module {
 	private static $_instance;
-	const API = '';
+	const LANG = 'he';
+	const API = 'hooks.zapier.com/hooks/catch/133542/6p8qqq';
 
 	/**
 	 * Constructor
@@ -26,6 +27,9 @@ class bsexy extends Module {
 		global $section, $action;
 
 		parent::__construct(__FILE__);
+
+		Event::connect('shop', 'item-added', 'handle_item_add', $this);
+		Event::connect('shop', 'item-changed', 'handle_item_change', $this);
 	}
 
 	/**
@@ -59,64 +63,33 @@ class bsexy extends Module {
 	public function onDisable() {
 	}
 
+	public function handle_item_add($item_id) {
+
+	}
+
 	/**
 	 * Handle transaction status change.
 	 *
 	 * @param object transaction
 	 */
-	public function handle_item_change($transaction) {
+	public function handle_item_change($item_id) {
 		global $language;
 
 		// get managers
-		$buyer_manager = ShopBuyersManager::getInstance();
-		$address_manager = ShopDeliveryAddressManager::getInstance();
-		$transaction_items_manager = ShopTransactionItemsManager::getInstance();
 		$item_manager = ShopItemManager::getInstance();
 
-		// get transaction data
-		$buyer = Transaction::get_buyer($transaction);
-		$address = Transaction::get_address($transaction);
-		$transaction_items = $transaction_items_manager->getItems(
-			$transaction_items_manager->getFieldNames(),
-			array('transaction' => $transaction->id)
-		);
+		// get item from the database
+		$item = $item_manager->get_item(array('name', 'expires'), array('id' => $item_id));
+		if (!is_object($item))
+			return;
 
-		$date_time = date('Y-m-d', strtotime($transaction->delivery_type));
-
-		// prepare data
-		$title = $buyer->first_name.' '.$buyer->last_name.' - '.$transaction->uid;
-
-		if ($transaction->delivery_type == 'pickup') {
-			$location = '';
-			$color = 9;
-
-		} else {
-			$location = $address->street.' '.$address->street2.', '.$address->zip.' '.$address->city.', '.$address->country;
-			$color = 10;
-		}
-
-		$id_list = array();
-		$name_by_id = array();
-		$description = '';
-
-		if (count($transaction_items) > 0) {
-			foreach ($transaction_items as $item)
-				$id_list[] = $item->item;
-
-			$items = $item_manager->getItems(array('id', 'name'), array('id' => $id_list));
-			foreach ($items as $item)
-				$name_by_id[$item->id] = $item->name;
-
-			foreach ($transaction_items as $item)
-				$description .= $name_by_id[$item->item][$language].' - '.$item->amount."\n";
-		}
-
+		$date_time = date('Y-m-d', strtotime($item->expires));
+		$color = 9;
 		$post_data = array(
-				'start'       => $date_time,
-				'end'         => $date_time,
-				'title'       => $title,
-				'description' => $description,
-				'color'       => $color
+				'start' => $date_time,
+				'end'   => $date_time,
+				'item'  => $item->name[self::LANG],
+				'color' => $color
 			);
 		$post_data = json_encode($post_data);
 
