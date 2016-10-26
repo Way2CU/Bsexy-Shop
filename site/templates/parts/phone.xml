@@ -1,6 +1,6 @@
 <document>
 	<a
-		href="'tel:'.$params['value']"
+		href="'tel:'.urlencode($params['value'])"
 		cms:eval="href"
 		class="phone action"
 		>

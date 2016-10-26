@@ -6,6 +6,7 @@
 		<head>
 			<title>
 				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
 				<cms:module
 					name="shop"
 					action="show_category"
