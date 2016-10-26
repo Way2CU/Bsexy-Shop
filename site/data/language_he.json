@@ -11,11 +11,6 @@
 	"label_list": "רשימה",
 	"label_gallery": "גלריה",
 	"title_latest": "חדשות באתר",
-	"property_age": "גיל:",
-	"property_height": "גובה:",
-	"property_breast_size": "מידת חזה:",
-	"property_language": "שפה:",
-	"property_origin": "מוצא:",
+	"search_results": "Search results",
 	"button_show_more": "לרשימה המלאה",
-	"search_results": "Search results"
 }

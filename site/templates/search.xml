@@ -15,22 +15,28 @@
 		<body>
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
-
 			<cms:mobile>
 				<cms:template file="parts/display_controls.xml"/>
 			</cms:mobile>
 
 			<section class="category">
-				<cms:module
-					name="search"
-					action="show_results"
-					query="fix_chars($_REQUEST['query'])"
-					module_list="shop"
-					threshold="10"
-					limit="50"
-					template="parts/search_results.xml"
-					cms:eval="query"
-				/>
+				<h1>
+					<cms:text constant="title_search"/>
+					<cms:var name="fix_chars($_REQUEST['query'])"/>
+				</h1>
+
+				<div class="category_items">
+					<cms:module
+						name="search"
+						action="show_results"
+						query="fix_chars($_REQUEST['query'])"
+						module_list="shop"
+						threshold="10"
+						limit="50"
+						template="parts/search_results.xml"
+						cms:eval="query"
+					/>
+				</div>
 			</section>
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
