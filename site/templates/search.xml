@@ -38,6 +38,7 @@
 					/>
 				</div>
 			</section>
+
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
 		</body>

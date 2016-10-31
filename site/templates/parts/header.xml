@@ -1,6 +1,6 @@
 <document>
-	<!-- sprite svg -->
 	<cms:svg file="site-sprite.svg"/>
+
 	<!-- Desktop version header -->
 	<cms:desktop>
 		<header>

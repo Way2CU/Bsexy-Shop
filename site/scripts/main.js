@@ -78,9 +78,10 @@ Site.handle_view_controls = function() {
 			view_controls[i].classList.remove('active');
 	}
 
-	if(view == "gallery") {
+	if(view == 'gallery') {
 		for(var i = 0; i < items_container.length; i++)
 			items_container[i].classList.remove('gallery');
+
 	} else {
 		for(var i = 0; i < items_container.length; i++)
 			items_container[i].classList.add('gallery');
@@ -96,9 +97,8 @@ Site.on_load = function() {
 
 	// create function for displaying category items view
 	var view_controls = document.querySelectorAll('div.display a');
-	for(var i = 0,count = view_controls.length; i < count; i++) {
+	for(var i = 0,count = view_controls.length; i < count; i++)
 		view_controls[i].addEventListener('click', Site.handle_view_controls);
-	}
 
 	// create function for rotating product big image
 	if(document.querySelector('section.item_details')) {

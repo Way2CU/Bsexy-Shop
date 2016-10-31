@@ -82,6 +82,10 @@ html[dir="rtl"] section div.title a.action.show {
 	left: 0;
 }
 
+section.category_areas {
+	position: relative;
+}
+
 section.category_areas > p {
 	margin-top: 0;
 }
@@ -587,4 +591,109 @@ section.category_areas div.commercial a.add_link:nth-of-type(2n),
 section.category div.commercial a.add_link:nth-of-type(2n) {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/**
+ * Areas menu
+ */
+nav#areas {
+	position: absolute;
+	top: 35px;
+	right: calc(~'(100% - 1200px)/2');
+}
+
+nav#areas > input {
+	display: none;
+}
+
+nav#areas > label {
+	display: block;
+	padding: 1em;
+
+	border: 1px solid transparent;
+	border-bottom: 0px;
+	background-color: @color_background;
+}
+
+nav#areas > label:before {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	content: '';
+	margin-left: 5px;
+
+	border: 7px solid transparent;
+	border-top-color: @color_text;
+	line-height: 0;
+	font-size: 0;
+
+	transform: translateY(10%) rotate(-90deg);
+	transition: all 0.5s;
+}
+
+html[dir=rtl] nav#areas > label:before {
+	transform: translateY(10%) rotate(90deg);
+}
+
+nav#areas > input:checked + label:before {
+	transform: translateY(10%) rotate(0deg);
+}
+
+nav#areas > input:checked + label {
+	border-color: @color_border;
+}
+
+nav#areas > div {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 1200px;
+	z-index: 1000;
+
+	visibility: hidden;
+
+	border: 1px solid @color_border;
+	background-color: @color_background;
+	background-color: alpha(@color_background, 80);
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav#areas > input:checked ~ div {
+	visibility: visible;
+}
+
+nav#areas div.area {
+	display: inline-block;
+	vertical-align: top;
+	width: 25%;
+	box-sizing: border-box;
+	padding: 1em;
+}
+
+nav#areas div.area h4 {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+nav#areas div.area a {
+	display: block;
+
+	border-bottom: 2px solid transparent;
+	color: @color_text;
+	text-decoration: none;
+
+	transition: color 0.3s;
+}
+
+nav#areas div.area a:hover {
+	color: @color_dark_action;
+}
+
+nav#areas div.area a:visited {
+	color: darken(@color_text, 30);
+}
+
+nav#areas div.area a.active {
+	border-bottom-color: @color_dark_action;
 }

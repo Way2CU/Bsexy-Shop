@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
+<document>
+	<div class="area">
+		<h4><cms:var param="title" multilanguage="yes"/></h4>
+		<cms:module
+			name="shop"
+			action="show_category_list"
+			parent_id="$params['id']"
+			template="parts/areas_item.xml"
+			cms:eval="parent_id"
+			/>
+	</div>
+</document>

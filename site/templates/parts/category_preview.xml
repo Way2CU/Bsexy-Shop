@@ -81,7 +81,7 @@
 					template="parts/promoted_items.xml"
 					cms:eval="category"
 					>
-					<transfer target="area" name="text_id"/>
+					<cms:transfer target="area" name="text_id"/>
 				</cms:module>
 
 				<cms:module

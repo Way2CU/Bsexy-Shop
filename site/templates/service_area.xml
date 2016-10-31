@@ -28,20 +28,12 @@
 					name="shop"
 					action="show_category"
 					text_id="$_REQUEST['area']"
-					template="parts/category_title.xml"
+					template="parts/category.xml"
 					cms:eval="text_id"
 					>
-					<param name="no_icon" value=""/>
+					<param name="icon" value=""/>
+					<param name="menu" value=""/>
 				</cms:module>
-
-				<!-- Category description -->
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="$_REQUEST['area']"
-					template="parts/category_description.xml"
-					cms:eval="text_id"
-					/>
 
 				<!-- Show display controls options on mobile version -->
 				<cms:mobile>

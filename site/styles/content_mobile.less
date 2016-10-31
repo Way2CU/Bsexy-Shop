@@ -398,3 +398,87 @@ div.commercial a.add_link {
 div.commercial a.add_link:last-of-type {
 	margin-bottom: 0;
 }
+
+/**
+ * Areas menu
+ */
+nav#areas > input {
+	display: none;
+}
+
+nav#areas > label {
+	display: block;
+	padding: 1em;
+
+	border: 1px solid transparent;
+	border-bottom: 0px;
+	background-color: @color_background;
+}
+
+nav#areas > label:before {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	content: '';
+	margin-left: 5px;
+
+	border: 7px solid transparent;
+	border-top-color: @color_text;
+	line-height: 0;
+	font-size: 0;
+
+	transform: translateY(10%) rotate(-90deg);
+	transition: all 0.5s;
+}
+
+html[dir=rtl] nav#areas > label:before {
+	transform: translateY(10%) rotate(90deg);
+}
+
+nav#areas > input:checked + label:before {
+	transform: translateY(10%) rotate(0deg);
+}
+
+nav#areas > div {
+	display: none;
+	padding: 0em 2em;
+}
+
+nav#areas > input:checked ~ div {
+	display: block;
+}
+
+nav#areas div.area {
+	padding: 1em;
+	border: 1px solid @color_border;
+	margin-bottom: 10px;
+}
+
+nav#areas div.area h4 {
+	margin: 0;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+nav#areas div.area a {
+	display: inline-block;
+	padding: 0.5em;
+
+	border-bottom: 2px solid transparent;
+	color: @color_text;
+	text-decoration: none;
+
+	transition: color 0.3s;
+}
+
+nav#areas div.area a:hover {
+	color: @color_dark_action;
+}
+
+nav#areas div.area a:visited {
+	color: darken(@color_text, 30);
+}
+
+nav#areas div.area a.active {
+	border-bottom-color: @color_dark_action;
+}
