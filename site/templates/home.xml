@@ -22,21 +22,35 @@
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="promoted_gold"
+					text_id="escort"
 					template="parts/category_preview.xml"
 					/>
 
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="promoted_premium"
+					text_id="apartments"
 					template="parts/category_preview.xml"
 					/>
 
 				<cms:module
 					name="shop"
 					action="show_category"
-					text_id="promoted_regular"
+					text_id="massage"
+					template="parts/category_preview.xml"
+					/>
+
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="private"
+					template="parts/category_preview.xml"
+					/>
+
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="vip"
 					template="parts/category_preview.xml"
 					/>
 			</cms:if>

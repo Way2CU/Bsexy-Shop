@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
+<document>
+	<url>
+		<loc><cms:var name="URL::make(array('service' => $template['service'], 'area' => $params['text_id']))"/></loc>
+		<changefreq>daily</changefreq>
+		<priority><cms:var template="priority"/></priority>
+	</url>
+</document>

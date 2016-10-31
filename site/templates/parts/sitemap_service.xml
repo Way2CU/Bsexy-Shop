@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
+<document>
+	<url>
+		<loc><cms:var name="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"/></loc>
+		<changefreq>daily</changefreq>
+		<priority><cms:var template="priority"/></priority>
+	</url>
+
+	<cms:module
+		name="shop"
+		action="show_category_list"
+		parent_id="$params['id']"
+		template="parts/sitemap_area.xml"
+		cms:eval="parent_id"
+		>
+		<cms:transfer target="service" name="text_id"/>
+	</cms:module>
+</document>

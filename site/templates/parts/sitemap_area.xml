@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
+<document>
+	<cms:module
+		name="shop"
+		action="show_category_list"
+		parent_id="$params['id']"
+		template="parts/sitemap_category.xml"
+		cms:eval="parent_id"
+		>
+		<param name="priority" value="0.8"/>
+		<cms:transfer target="service" template="service"/>
+	</cms:module>
+</document>

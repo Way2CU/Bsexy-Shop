@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+		<!-- Recursively show main menu and rest of the categories -->
+		<cms:module
+			name="shop"
+			action="show_category_list"
+			parent="services"
+			template="parts/sitemap_service.xml"
+			>
+			<param name="priority" value="0.9"/>
+		</cms:module>
+
+		<!-- Promoted categories -->
+		<cms:module
+			name="shop"
+			action="show_item_list"
+			category="escort"
+			template="parts/sitemap_promoted_item.xml"
+			>
+			<param name="priority" value="0.7"/>
+		</cms:module>
+
+		<cms:module
+			name="shop"
+			action="show_item_list"
+			category="apartments"
+			template="parts/sitemap_promoted_item.xml"
+			>
+			<param name="priority" value="0.7"/>
+		</cms:module>
+
+		<cms:module
+			name="shop"
+			action="show_item_list"
+			category="massage"
+			template="parts/sitemap_promoted_item.xml"
+			>
+			<param name="priority" value="0.7"/>
+		</cms:module>
+
+		<cms:module
+			name="shop"
+			action="show_item_list"
+			category="private"
+			template="parts/sitemap_promoted_item.xml"
+			>
+			<param name="priority" value="0.7"/>
+		</cms:module>
+
+		<cms:module
+			name="shop"
+			action="show_item_list"
+			category="vip"
+			template="parts/sitemap_promoted_item.xml"
+			>
+			<param name="priority" value="0.7"/>
+		</cms:module>
+	</urlset>
+</document>
