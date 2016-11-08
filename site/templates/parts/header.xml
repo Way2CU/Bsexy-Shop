@@ -123,6 +123,7 @@
 					<cms:module
 						name="shop"
 						action="show_category_list"
+						order_by="order"
 						parent="services"
 						template="parts/services_menu_item.xml"
 						/>
