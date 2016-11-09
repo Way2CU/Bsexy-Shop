@@ -107,10 +107,15 @@
 					template="parts/link.xml"
 					/>
 
-				<form>
+				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
 					<label>
 						<span><cms:text constant="label_search"/></span>
-						<input type="search"/>
+						<input
+							type="search"
+							name="query"
+							value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+							cms:optional="value"
+							/>
 					</label>
 
 					<button class="action" type="submit">
@@ -123,6 +128,7 @@
 					<cms:module
 						name="shop"
 						action="show_category_list"
+						order_by="order"
 						parent="services"
 						template="parts/services_menu_item.xml"
 						/>

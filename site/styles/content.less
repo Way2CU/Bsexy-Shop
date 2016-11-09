@@ -683,12 +683,13 @@ nav#areas div.area a {
 	border-bottom: 2px solid transparent;
 	color: @color_text;
 	text-decoration: none;
+	font-weight: 700;
 
 	transition: color 0.3s;
 }
 
 nav#areas div.area a:hover {
-	color: @color_dark_action;
+	background-color: @color_dark_action;
 }
 
 nav#areas div.area a:visited {
@@ -697,4 +698,16 @@ nav#areas div.area a:visited {
 
 nav#areas div.area a.active {
 	border-bottom-color: @color_dark_action;
+}
+
+nav#areas div.area a span {
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -11px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	transition: all 0.3s;
 }
