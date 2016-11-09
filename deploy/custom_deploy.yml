@@ -1,0 +1,12 @@
+---
+- hosts: 185.151.197.11
+  remote_user: root
+
+  roles:
+    - caracal
+    - site
+
+  tasks:
+    - name: Detecting subscription owner and group
+      stat: path={{ site_directory }}
+      register: directory
