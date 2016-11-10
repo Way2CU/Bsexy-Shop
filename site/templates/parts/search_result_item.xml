@@ -1,0 +1,34 @@
+<document>
+	<div
+		class="item"
+		data-priority="$params['priority']"
+		cms:eval="data-priority"
+		>
+		<a
+			class="image"
+			title="$params['name'][$language]"
+			href="URL::make(array('id' => $params['id']), 'search_result.xml')"
+			cms:eval="href,title"
+			>
+			<img
+				src="gallery::getGroupThumbnailById($params['gallery'], null, _DESKTOP_VERSION ? 250 : 150,Thumbnail::CONSTRAIN_HEIGHT)"
+				alt="$params['name'][$language]"
+				cms:eval="src,alt"
+			/>
+		</a>
+		<div class="description">
+			<h2><cms:var param="name" multilanguage="yes"/></h2>
+			<cms:markdown param="description" multilanguage="yes" chars="50"/>
+
+			<!-- Show phone numbers -->
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="phone1"
+				template="parts/phone.xml"
+				cms:eval="item"
+				/>
+		</div>
+	</div>
+</document>

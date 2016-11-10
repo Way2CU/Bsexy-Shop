@@ -7,7 +7,13 @@
 			<title>
 				<cms:text constant="site_title"/>
 				<cms:raw text=" - "/>
-				<cms:text constant="search_results"/>
+				<cms:module
+					name="shop"
+					action="show_item"
+					id="fix_id($_REQUEST['id'])"
+					template="parts/item_title.xml"
+					cms:eval="id"
+					/>
 			</title>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
@@ -15,28 +21,15 @@
 		<body>
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
-			<cms:mobile>
-				<cms:template file="parts/display_controls.xml"/>
-			</cms:mobile>
 
-			<section class="category">
-				<h1>
-					<cms:text constant="title_search"/>
-					<cms:var name="fix_chars($_REQUEST['query'])"/>
-				</h1>
-
-				<div class="category_items">
-					<cms:module
-						name="search"
-						action="show_results"
-						query="fix_chars($_REQUEST['query'])"
-						module_list="shop"
-						threshold="20"
-						limit="50"
-						template="parts/search_results.xml"
-						cms:eval="query"
+			<section class="item_details">
+				<cms:module
+					name="shop"
+					action="show_item"
+					id="fix_id($_REQUEST['id'])"
+					template="parts/item_details.xml"
+					cms:eval="id"
 					/>
-				</div>
 			</section>
 
 			<!-- Bottom section of the site -->

@@ -3,7 +3,7 @@
 		name="shop"
 		action="show_item"
 		id="$params['id']"
-		template="parts/category_items.xml"
+		template="parts/search_result_item.xml"
 		cms:eval="id"
 	/>
 </document>
