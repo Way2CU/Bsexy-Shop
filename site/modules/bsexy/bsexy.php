@@ -12,8 +12,6 @@
 use Core\Module;
 use Core\Events;
 
-use \Modules\Shop\Transaction as Transaction;
-
 
 class bsexy extends Module {
 	private static $_instance;
@@ -28,6 +26,7 @@ class bsexy extends Module {
 
 		parent::__construct(__FILE__);
 
+		// connect to shop events
 		Event::connect('shop', 'item-added', 'handle_item_add', $this);
 		Event::connect('shop', 'item-changed', 'handle_item_change', $this);
 	}
@@ -35,7 +34,7 @@ class bsexy extends Module {
 	/**
 	 * Public function that creates a single instance
 	 */
-	public static function getInstance() {
+	public static function get_instance() {
 		if (!isset(self::$_instance))
 			self::$_instance = new self();
 
@@ -48,29 +47,33 @@ class bsexy extends Module {
 	 * @param array $params
 	 * @param array $children
 	 */
-	public function transferControl($params = array(), $children = array()) {
+	public function transfer_control($params=array(), $children=array()) {
 	}
 
 	/**
 	 * Event triggered upon module initialization
 	 */
-	public function onInit() {
+	public function initialize() {
 	}
 
 	/**
 	 * Event triggered upon module deinitialization
 	 */
-	public function onDisable() {
-	}
-
-	public function handle_item_add($item_id) {
-
+	public function disable() {
 	}
 
 	/**
-	 * Handle transaction status change.
+	 * Handle shop item change.
 	 *
-	 * @param object transaction
+	 * @param integer $item_id
+	 */
+	public function handle_item_add($item_id) {
+	}
+
+	/**
+	 * Handle adding new shop item.
+	 *
+	 * @param integer $item_id
 	 */
 	public function handle_item_change($item_id) {
 		global $language;
