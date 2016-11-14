@@ -59,7 +59,7 @@ class bsexy extends Module {
 	/**
 	 * Event triggered upon module deinitialization
 	 */
-	public function disable() {
+	public function cleanup() {
 	}
 
 	/**
