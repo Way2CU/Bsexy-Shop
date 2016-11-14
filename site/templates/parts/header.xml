@@ -26,11 +26,11 @@
 				</a>
 
 				<!-- Links to services outside the site -->
-				<a href="#" class="service">
+				<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="shop"/>
 					<cms:text constant="sex_store"/>
 				</a>
-				<a href="#" class="service">
+				<a href="erotic_calls_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="calls"/>
 					<cms:text constant="erotic_calls"/>
 				</a>
