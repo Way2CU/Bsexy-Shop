@@ -11,6 +11,8 @@
  */
 use Core\Module;
 use Core\Events;
+use Modules\Shop\Item\Manager as ItemManager;
+use Modules\Shop\Property\Manager as PropertyManager;
 
 
 class bsexy extends Module {
@@ -22,13 +24,33 @@ class bsexy extends Module {
 	 * Constructor
 	 */
 	protected function __construct() {
-		global $section, $action;
+		global $section;
 
 		parent::__construct(__FILE__);
 
 		// connect to shop events
-		Event::connect('shop', 'item-added', 'handle_item_add', $this);
-		Event::connect('shop', 'item-changed', 'handle_item_change', $this);
+		Events::connect('shop', 'item-added', 'handle_item_add', $this);
+		Events::connect('shop', 'item-changed', 'handle_item_change', $this);
+
+		// register backend
+		if (ModuleHandler::is_loaded('backend') && $section == 'backend') {
+			$backend = backend::get_instance();
+
+			$bsexy_menu = new backend_MenuItem(
+				$this->get_language_constant('menu_search'),
+				URL::from_file_path($this->path.'images/icon.svg'),
+				window_Open( // on click open window
+					'bsexy_search',
+					700,
+					$this->get_language_constant('title_search'),
+					true, true,
+					backend_UrlMake($this->name, 'items')
+				),
+				5  // level
+			);
+
+			$backend->addMenu($this->name, $bsexy_menu);
+		}
 	}
 
 	/**
@@ -48,6 +70,20 @@ class bsexy extends Module {
 	 * @param array $children
 	 */
 	public function transfer_control($params=array(), $children=array()) {
+		// global control actions
+		if (isset($params['backend_action'])) {
+			$action = $params['backend_action'];
+
+			switch ($action) {
+				case 'show_results':
+					$this->show_results();
+					break;
+
+				default:
+					$this->show_search_form();
+					break;
+			}
+		}
 	}
 
 	/**
@@ -60,6 +96,41 @@ class bsexy extends Module {
 	 * Event triggered upon module deinitialization
 	 */
 	public function cleanup() {
+	}
+
+	/**
+	 * Show form for searching items.
+	 */
+	private function show_search_form() {
+		$template = new TemplateHandler('search.xml', $this->path.'templates/');
+		$template->set_mapped_module($this->name);
+
+		$params = array(
+				'form_action'	=> backend_UrlMake($this->name, 'show_results'),
+			);
+
+		$template->restore_xml();
+		$template->set_local_params($params);
+		$template->parse();
+	}
+
+	/**
+	 * Show search results for provided query.
+	 */
+	private function show_results() {
+		$query = fix_chars($_REQUEST['query']);
+		$template = new TemplateHandler('results.xml', $this->path.'templates/');
+		$template->set_mapped_module($this->name);
+		$template->register_tag_handler('cms:result_list', $this, 'tag_SearchResults');
+
+		$params = array(
+				'query'       => $query,
+				'form_action' => backend_UrlMake($this->name, 'show_results'),
+			);
+
+		$template->restore_xml();
+		$template->set_local_params($params);
+		$template->parse();
 	}
 
 	/**
@@ -103,6 +174,120 @@ class bsexy extends Module {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($ch);
+	}
+
+	/**
+	 * Render search results for specified query.
+	 */
+	public function tag_SearchResults($tag_params, $children) {
+		$query = fix_chars($_REQUEST['query']);
+		$item_manager = ItemManager::get_instance();
+		$property_manager = PropertyManager::get_instance();
+		define('SQL_DEBUG', '');
+
+		// prepare search condition for database
+		$conditions = array(
+				'text_id' => array(
+						'operator' => 'REGEXP',
+						'value'    => 'phone[12]'
+					),
+				'value' => array(
+						'operator' => 'REGEXP',
+						'value'    => "{$query}"
+					)
+			);
+
+		// load all properties matching specified conditions
+		$properties = $property_manager->get_items(array('item'), $conditions);
+		if (count($properties) == 0)
+			return;
+
+		// collect all item ids
+		$item_ids = array();
+		foreach ($properties as $property)
+			$item_ids[] = $property->item;
+
+		// get items matching searched properties
+		$items = $item_manager->get_items(
+				$item_manager->get_field_names(),
+				array('id' => $item_ids)
+			);
+
+		if (count($items) == 0)
+			return;
+
+		// load template
+		$shop = shop::get_instance();
+		$gallery = gallery::get_instance();
+		$template = $this->load_template($tag_params, 'result_item.xml');
+
+		// parse template for all search results
+		foreach ($items as $item) {
+			$params = array(
+						'id'                    => $item->id,
+						'name'                  => $item->name,
+						'views'                 => $item->views,
+						'price'                 => $item->price,
+						'expires'               => strtotime($item->expires),
+						'item_change'           => URL::make_hyperlink(
+												$shop->get_language_constant('change'),
+												window_Open(
+													'shop_item_change', 	// window id
+													550,				// width
+													$shop->get_language_constant('title_item_change'), // title
+													true, true,
+													URL::make_query(
+														'backend_module',
+														'transfer_control',
+														array('module', $shop->name),
+														array('backend_action', 'items'),
+														array('sub_action', 'change'),
+														array('id', $item->id)
+													)
+												)
+											),
+						'item_delete'           => URL::make_hyperlink(
+												$shop->get_language_constant('delete'),
+												window_Open(
+													'shop_item_delete', 	// window id
+													400,				// width
+													$shop->get_language_constant('title_item_delete'), // title
+													false, false,
+													URL::make_query(
+														'backend_module',
+														'transfer_control',
+														array('module', $shop->name),
+														array('backend_action', 'items'),
+														array('sub_action', 'delete'),
+														array('id', $item->id)
+													)
+												)
+											),
+					);
+
+			// add images link
+			$open_gallery_window = window_Open(
+								'gallery_images',
+								670,
+								$gallery->get_language_constant('title_images'),
+								true, true,
+								URL::make_query(
+									'backend_module',
+									'transfer_control',
+									array('backend_action', 'images'),
+									array('module', 'gallery'),
+									array('group', $item->gallery)
+								)
+							);
+			$params['item_images'] = URL::make_hyperlink(
+												$shop->get_language_constant('images'),
+												$open_gallery_window
+											);
+
+			$template->restore_xml();
+			$template->set_local_params($params);
+			$template->parse();
+		}
 	}
 }
 
