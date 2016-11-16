@@ -2,7 +2,7 @@
 	<a
 		class="add_link"
 		style="'background-image: url('.$params['image'].');'"
-		href="$params['url']"
+		href="$params['redirect_url']"
 		cms:eval="href,style"
 		>
 	</a>
