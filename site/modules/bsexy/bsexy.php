@@ -183,7 +183,6 @@ class bsexy extends Module {
 		$query = fix_chars($_REQUEST['query']);
 		$item_manager = ItemManager::get_instance();
 		$property_manager = PropertyManager::get_instance();
-		define('SQL_DEBUG', '');
 
 		// prepare search condition for database
 		$conditions = array(
