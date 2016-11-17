@@ -119,6 +119,10 @@ div.category_items {
 	width: 800px;
 }
 
+div.search_items {
+	width: 1200px;
+}
+
 div.latest {
 	width: 380px;
 	margin-left: 20px;
@@ -257,6 +261,11 @@ html[dir="rtl"] div.item:nth-of-type(1n) {
 	margin-right: 0;
 }
 
+html[dir="rtl"] div.search_items div.item:nth-of-type(1n) {
+	margin-left: calc(~'(70px / 6)');
+	margin-right: 0;
+}
+
 div.latest div.item:nth-of-type(1n) {
 	margin-right: 0;
 	margin-left: 0;
@@ -291,6 +300,10 @@ div.item:nth-of-type(4n) {
 }
 
 html[dir="rtl"] div.item:nth-of-type(4n) {
+	margin-left: 0;
+}
+
+html[dir="rtl"] div.search_items div.item:nth-of-type(6n) {
 	margin-left: 0;
 }
 
