@@ -28,13 +28,15 @@ class bsexy extends Module {
 
 		parent::__construct(__FILE__);
 
-		// connect to shop events
-		Events::connect('shop', 'item-added', 'handle_item_add', $this);
-		Events::connect('shop', 'item-changed', 'handle_item_change', $this);
-
 		// register backend
 		if (ModuleHandler::is_loaded('backend') && $section == 'backend') {
 			$backend = backend::get_instance();
+
+			// add backend script
+			if (ModuleHandler::is_loaded('head_tag')) {
+				$head_tag = head_tag::get_instance();
+				$head_tag->addTag('script', array('src'=>URL::from_file_path($this->path.'include/backend.js'), 'type'=>'text/javascript'));
+			}
 
 			$bsexy_menu = new backend_MenuItem(
 				$this->get_language_constant('menu_search'),
@@ -131,49 +133,6 @@ class bsexy extends Module {
 		$template->restore_xml();
 		$template->set_local_params($params);
 		$template->parse();
-	}
-
-	/**
-	 * Handle shop item change.
-	 *
-	 * @param integer $item_id
-	 */
-	public function handle_item_add($item_id) {
-	}
-
-	/**
-	 * Handle adding new shop item.
-	 *
-	 * @param integer $item_id
-	 */
-	public function handle_item_change($item_id) {
-		global $language;
-
-		// get managers
-		$item_manager = ShopItemManager::getInstance();
-
-		// get item from the database
-		$item = $item_manager->get_item(array('name', 'expires'), array('id' => $item_id));
-		if (!is_object($item))
-			return;
-
-		$date_time = date('Y-m-d', strtotime($item->expires));
-		$color = 9;
-		$post_data = array(
-				'start' => $date_time,
-				'end'   => $date_time,
-				'item'  => $item->name[self::LANG],
-				'color' => $color
-			);
-		$post_data = json_encode($post_data);
-
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, self::API);
-		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_HTTPGET, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($ch);
 	}
 
 	/**
