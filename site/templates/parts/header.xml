@@ -34,7 +34,7 @@
 					<cms:svg file="site-sprite.svg" symbol="calls"/>
 					<cms:text constant="erotic_calls"/>
 				</a>
-				<a href="#" class="service">
+				<a href="room_for_rent_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="rooms"/>
 					<cms:text constant="rooms_for_rent"/>
 				</a>
@@ -49,6 +49,28 @@
 					order_by="order"
 					template="parts/services_menu_item.xml"
 					/>
+				<!-- manual service links -->
+				<a
+					href="porn_movies_url"
+					cms:constant="href"
+					>
+					<cms:svg file="site-sprite.svg" symbol="porn"/>
+					<cms:text constant="porn_movies"/>
+				</a>
+				<a
+					href="webcam_url"
+					cms:constant="href"
+					>
+					<cms:svg file="site-sprite.svg" symbol="webcam"/>
+					<cms:text constant="webcam"/>
+				</a>
+				<a
+					href="forum_url"
+					cms:constant="href"
+					>
+					<cms:svg file="site-sprite.svg" symbol="forum"/>
+					<cms:text constant="forum"/>
+				</a>
 			</nav>
 
 			<div id="options">
@@ -132,18 +154,40 @@
 						parent="services"
 						template="parts/services_menu_item.xml"
 						/>
+					<!-- manual service links -->
+					<a
+						href="porn_movies_url"
+						cms:constant="href"
+						>
+						<cms:svg file="site-sprite.svg" symbol="porn"/>
+						<cms:text constant="porn_movies"/>
+					</a>
+					<a
+						href="webcam_url"
+						cms:constant="href"
+						>
+						<cms:svg file="site-sprite.svg" symbol="webcam"/>
+						<cms:text constant="webcam"/>
+					</a>
+					<a
+						href="forum_url"
+						cms:constant="href"
+						>
+						<cms:svg file="site-sprite.svg" symbol="forum"/>
+						<cms:text constant="forum"/>
+					</a>
 				</div>
 
 				<!-- Links to services outside the site -->
-				<a href="#" class="service">
+				<a href="sex_store_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="shop"/>
 					<cms:text constant="sex_store"/>
 				</a>
-				<a href="#" class="service">
+				<a href="erotic_calls_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="calls"/>
 					<cms:text constant="erotic_calls"/>
 				</a>
-				<a href="#" class="service">
+				<a href="room_for_rent_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="rooms"/>
 					<cms:text constant="rooms_for_rent"/>
 				</a>
