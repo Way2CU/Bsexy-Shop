@@ -59,7 +59,9 @@
 						text_id="$_REQUEST['area']"
 						template="stock/article_generic.xml"
 						cms:eval="text_id"
-						/>
+						>
+						<param name="title" value=""/>
+					</cms:module>
 				</div>
 
 				<!-- Category page banners -->
