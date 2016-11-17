@@ -475,8 +475,8 @@ div.item_gallery div.main_image {
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
-	width: 600px;
-	height: 600px;
+	width: 400px;
+	height: 468px;
 }
 
 div.item_gallery div.main_image {
@@ -492,11 +492,13 @@ div.item_gallery div.main_image img {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	opacity: 0;
+	visibility: hidden;
 	transition: all 0.3s;
 }
 
 div.item_gallery div.main_image img.visible {
 	opacity: 1;
+	visibility: visible;
 }
 
 div.item_gallery div.thumbnails {

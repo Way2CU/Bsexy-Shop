@@ -30,11 +30,7 @@
 		<!-- Item images -->
 		<div class="item_gallery">
 			<!-- Big image container-->
-			<div
-				class="main_image"
-				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
-				cms:eval="style"
-				>
+			<div class="main_image">
 				<cms:module
 					name="gallery"
 					action="show_image_list"
@@ -67,10 +63,7 @@
 		<!-- Item images -->
 		<div class="item_gallery">
 			<!-- Big image container-->
-			<div
-				class="main_image"
-				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'],null, 10, Thumbnail::CONSTRAIN_WIDTH).');'"
-				cms:eval="style"
+			<div class="main_image"
 				>
 				<cms:module
 					name="gallery"
@@ -100,56 +93,6 @@
 
 			<!-- Information -->
 			<div class="information">
-				<!-- Age -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="age"
-					template="parts/property.xml"
-					cms:eval="item"
-					/>
-
-				<!-- Height -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="height"
-					template="parts/property.xml"
-					cms:eval="item"
-					/>
-
-				<!-- Breast size -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="breast_size"
-					template="parts/property.xml"
-					cms:eval="item"
-					/>
-
-				<!-- Language -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="language"
-					template="parts/property.xml"
-					cms:eval="item"
-					/>
-
-				<!-- Origin -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="origin"
-					template="parts/property.xml"
-					cms:eval="item"
-					/>
-
 				<cms:markdown param="description" multilanguage="yes"/>
 
 				<!-- Show phone numbers -->
