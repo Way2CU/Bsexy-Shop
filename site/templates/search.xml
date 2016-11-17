@@ -19,13 +19,13 @@
 				<cms:template file="parts/display_controls.xml"/>
 			</cms:mobile>
 
-			<section>
+			<section class="search_items">
 				<h1>
 					<cms:text constant="title_search"/>
 					<cms:var name="fix_chars($_REQUEST['query'])"/>
 				</h1>
 
-				<div class="search_items">
+				<div class="category_items">
 					<cms:module
 						name="search"
 						action="show_results"
