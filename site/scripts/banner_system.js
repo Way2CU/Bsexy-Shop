@@ -18,13 +18,15 @@ Site.BannerSystem = function(items, banners) {
 	self.step = 2;
 
 	self._init = function() {
+		// check if there are items
 		if(self.items.length > 0)
 			self.items_container = self.items[0].parentElement;
 
-		// remove banner container
+		// check if there are banners and remove container of banners
 		if(self.banners.length > 0)
 			self.banners[0].parentElement.remove();
 
+		// insert banners after two items
 		for(var i = 0; i < self.banners.length; i++) {
 			self.items_container.insertBefore(self.banners[i], self.items_container.childNodes[self.step]);
 			self.step += 3;
