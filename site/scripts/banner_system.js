@@ -13,13 +13,17 @@ Site.BannerSystem = function(items, banners) {
 	var self = this;
 
 	self.items = document.querySelectorAll(items);
-	self.items_container = self.items[0].parentElement;
+	self.items_container = null;
 	self.banners = document.querySelectorAll(banners);
 	self.step = 2;
 
 	self._init = function() {
+		if(self.items.length > 0)
+			self.items_container = self.items[0].parentElement;
+
 		// remove banner container
-		self.banners[0].parentElement.remove();
+		if(self.banners.length > 0)
+			self.banners[0].parentElement.remove();
 
 		for(var i = 0; i < self.banners.length; i++) {
 			self.items_container.insertBefore(self.banners[i], self.items_container.childNodes[self.step]);
