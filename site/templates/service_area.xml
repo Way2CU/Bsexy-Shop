@@ -15,6 +15,7 @@
 					cms:eval="text_id"
 					/>
 			</title>
+			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
