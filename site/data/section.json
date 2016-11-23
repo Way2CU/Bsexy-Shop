@@ -1,7 +1,7 @@
 {
 	"/": "home.xml",
 	"/sitemap.xml": "sitemap.xml",
-	"/promoted/{id}": "view.xml",
+	"/promoted/{id}": "view_promoted.xml",
 	"/{service}/{area}": "service_area.xml",
 	"/{service}/{area}/{id}": "view.xml",
 	"/search": "search.xml",
