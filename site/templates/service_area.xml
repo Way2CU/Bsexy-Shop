@@ -49,7 +49,6 @@
 						category="$_REQUEST['area']"
 						order_by="priority"
 						order_asc="0"
-						show_expired="0"
 						template="parts/category_items.xml"
 						cms:eval="category"
 						/>

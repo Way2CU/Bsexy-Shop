@@ -28,6 +28,7 @@
 					action="show_item"
 					id="fix_id($_REQUEST['id'])"
 					template="parts/item_details.xml"
+					update_view_count="1"
 					cms:eval="id"
 					/>
 			</section>
