@@ -14,6 +14,10 @@ use Core\Events;
 use Modules\Shop\Item\Manager as ItemManager;
 use Modules\Shop\Property\Manager as PropertyManager;
 
+use ShopItemMembershipManager as ItemMembershipManager;
+use ShopManufacturerManager as ManufacturerManager;
+use ShopCategoryManager as CategoryManager;
+
 
 class bsexy extends Module {
 	private static $_instance;
@@ -28,26 +32,48 @@ class bsexy extends Module {
 
 		parent::__construct(__FILE__);
 
-		// connect to shop events
-		Events::connect('shop', 'item-added', 'handle_item_add', $this);
-		Events::connect('shop', 'item-changed', 'handle_item_change', $this);
-
 		// register backend
 		if (ModuleHandler::is_loaded('backend') && $section == 'backend') {
 			$backend = backend::get_instance();
 
+			// add backend script
+			if (ModuleHandler::is_loaded('head_tag')) {
+				$head_tag = head_tag::get_instance();
+				$head_tag->addTag('script', array('src'=>URL::from_file_path($this->path.'include/backend.js'), 'type'=>'text/javascript'));
+			}
+
 			$bsexy_menu = new backend_MenuItem(
-				$this->get_language_constant('menu_search'),
+				$this->get_language_constant('menu_bsexy'),
 				URL::from_file_path($this->path.'images/icon.svg'),
-				window_Open( // on click open window
-					'bsexy_search',
-					700,
-					$this->get_language_constant('title_search'),
-					true, true,
-					backend_UrlMake($this->name, 'items')
-				),
+				'javascript:void(0);',
 				5  // level
 			);
+
+			$bsexy_menu->addChild(null, new backend_MenuItem(
+				$this->get_language_constant('menu_search'),
+				URL::from_file_path($this->path.'images/search.svg'),
+				window_Open( // on click open window
+					'bsexy_search',
+					850,
+					$this->get_language_constant('title_search'),
+					true, true,
+					backend_UrlMake($this->name, 'search')
+				),
+				5  // level
+			));
+
+			$bsexy_menu->addChild(null, new backend_MenuItem(
+				$this->get_language_constant('menu_items'),
+				URL::from_file_path($this->path.'images/items.svg'),
+				window_Open( // on click open window
+					'bsexy_items',
+					850,
+					$this->get_language_constant('title_manage_items'),
+					true, true,
+					backend_UrlMake($this->name, 'manage_items')
+				),
+				5  // level
+			));
 
 			$backend->addMenu($this->name, $bsexy_menu);
 		}
@@ -79,8 +105,12 @@ class bsexy extends Module {
 					$this->show_results();
 					break;
 
-				default:
+				case 'search':
 					$this->show_search_form();
+					break;
+
+				case 'manage_items':
+					$this->show_items();
 					break;
 			}
 		}
@@ -96,6 +126,51 @@ class bsexy extends Module {
 	 * Event triggered upon module deinitialization
 	 */
 	public function cleanup() {
+	}
+
+	/**
+	 * Show shop item management form.
+	 */
+	private function show_items() {
+		$shop = shop::get_instance();
+		$template = new TemplateHandler('item_list.xml', $this->path.'templates/');
+
+		$params = array(
+					'link_new' => URL::make_hyperlink(
+										$shop->get_language_constant('add_item'),
+										window_Open( // on click open window
+											'shop_item_add',
+											550,
+											$shop->get_language_constant('title_item_add'),
+											true, true,
+											backend_UrlMake($shop->name, 'items', 'add')
+										)
+									),
+					'link_categories' => URL::make_hyperlink(
+										$shop->get_language_constant('manage_categories'),
+										window_Open( // on click open window
+											'shop_categories',
+											550,
+											$shop->get_language_constant('title_manage_categories'),
+											true, true,
+											backend_UrlMake($shop->name, 'categories')
+										)
+									)
+					);
+
+		// register tag handler
+		$template->register_tag_handler('cms:item_list', $this, 'tag_ItemList');
+
+		$manufacturer_handler = ShopManufacturerHandler::get_instance($shop);
+		$template->register_tag_handler('cms:manufacturer_list', $manufacturer_handler, 'tag_ManufacturerList');
+
+		$category_handler = ShopCategoryHandler::get_instance($shop);
+		$template->register_tag_handler('cms:category_list', $category_handler, 'tag_CategoryList');
+
+
+		$template->restore_xml();
+		$template->set_local_params($params);
+		$template->parse();
 	}
 
 	/**
@@ -131,49 +206,6 @@ class bsexy extends Module {
 		$template->restore_xml();
 		$template->set_local_params($params);
 		$template->parse();
-	}
-
-	/**
-	 * Handle shop item change.
-	 *
-	 * @param integer $item_id
-	 */
-	public function handle_item_add($item_id) {
-	}
-
-	/**
-	 * Handle adding new shop item.
-	 *
-	 * @param integer $item_id
-	 */
-	public function handle_item_change($item_id) {
-		global $language;
-
-		// get managers
-		$item_manager = ShopItemManager::getInstance();
-
-		// get item from the database
-		$item = $item_manager->get_item(array('name', 'expires'), array('id' => $item_id));
-		if (!is_object($item))
-			return;
-
-		$date_time = date('Y-m-d', strtotime($item->expires));
-		$color = 9;
-		$post_data = array(
-				'start' => $date_time,
-				'end'   => $date_time,
-				'item'  => $item->name[self::LANG],
-				'color' => $color
-			);
-		$post_data = json_encode($post_data);
-
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, self::API);
-		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_HTTPGET, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($ch);
 	}
 
 	/**
@@ -220,15 +252,44 @@ class bsexy extends Module {
 		$gallery = gallery::get_instance();
 		$template = $this->load_template($tag_params, 'result_item.xml');
 
+		// cache manufacturers
+		$manufacturer_manager = ManufacturerManager::get_instance();
+		$manufacturer_names = array('');  // add empty string to display by default
+		$manufacturers = $manufacturer_manager->get_items(array('id', 'name'), array());
+
+		if (count($manufacturers) > 0)
+			foreach ($manufacturers as $manufacturer)
+				$manufacturer_names[$manufacturer->id] = $manufacturer->name[$language];
+
+		// cache phone numbers
+		$property_manager = PropertyManager::get_instance();
+		$phone_numbers = array();
+
+		$properties = $property_manager->get_items(array('item', 'value'), array('text_id' => 'phone1'));
+		if (count($properties) > 0)
+			foreach ($properties as $property) {
+				$value = unserialize($property->value);
+				$phone_numbers[$property->item] = $value;
+			}
+
+		// cache date format
+		$date_format = $this->get_language_constant('format_date');
+
 		// parse template for all search results
 		foreach ($items as $item) {
+			$manufacturer_name = $manufacturer_names[$item->manufacturer];
+			$phone_number = isset($phone_numbers[$item->id]) ? $phone_numbers[$item->id] : '';
+
 			$params = array(
-						'id'                    => $item->id,
-						'name'                  => $item->name,
-						'views'                 => $item->views,
-						'price'                 => $item->price,
-						'expires'               => strtotime($item->expires),
-						'item_change'           => URL::make_hyperlink(
+						'id'                => $item->id,
+						'name'              => $item->name,
+						'views'             => $item->views,
+						'manufacturer'      => $item->manufacturer,
+						'manufacturer_name' => $manufacturer_name,
+						'phone'             => $phone_number,
+						'price'             => $item->price,
+						'expires'           => date($date_format, strtotime($item->expires)),
+						'item_change'       => URL::make_hyperlink(
 												$shop->get_language_constant('change'),
 												window_Open(
 													'shop_item_change', 	// window id
@@ -245,7 +306,7 @@ class bsexy extends Module {
 													)
 												)
 											),
-						'item_delete'           => URL::make_hyperlink(
+						'item_delete'       => URL::make_hyperlink(
 												$shop->get_language_constant('delete'),
 												window_Open(
 													'shop_item_delete', 	// window id
@@ -286,6 +347,298 @@ class bsexy extends Module {
 			$template->restore_xml();
 			$template->set_local_params($params);
 			$template->parse();
+		}
+	}
+
+	/**
+	 * Handle drawing item list
+	 *
+	 * @param array $tag_params
+	 * @param array $chilren
+	 */
+	public function tag_ItemList($tag_params, $children) {
+		global $language;
+
+		$shop = shop::get_instance();
+		$manager = ItemManager::get_instance();
+		$conditions = array();
+		$page_switch = null;
+		$order_by = array('id');
+		$order_asc = true;
+		$limit = null;
+
+		// create conditions
+		if (isset($_REQUEST['manufacturer']) && !empty($_REQUEST['manufacturer']))
+			$conditions['manufacturer'] = fix_id($_REQUEST['manufacturer']);
+
+		if (isset($tag_params['manufacturer']) && !empty($tag_params['manufacturer']))
+			$conditions['manufacturer'] = fix_id($tag_params['manufacturer']);
+
+		if (isset($tag_params['category'])) {
+			$categories = explode(',', $tag_params['category']);
+
+			if (is_numeric($categories[0])) {
+				$category_id = fix_id($categories);
+
+			} else {
+				// specified id is actually text_id, get real one
+				$category_manager = CategoryManager::get_instance();
+				$category_list = $category_manager->get_items(
+												array('id'),
+												array('text_id' => fix_chars($categories))
+											);
+
+				if (count($category_list) == 0)
+					return;
+
+				// populate list of categories
+				$category_id = array();
+				foreach ($category_list as $category)
+					$category_id[] = $category->id;
+			}
+
+			$membership_manager = ItemMembershipManager::get_instance();
+			$membership_items = $membership_manager->get_items(
+												array('item'),
+												array('category' => $category_id)
+											);
+
+			$item_ids = array();
+			if (count($membership_items) > 0) {
+				// accumulate item membership counts
+				$item_counts = array();
+				foreach($membership_items as $membership)
+					if (isset($item_counts[$membership->item]))
+						$item_counts[$membership->item]++; else
+						$item_counts[$membership->item] = 1;
+
+				// remove all the item ids which don't belong to all categories
+				$required_count = count($categories);
+				foreach ($item_counts as $id => $count)
+					if ($count == $required_count)
+						$item_ids[] = $id;
+			}
+
+			if (count($item_ids) > 0)
+				$conditions['id'] = $item_ids; else
+				$conditions['id'] = -1;  // make sure nothing is returned if category is empty
+		}
+
+		// option to show or hide expired items
+		if (isset($tag_params['show_expired']))
+			if ($tag_params['show_expired'] == 0) {
+				$conditions['expires'] = array(
+						'operator' => '>=',
+						'value'    => date('Y-m-d H:i:s')
+					);
+			} else {
+				$conditions['expires'] = array(
+						'operator' => 'IS NOT',
+						'value'    => 'NULL'
+					);
+			}
+
+		if (isset($tag_params['related'])) {
+			$item_id = -1;
+			$relation_manager = ShopRelatedItemsManager::get_instance();
+
+			if (is_numeric($tag_params['related'])) {
+				// get item id as is
+				$item_id = fix_id($tag_params['related']);
+
+			} else {
+				// find item id based on specified text id
+				$item = $manager->get_single_item(array('id'), array('uid' => fix_chars($tag_params['related'])));
+
+				if (is_object($item))
+					$item_id = $item->id;
+			}
+
+			$related_items = $relation_manager->get_items(array('related'), array('item' => $item_id));
+			$related_item_ids = array();
+
+			if (count($related_items) > 0)
+				foreach ($related_items as $relationship)
+					$related_item_ids[] = $relationship->related;
+
+			if (count($related_item_ids) > 0)
+				$conditions['id'] = $related_item_ids; else
+				$conditions['id'] = -1;
+		}
+
+		if (!(isset($tag_params['show_deleted']) && $tag_params['show_deleted'] == 1)) {
+			// force hiding deleted items
+			$conditions['deleted'] = 0;
+		}
+
+		if (isset($tag_params['show_hidden']))
+			$conditions['visible'] = fix_id($tag_params['show_hidden']);
+
+		if (isset($tag_params['filter']) && !empty($tag_params['filter'])) {
+			// filter items with name matching
+			$conditions['name_'.$language] = array(
+								'operator'	=> 'LIKE',
+								'value'		=> '%'.fix_chars($tag_params['filter']).'%'
+							);
+		}
+
+		if (isset($tag_params['limit']))
+			$limit = fix_id($tag_params['limit']);
+
+		if (isset($tag_params['paginate'])) {
+			$per_page = is_numeric($tag_params['paginate']) ? $tag_params['paginate'] : 10;
+			$param = isset($tag_params['page_param']) ? fix_chars($tag_params['page_param']) : null;
+
+			$item_count = $manager->get_item_value('COUNT(id)', $conditions);
+
+			$page_switch = new PageSwitch($param);
+			$page_switch->setCurrentAsBaseURL();
+			$page_switch->setItemsPerPage($per_page);
+			$page_switch->setTotalItems($item_count);
+
+			// get filter params
+			$limit = $page_switch->getFilterParams();
+		}
+
+		if (isset($tag_params['order_by']))
+			$order_by = fix_chars(explode(',', $tag_params['order_by']));
+
+		if (isset($tag_params['order_asc']))
+			$order_asc = $tag_params['order_asc'] == 1;
+
+		// get items
+		$items = $manager->get_items($manager->get_field_names(), $conditions, $order_by, $order_asc, $limit);
+
+		// create template
+		$size_handler = ShopItemSizesHandler::get_instance($shop);
+		$template = $this->load_template($tag_params, 'item_list_item.xml');
+		$template->set_template_params_from_array($children);
+		$template->register_tag_handler('cms:color_list', $shop, 'tag_ColorList');
+		$template->register_tag_handler('cms:value_list', $size_handler, 'tag_ValueList');
+
+		// make sure we have items
+		if (count($items) == 0)
+			return;
+
+		// get gallery for images link
+		$gallery = null;
+		if (ModuleHandler::is_loaded('gallery'))
+			$gallery = gallery::get_instance();
+
+		// cache manufacturers
+		$manufacturer_manager = ManufacturerManager::get_instance();
+		$manufacturer_names = array('');  // add empty string to display by default
+		$manufacturers = $manufacturer_manager->get_items(array('id', 'name'), array());
+
+		if (count($manufacturers) > 0)
+			foreach ($manufacturers as $manufacturer)
+				$manufacturer_names[$manufacturer->id] = $manufacturer->name[$language];
+
+		// cache phone numbers
+		$property_manager = PropertyManager::get_instance();
+		$phone_numbers = array();
+
+		$properties = $property_manager->get_items(array('item', 'value'), array('text_id' => 'phone1'));
+		if (count($properties) > 0)
+			foreach ($properties as $property) {
+				$value = unserialize($property->value);
+				$phone_numbers[$property->item] = $value;
+			}
+
+		// cache date format
+		$date_format = $this->get_language_constant('format_date');
+
+		foreach ($items as $item) {
+			$manufacturer_name = $manufacturer_names[$item->manufacturer];
+			$phone_number = isset($phone_numbers[$item->id]) ? $phone_numbers[$item->id] : '';
+
+			$params = array(
+						'id'                => $item->id,
+						'uid'               => $item->uid,
+						'name'              => $item->name,
+						'manufacturer'      => $item->manufacturer,
+						'manufacturer_name' => $manufacturer_name,
+						'views'             => $item->views,
+						'phone'             => $phone_number,
+						'timestamp'         => $item->timestamp,
+						'visible'           => $item->visible,
+						'deleted'           => $item->deleted,
+						'expires'           => date($date_format, strtotime($item->expires)),
+						'item_change'       => URL::make_hyperlink(
+												$shop->get_language_constant('change'),
+												window_Open(
+													'shop_item_change', 	// window id
+													550,				// width
+													$shop->get_language_constant('title_item_change'), // title
+													true, true,
+													URL::make_query(
+														'backend_module',
+														'transfer_control',
+														array('module', $shop->name),
+														array('backend_action', 'items'),
+														array('sub_action', 'change'),
+														array('id', $item->id)
+													)
+												)
+											),
+						'item_delete'       => URL::make_hyperlink(
+												$shop->get_language_constant('delete'),
+												window_Open(
+													'shop_item_delete', 	// window id
+													400,				// width
+													$shop->get_language_constant('title_item_delete'), // title
+													false, false,
+													URL::make_query(
+														'backend_module',
+														'transfer_control',
+														array('module', $shop->name),
+														array('backend_action', 'items'),
+														array('sub_action', 'delete'),
+														array('id', $item->id)
+													)
+												)
+											),
+					);
+
+			// add images link
+			if (!is_null($gallery)) {
+				$open_gallery_window = window_Open(
+									'gallery_images',
+									670,
+									$gallery->get_language_constant('title_images'),
+									true, true,
+									URL::make_query(
+										'backend_module',
+										'transfer_control',
+										array('backend_action', 'images'),
+										array('module', 'gallery'),
+										array('group', $item->gallery)
+									)
+								);
+				$params['item_images'] = URL::make_hyperlink(
+													$shop->get_language_constant('images'),
+													$open_gallery_window
+												);
+			} else {
+				$params['item_images'] = '';
+			}
+
+			$template->restore_xml();
+			$template->set_local_params($params);
+			$template->parse();
+		}
+
+		// draw page switch if needed
+		if (!is_null($page_switch)) {
+			$params = array();
+			$children = array();
+
+			// pick up parameters from original array
+			foreach ($tag_params as $key => $value)
+				if (substr($key, 0, 12) == 'page_switch_')
+					$params[substr($key, 12)] = $value;
+
+			$page_switch->tag_PageSwitch($params, $children);
 		}
 	}
 }

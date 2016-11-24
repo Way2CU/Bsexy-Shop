@@ -5,8 +5,6 @@
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title>
-				<cms:text constant="site_title"/>
-				<cms:raw text=" - "/>
 				<cms:module
 					name="shop"
 					action="show_item"
@@ -14,6 +12,26 @@
 					template="parts/item_title.xml"
 					cms:eval="id"
 					/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['service']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					/>
+				<cms:raw text=" - "/>
+				<cms:text constant="site_title_all"/>
+				<cms:raw text=" "/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="$_REQUEST['area']"
+					template="parts/page_title.xml"
+					cms:eval="text_id"
+					/>
+				<cms:raw text=" "/>
+				<cms:text constant="site_title_end"/>
 			</title>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
@@ -28,6 +46,7 @@
 					action="show_item"
 					id="fix_id($_REQUEST['id'])"
 					template="parts/item_details.xml"
+					update_view_count="1"
 					cms:eval="id"
 					/>
 			</section>

@@ -1,5 +1,10 @@
 {
-	"menu_search": "Search by phone",
-	"title_search": "Search items by phone number",
-	"label_search": "Search:"
+	"menu_bsexy": "Bsexy",
+	"menu_search": "חיפוש לפי טלפון",
+    "menu_items": "נהל מוצרים",
+	"title_search": "חפש מוצרים לפי טלפון",
+    "title_manage_items": "Bsexy: נהל מוצרים",
+	"label_search": "חפש:",
+    "column_manufacturer": "יצרן",
+    "column_phone": "מספר טלפון"
 }
