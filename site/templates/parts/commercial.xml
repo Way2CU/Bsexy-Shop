@@ -1,5 +1,6 @@
 <document>
 	<a
+		nofollow="nofollow"
 		class="add_link"
 		style="'background-image: url('.$params['image'].');'"
 		href="$params['redirect_url']"
