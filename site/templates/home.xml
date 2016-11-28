@@ -6,9 +6,11 @@
 		<head>
 			<title><cms:text constant="site_title"/></title>
 			<cms:module name="head_tag" action="print_tag"/>
+			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
 
 		<body>
+			<cms:raw file="parts/gtmbody.txt"/>
 			<!-- Content after consent -->
 			<cms:if condition="isset($_SESSION['intro_displayed'])">
 				<!-- Top part of the site -->
