@@ -16,45 +16,56 @@
 				<!-- Top part of the site -->
 				<cms:template file="parts/header.xml"/>
 
+				<!-- Desktop version promoted categories -->
+				<cms:desktop>
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="escort"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="apartments"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="massage"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="private"
+						template="parts/category_preview.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip"
+						template="parts/category_preview.xml"
+						/>
+				</cms:desktop>
+
+				<!-- Mobile version home page -->
 				<cms:mobile>
-					<cms:template file="parts/display_controls.xml"/>
+					<section>
+						<cms:module
+							name="shop"
+							action="show_category_list"
+							parent="services"
+							order_by="order"
+							template="parts/services_menu_images.xml"
+							/>
+					</section>
 				</cms:mobile>
-
-				<!-- promoted categories -->
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="escort"
-					template="parts/category_preview.xml"
-					/>
-
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="apartments"
-					template="parts/category_preview.xml"
-					/>
-
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="massage"
-					template="parts/category_preview.xml"
-					/>
-
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="private"
-					template="parts/category_preview.xml"
-					/>
-
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="vip"
-					template="parts/category_preview.xml"
-					/>
 			</cms:if>
 
 			<!-- User consent -->

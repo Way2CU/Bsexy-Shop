@@ -146,6 +146,42 @@ div.intro article {
 }
 
 /**
+ * Home page categories links
+ */
+
+a.category {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0.2em;
+	text-decoration: none;
+	color: @color_text;
+	font-weight: 700;
+	width: 150px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid @color_text;
+}
+
+a.category img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+a.category h3.title {
+	position: absolute;
+	margin: 0;
+	padding: 1em 0em;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	font-size: 1em;
+	background-color: fade(@color_background, 80%);
+}
+
+/**
  * Area menu
  */
 
