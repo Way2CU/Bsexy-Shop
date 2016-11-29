@@ -1,5 +1,6 @@
 {
 	"/": "home.xml",
+	"/agreement": "agreement.xml",
 	"/sitemap.xml": "sitemap.xml",
 	"/promoted/{id}": "view_promoted.xml",
 	"/{service}/{area}": "service_area.xml",
