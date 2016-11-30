@@ -5,22 +5,18 @@
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
 
 		<body>
 			<cms:raw file="parts/gtmbody.txt"/>
-			<!-- Content after consent -->
-			<cms:if condition="isset($_SESSION['intro_displayed'])">
-				<!-- Top part of the site -->
-				<cms:template file="parts/header.xml"/>
 
-				<cms:mobile>
-					<cms:template file="parts/display_controls.xml"/>
-				</cms:mobile>
+			<cms:template file="parts/header.xml"/>
 
-				<!-- promoted categories -->
+			<!-- Desktop version promoted categories -->
+			<cms:desktop>
 				<cms:module
 					name="shop"
 					action="show_category"
@@ -55,13 +51,30 @@
 					text_id="vip"
 					template="parts/category_preview.xml"
 					/>
-			</cms:if>
+			</cms:desktop>
 
-			<!-- User consent -->
-			<cms:if condition="!isset($_SESSION['intro_displayed'])">
-				<cms:template file="parts/intro.xml"/>
-				<cms:session name="intro_displayed" value="1"/>
-			</cms:if>
+			<!-- Mobile version home page -->
+			<cms:mobile>
+				<section>
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						parent="services"
+						order_by="order"
+						template="parts/services_menu_images.xml"
+						/>
+				</section>
+
+				<!-- Banners-->
+				<div class="commercial">
+					<cms:module
+						name="links"
+						action="show_link_list"
+						group="mobile_home_page_banners"
+						template="parts/commercial.xml"
+						/>
+				</div>
+			</cms:mobile>
 
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>

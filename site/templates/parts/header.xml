@@ -51,6 +51,7 @@
 					/>
 				<!-- manual service links -->
 				<a
+					target="_blank"
 					href="porn_movies_url"
 					cms:constant="href"
 					>
@@ -58,6 +59,7 @@
 					<cms:text constant="porn_movies"/>
 				</a>
 				<a
+					target="_blank"
 					href="webcam_url"
 					cms:constant="href"
 					>
@@ -65,6 +67,7 @@
 					<cms:text constant="webcam"/>
 				</a>
 				<a
+					target="_blank"
 					href="forum_url"
 					cms:constant="href"
 					>
@@ -156,6 +159,7 @@
 						/>
 					<!-- manual service links -->
 					<a
+						target="_blank"
 						href="porn_movies_url"
 						cms:constant="href"
 						>
@@ -163,6 +167,7 @@
 						<cms:text constant="porn_movies"/>
 					</a>
 					<a
+						target="_blank"
 						href="webcam_url"
 						cms:constant="href"
 						>
@@ -170,6 +175,7 @@
 						<cms:text constant="webcam"/>
 					</a>
 					<a
+						target="_blank"
 						href="forum_url"
 						cms:constant="href"
 						>

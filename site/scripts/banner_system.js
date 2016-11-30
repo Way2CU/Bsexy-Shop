@@ -9,13 +9,13 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.BannerSystem = function(items, banners, increament_size) {
+Site.BannerSystem = function(items, banners, increament_size, position) {
 	var self = this;
 
 	self.items = document.querySelectorAll(items);
 	self.items_container = null;
 	self.banners = document.querySelectorAll(banners);
-	self.start_position = 2;
+	self.start_position = position;
 	self.increament_size = increament_size;
 
 	self._init = function() {
@@ -39,6 +39,11 @@ Site.BannerSystem = function(items, banners, increament_size) {
 }
 
 $(function() {
-	if (Site.is_mobile())
-		Site.banner_system = new Site.BannerSystem('div.item', 'a.add_link', 3);
+	if (Site.is_mobile()) {
+		if(window.location.pathname == "/") {
+			Site.home_page_banners = new Site.BannerSystem('a.category', 'a.add_link', 5, 0);
+		} else {
+			Site.banner_system = new Site.BannerSystem('div.item', 'a.add_link', 3, 2);
+		}
+	}
 })

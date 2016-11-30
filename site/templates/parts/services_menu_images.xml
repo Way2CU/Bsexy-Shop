@@ -1,0 +1,16 @@
+<document>
+	<a
+		class="category"
+		href="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"
+		cms:eval="href"
+		>
+		<img
+			src="$params['image']"
+			alt="$params['title'][$language]"
+			cms:eval="src,alt"
+			/>
+		<h3 class="title">
+			<cms:var param="title" multilanguage="yes"/>
+		</h3>
+	</a>
+</document>
