@@ -15,6 +15,7 @@
 				<cms:raw text=" "/>
 				<cms:text constant="site_title_end"/>
 			</title>
+			<cms:module name="page_description" action="set_page_skip"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
