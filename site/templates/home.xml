@@ -56,11 +56,101 @@
 			<!-- Mobile version home page -->
 			<cms:mobile>
 				<section>
-					<cms:module
+<!-- 					<cms:module
 						name="shop"
 						action="show_category_list"
 						parent="services"
 						order_by="order"
+						template="parts/services_menu_images.xml"
+						/> -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="escort"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="private"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="images"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="apartments"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip2"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="massage"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="discreet"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="spa"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="transgender"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="gays"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="sado"
+						template="parts/services_menu_images.xml"
+						/>
+
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="required"
 						template="parts/services_menu_images.xml"
 						/>
 				</section>
