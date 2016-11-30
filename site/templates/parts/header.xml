@@ -107,6 +107,7 @@
 			<div class="mobile_title">
 				<a href="javascript:void(0)" class="menu">
 					<cms:svg file="site-sprite.svg" symbol="menu"/>
+					<cms:text constant="label_menu"/>
 				</a>
 
 				<!-- logo -->

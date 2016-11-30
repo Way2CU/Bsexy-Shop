@@ -160,7 +160,7 @@ a.category {
 	height: 150px;
 	position: relative;
 	overflow: hidden;
-	border: 1px solid @color_text;
+	border: 1px solid @color_dark_action;
 }
 
 a.category img {
@@ -428,10 +428,13 @@ a.add_link,
 div.commercial a.add_link {
 	display: block;
 	margin: 0.2em 0em;
+	margin-left: auto;
+	margin-right: auto;
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-size: cover;
-	height: 115px;
+	background-size: 100% auto;
+	width: 310px;
+	height: calc(~'(310px * (200 / 590))');
 }
 
 section.category_areas a.add_link {
@@ -441,9 +444,9 @@ section.category_areas a.add_link {
 	margin-bottom: 0.4em;
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-size: cover;
-	width: 300px;
-	height: 160px;
+	background-size: 100% auto;
+	width: 310px;
+	height: calc(~'(310px * (200 / 380))');
 }
 
 div.commercial a.add_link {
