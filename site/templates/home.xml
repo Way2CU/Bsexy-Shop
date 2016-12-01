@@ -146,6 +146,56 @@
 						text_id="required"
 						template="parts/services_menu_images.xml"
 						/>
+
+					<!-- Manual category links -->
+					<a
+						class="category"
+						href="porn_movies_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="movies"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="porn_movies"/>
+						</h3>
+					</a>
+
+					<a
+						class="category"
+						href="webcam_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="webcam"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="webcam"/>
+						</h3>
+					</a>
+
+					<a
+						class="category"
+						href="forum_url"
+						cms:constant="href"
+						>
+						<cms:module
+							name="gallery"
+							action="show_image"
+							text_id="forum"
+							template="parts/image.xml"
+							/>
+						<h3 class="title">
+							<cms:text constant="forum"/>
+						</h3>
+					</a>
+
 				</section>
 
 				<!-- Banners-->
