@@ -15,6 +15,8 @@
 					selected="isset($_REQUEST['manufacturer']) ? $_REQUEST['manufacturer'] : null"
 					template="manufacturer_option.xml"
 					local="1"
+					order_by="name"
+					order_asc="1"
 					cms:optional="selected"
 					/>
 			</select>
