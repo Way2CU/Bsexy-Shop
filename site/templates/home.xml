@@ -15,7 +15,7 @@
 
 			<cms:template file="parts/header.xml"/>
 
-			<!-- Desktop version promoted categories -->
+			<!-- Desktop version of home page -->
 			<cms:desktop>
 				<cms:module
 					name="shop"
@@ -56,13 +56,6 @@
 			<!-- Mobile version home page -->
 			<cms:mobile>
 				<section>
-<!-- 					<cms:module
-						name="shop"
-						action="show_category_list"
-						parent="services"
-						order_by="order"
-						template="parts/services_menu_images.xml"
-						/> -->
 					<cms:module
 						name="shop"
 						action="show_category"
