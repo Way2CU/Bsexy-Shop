@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
+			<cms:module name="head_tag" action="print_tag"/>
+			<cms:raw file="parts/gtmhead.txt"/>
+		</head>
+
+		<body>
+			<cms:raw file="parts/gtmbody.txt"/>
+			<cms:template file="parts/header.xml"/>
+			<section id="missing">
+				<h2><cms:text constant="message_client_error_404" /></h2>
+			</section>
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>
