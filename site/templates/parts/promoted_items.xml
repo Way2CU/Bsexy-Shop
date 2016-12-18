@@ -1,8 +1,8 @@
 <document>
 		<div
 			class="item"
-			data-priority="isset($template['area']) ? $params['priority'] : false"
-			cms:optional="data-priority"
+			data-priority="$params['priority']"
+			cms:eval="data-priority"
 			>
 			<a
 				class="image"
