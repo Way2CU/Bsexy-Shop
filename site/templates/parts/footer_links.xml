@@ -1,0 +1,11 @@
+<document>
+	<a
+		class="action"
+		target="_blank"
+		href="$params['url']"
+		title="$params['text'][$language]"
+		cms:eval="href,title"
+		>
+		<cms:var param="text" multilanguage="yes"/>
+	</a>
+</document>
