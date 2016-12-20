@@ -41,9 +41,9 @@ Site.BannerSystem = function(items, banners, increament_size, position) {
 $(function() {
 	if (Site.is_mobile()) {
 		if(window.location.pathname == "/") {
-			Site.home_page_banners = new Site.BannerSystem('a.category', 'a.add_link', 5, 0);
+			Site.home_page_banners = new Site.BannerSystem('a.category', 'a.link', 5, 0);
 		} else {
-			Site.banner_system = new Site.BannerSystem('div.item', 'a.add_link', 3, 2);
+			Site.banner_system = new Site.BannerSystem('div.item', 'a.link', 3, 2);
 		}
 	}
 })
