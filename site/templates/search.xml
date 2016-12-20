@@ -31,6 +31,10 @@
 
 				<div class="category_items">
 					<cms:module
+						name="shop"
+						action="configure_search"
+						/>
+					<cms:module
 						name="search"
 						action="show_results"
 						query="fix_chars($_REQUEST['query'])"

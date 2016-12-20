@@ -77,7 +77,7 @@
 			</nav>
 
 			<div id="options">
-				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action">
+				<form action="URL::make(array(), 'search.xml')" method="get" cms:eval="action" cms:skip_cache="1">
 					<label>
 						<span><cms:text constant="label_search"/></span>
 						<input
