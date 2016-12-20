@@ -9,6 +9,14 @@
 					cms:eval="src"
 					/>
 
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="footer_links"
+					template="parts/footer_links.xml"
+					/>
+				<br/>
+
 				<!-- phone link -->
 				<cms:module
 					name="links"
@@ -40,6 +48,14 @@
 					alt="message"
 					cms:eval="src"
 					/>
+
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="footer_links"
+					template="parts/footer_links.xml"
+					/>
+				<br/>
 
 				<img
 					class="logo"
