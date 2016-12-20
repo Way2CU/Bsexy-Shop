@@ -4,15 +4,9 @@
         state=directory
         mode=0775
 
-- name: Creating cache directory
-  file: path={{ site_directory }}/site/cache
-        state=directory
-        mode=0775
-
 - name: Clear cache directory
-  command: rm -f *
-  args:
-    chdir: "{{ site_directory }}/site/cache"
+  file: path="{{ site_directory }}/site/cache/"
+        state=absent
 
 
 - name: Check if site scripts need to be uploaded
