@@ -77,7 +77,7 @@ Caracal.handle_shop_window_open = function(shop_window) {
 				'he': 'Phone number',
 				'en': 'Phone number'
 				},
-			type: 'string',
+			type: 'text',
 			value: ''
 		};
 
