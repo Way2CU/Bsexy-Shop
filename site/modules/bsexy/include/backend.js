@@ -45,15 +45,23 @@ Caracal.add_property_row = function(property_id, data, container) {
 
 	// create options
 	var option_remove = $('<a>');
+	var option_change = $('<a>');
 	var space = document.createTextNode(' ');
+
+	option_change
+		.on('click', Caracal.Shop.edit_property)
+		.appendTo(column_options);
+
+	column_options.append(space);
 
 	option_remove
 		.on('click', Caracal.Shop.delete_property)
 		.appendTo(column_options);
 
 	// load language constants for options
-	language_handler.getTextAsync(null, 'delete', function(data) {
-			option_remove.html(data);
+	language_handler.getTextArrayAsync(null, ['delete', 'change'], function(data) {
+			option_remove.html(data['delete']);
+			option_change.html(data['change']);
 		});
 };
 
@@ -85,8 +93,9 @@ Caracal.handle_shop_window_open = function(shop_window) {
 	var container = shop_window.container.find('div#item_properties.list_content');
 
 	// add two phone numbers
+	data2 = data;
 	Caracal.add_property_row(1, data, container);
-	Caracal.add_property_row(2, data, container);
+	Caracal.add_property_row(2, data2, container);
 };
 
 /**
