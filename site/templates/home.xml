@@ -204,6 +204,7 @@
 						name="links"
 						action="show_link_list"
 						group="mobile_home_page_banners"
+						random="1"
 						template="parts/commercial.xml"
 						/>
 				</div>

@@ -82,6 +82,7 @@
 						name="links"
 						action="show_link_list"
 						group="$_REQUEST['area']"
+						random="1"
 						template="parts/commercial.xml"
 						cms:eval="group"
 						/>
