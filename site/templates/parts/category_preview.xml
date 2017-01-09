@@ -41,6 +41,7 @@
 					name="links"
 					action="show_link_list"
 					group="$params['text_id']"
+					random="1"
 					limit="2"
 					template="parts/commercial.xml"
 					cms:eval="group"
@@ -96,6 +97,7 @@
 					action="show_link_list"
 					group="$params['text_id']"
 					limit="2"
+					random="1"
 					template="parts/commercial.xml"
 					cms:eval="group"
 					/>
