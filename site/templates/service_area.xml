@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-	<cms:var name="_DOCTYPE"/>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title>
@@ -14,7 +13,6 @@
 					/>
 				<cms:raw text=" - "/>
 				<cms:text constant="site_title_all"/>
-				<cms:raw text=" "/>
 				<cms:module
 					name="shop"
 					action="show_category"

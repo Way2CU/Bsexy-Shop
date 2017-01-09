@@ -6,7 +6,6 @@
  * This file overrides properties defined in main configuration
  * file for Caracal located in `units/config.php`.
  */
-
 use Core\Cache\Type as CacheType;
 
 // document standard
@@ -35,7 +34,7 @@ $db_config = array(
 
 // configure code generation
 $cache_method = CacheType::NONE;
-$optimize_code = false;
+$optimize_code = true;
 $include_styles = true;
 $url_rewrite = true;
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-	<cms:var name="_DOCTYPE"/>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title>
@@ -39,7 +38,7 @@
 						action="show_results"
 						query="fix_chars($_REQUEST['query'])"
 						module_list="shop"
-						threshold="20"
+						threshold="30"
 						limit="50"
 						template="parts/search_results.xml"
 						cms:eval="query"

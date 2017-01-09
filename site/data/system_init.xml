@@ -13,6 +13,7 @@
 	<module name="shop" order="8" preload="no"/>
 	<module name="search" order="9" preload="no"/>
 	<module name="bsexy" order="10" preload="no"/>
+	<module name="page_description" order="11" preload="no"/>
 
 	<user
 		fullname="Administrator"
