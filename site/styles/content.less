@@ -9,6 +9,10 @@ section {
 	padding: 0 calc(~'(100% - 1200px)' / 2);
 }
 
+section.footer_commercial {
+	padding: 1em calc(~'(100% - 1200px)' / 2);
+}
+
 section > h1 {
 	text-align: center;
 	margin: 0;
@@ -517,6 +521,7 @@ html[dir="rtl"] section.category div.commercial {
 	margin-right: calc(~'20px - 2px');
 }
 
+section.footer_commercial a.link,
 div.commercial a.link {
 	display: inline-block;
 	vertical-align: middle;
@@ -530,6 +535,21 @@ div.commercial a.link {
 	transition: all 0.3s;
 }
 
+section.footer_commercial a.link {
+	width: 200px;
+	height: 200px;
+}
+
+section.footer_commercial a.link:nth-of-type(n+2) {
+	margin-left: 50px;
+}
+
+html[dir="rtl"] section.footer_commercial a.link:nth-of-type(n+2) {
+	margin-left: auto;
+	margin-right: 50px;
+}
+
+section.footer_commercial a.link:hover,
 div.commercial a.link:hover {
 	border-color: @color_dark_action;
 }

@@ -30,7 +30,7 @@
 					<cms:svg file="site-sprite.svg" symbol="shop"/>
 					<cms:text constant="sex_store"/>
 				</a>
-				<a href="erotic_calls_url" target="_blank" class="service" cms:constant="href">
+				<a href="webcam_url" target="_blank" class="service" cms:constant="href">
 					<cms:svg file="site-sprite.svg" symbol="calls"/>
 					<cms:text constant="erotic_calls"/>
 				</a>
