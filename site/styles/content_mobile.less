@@ -458,101 +458,102 @@ div.commercial a.link:last-of-type {
 /**
  * Areas menu
  */
-nav#areas > input {
-	display: none;
-}
-
-nav#areas > label {
+nav#areas {
 	display: block;
-	padding: 1em;
-
-	border: 1px solid transparent;
-	border-bottom: 0px;
-	background-color: @color_background;
+	padding: 0.5em 0em;
 }
 
-nav#areas > label:before {
+nav#areas ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav#areas > ul > li {
+	display: block;
+	position: relative;
+}
+
+nav#areas > ul > li > label {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	padding: 1em 1em;
+	font-weight: 700;
+	font-size: 1em;
+	color: @color_text;
+	position: relative;
+}
+
+nav#areas > ul > li > label:before {
 	display: inline-block;
 	width: 0;
 	height: 0;
 	content: '';
 	margin-left: 5px;
-
 	border: 7px solid transparent;
-	border-top-color: @color_text;
+	border-top-color: #fff;
 	line-height: 0;
 	font-size: 0;
-
-	transform: translateY(10%) rotate(-90deg);
-	transition: all 0.5s;
+	transform: translateY(5%) rotate(90deg);
 }
 
-html[dir=rtl] nav#areas > label:before {
-	transform: translateY(10%) rotate(90deg);
-}
-
-nav#areas > input:checked + label:before {
-	transform: translateY(10%) rotate(0deg);
-}
-
-nav#areas > div {
+nav#areas > ul > li input {
 	display: none;
-	padding: 0em 2em;
 }
 
-nav#areas > input:checked ~ div {
-	display: block;
+nav#areas > ul > li input:checked + label:before {
+	transform: translateY(35%) rotate(0deg);
+	border-top-color: @color_dark_action;
 }
 
-nav#areas div.area {
-	padding: 1em;
-	border: 1px solid @color_border;
-	margin-bottom: 10px;
-}
-
-nav#areas div.area h4 {
-	margin: 0;
-	margin-bottom: 1em;
-	padding: 0;
-}
-
-nav#areas div.area a {
+nav#areas > ul > li > label span {
 	display: inline-block;
-	padding: 0.5em;
-
-	border-bottom: 2px solid transparent;
-	color: @color_text;
-	text-decoration: none;
-	font-weight: 700;
-
-	transition: color 0.3s;
-}
-
-nav#areas div.area a:hover {
-	color: @color_dark_action;
-}
-
-nav#areas div.area a:visited {
-	color: darken(@color_text, 30);
-}
-
-nav#areas div.area a.active {
-	border-bottom-color: @color_dark_action;
-}
-
-nav#areas div.area h4 span,
-nav#areas div.area a span {
-	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	background-image: url(../images/massage.svg);
 	background-repeat: no-repeat;
-	background-position: center -11px;
+	background-position: center -9px;
 	background-size: 2.5em 2.5em;
 	width: 2.5em;
 	height: 1.3em;
+	fill: @color_text;
+}
+
+nav#areas > ul > li > input:checked ~ ul {
+	display: block;
+}
+
+nav#areas ul li ul {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1000;
+	background-color: @color_background;
+	border: 1px solid @color_dark_action;
+	width: 95%;
+}
+
+nav#areas ul li ul li {
+	display: block;
+}
+
+nav#areas ul li ul li a {
+	display: block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	font-weight: 700;
+	color: @color_text;
 	transition: all 0.3s;
 }
 
-nav#areas div.area h4 span {
-	background-position: center -14px;
+nav#areas ul li ul li a span {
+	display: inline-block;
+	vertical-align: top;
+	background-image: url(../images/massage.svg);
+	background-repeat: no-repeat;
+	background-position: center -9px;
+	background-size: 2.5em 2.5em;
+	width: 2.5em;
+	height: 1.3em;
+	fill: @color_text;
 }

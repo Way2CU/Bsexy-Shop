@@ -6,24 +6,5 @@
 		</cms:if>
 		<cms:var param="title" multilanguage="yes"/>
 	</h1>
-
-	<!-- Show area navigation menu -->
-	<cms:if condition="isset($template['menu'])">
-		<nav id="areas">
-			<input type="checkbox" id="areas_menu"/>
-			<label for="areas_menu"><cms:text constant="label_change_area"/></label>
-
-			<div>
-				<cms:module
-					name="shop"
-					action="show_category_list"
-					parent="fix_chars($_REQUEST['service'])"
-					template="parts/areas_group.xml"
-					cms:eval="parent"
-					/>
-			</div>
-		</nav>
-	</cms:if>
-
 	<cms:markdown param="description" multilanguage="yes"/>
 </document>

@@ -1,0 +1,14 @@
+<document>
+	<!-- Show area navigation menu -->
+	<nav id="areas">
+		<ul>
+			<cms:module
+				name="shop"
+				action="show_category_list"
+				parent="fix_chars($_REQUEST['service'])"
+				template="parts/areas_group.xml"
+				cms:eval="parent"
+				/>
+		</ul>
+	</nav>
+</document>

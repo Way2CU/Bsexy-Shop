@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
 <document>
-	<a
-		href="URL::make(array('service' => fix_chars($_REQUEST['service']), 'area' => $params['text_id']))"
-		class="$_REQUEST['area'] == $params['text_id'] ? 'active' : false"
-		cms:eval="href"
-		cms:optional="class"
-		>
-		<cms:var param="title" multilanguage="yes"/>
-	</a>
+	<li>
+		<a
+			href="URL::make(array('service' => fix_chars($_REQUEST['service']), 'area' => $params['text_id']))"
+			class="$_REQUEST['area'] == $params['text_id'] ? 'active' : false"
+			cms:eval="href"
+			cms:optional="class"
+			>
+			<cms:var param="title" multilanguage="yes"/>
+		</a>
+	</li>
 </document>

@@ -43,8 +43,10 @@
 					cms:eval="text_id"
 					>
 					<param name="icon" value=""/>
-					<param name="menu" value=""/>
 				</cms:module>
+
+				<!-- Show area menu -->
+				<cms:template file="parts/area_menu.xml"/>
 
 				<!-- Show display controls options on mobile version -->
 				<cms:mobile>
