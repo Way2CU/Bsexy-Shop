@@ -209,6 +209,17 @@
 				</div>
 			</cms:mobile>
 
+			<section class="footer_commercial">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="footer_banners"
+					limit="5"
+					random="1"
+					template="parts/commercial.xml"
+					/>
+			</section>
+
 			<!-- Bottom section of the site -->
 			<cms:template file="parts/footer.xml"/>
 		</body>
