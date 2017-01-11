@@ -34,6 +34,9 @@
 			<cms:template file="parts/header.xml"/>
 
 			<section class="category_areas">
+				<!-- Show area menu -->
+				<cms:template file="parts/area_menu.xml"/>
+
 				<!-- Category title -->
 				<cms:module
 					name="shop"
@@ -44,9 +47,6 @@
 					>
 					<param name="icon" value=""/>
 				</cms:module>
-
-				<!-- Show area menu -->
-				<cms:template file="parts/area_menu.xml"/>
 
 				<!-- Show display controls options on mobile version -->
 				<cms:mobile>
