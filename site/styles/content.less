@@ -23,8 +23,15 @@ section > h1 {
 	overflow: hidden;
 }
 
-section.footer_commercial h2,
-section h1 {
+section > a {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: @color_text;
+	position: relative;
+}
+
+section.footer_commercial h2 {
 	margin-bottom: 0;
 }
 
@@ -51,6 +58,7 @@ section h1 span {
 	fill: @color_text;
 }
 
+section > a:before,
 section.footer_commercial h2:before,
 section > h1:before {
 	content: "";
@@ -64,6 +72,7 @@ section > h1:before {
 	z-index: -2;
 }
 
+section > a:after,
 section.footer_commercial h2:after,
 section > h1:after {
 	content: "";

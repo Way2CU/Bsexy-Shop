@@ -2,7 +2,13 @@
 	<cms:if condition="!isset($template['service_area'])">
 		<section>
 			<!-- Category title -->
-			<h1><cms:var param="title" multilanguage="yes"/></h1>
+			<a
+				href="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"
+				cms:eval="href"
+				>
+				<h1><cms:var param="title" multilanguage="yes"/></h1>
+			</a>
+
 
 			<!-- Promoted items -->
 			<div class="category_items">
