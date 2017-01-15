@@ -25,6 +25,13 @@
 				template="parts/phone.xml"
 				cms:eval="item"
 				/>
+
+			<img
+				class="note"
+				src="_BASEURL.'/site/images/footer-note-vector.svg'"
+				alt="message"
+				cms:eval="src"
+				/>
 		</div>
 
 		<!-- Item images -->
@@ -112,6 +119,12 @@
 					text_id="phone2"
 					template="parts/phone.xml"
 					cms:eval="item"
+					/>
+				<img
+					class="note"
+					src="_BASEURL.'/site/images/footer-note-vector.svg'"
+					alt="message"
+					cms:eval="src"
 					/>
 			</div>
 		</div>
