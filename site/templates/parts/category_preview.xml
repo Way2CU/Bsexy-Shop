@@ -3,6 +3,7 @@
 		<section>
 			<!-- Category title -->
 			<a
+				class="title"
 				href="URL::make(array('service' => $params['text_id'], 'area' => $params['text_id'].'-tel-aviv'))"
 				cms:eval="href"
 				>
