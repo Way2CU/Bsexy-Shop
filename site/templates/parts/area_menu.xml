@@ -6,6 +6,7 @@
 				name="shop"
 				action="show_category_list"
 				parent="fix_chars($_REQUEST['service'])"
+				order_by="order"
 				template="parts/areas_group.xml"
 				cms:eval="parent"
 				/>
