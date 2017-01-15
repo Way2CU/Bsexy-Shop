@@ -92,11 +92,18 @@
 			<section class="footer_commercial">
 				<cms:module
 					name="links"
+					action="show_group"
+					text_id="footer_banners"
+					template="parts/links_group_title.xml"
+					/>
+
+				<cms:module
+					name="links"
 					action="show_link_list"
 					group="footer_banners"
 					limit="5"
 					random="1"
-					template="parts/commercial.xml"
+					template="parts/footer_commercial.xml"
 					/>
 			</section>
 
