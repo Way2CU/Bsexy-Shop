@@ -13,6 +13,7 @@ section.footer_commercial {
 	padding: 1em calc(~'(100% - 1200px)' / 2);
 }
 
+section.footer_commercial h2,
 section > h1 {
 	text-align: center;
 	margin: 0;
@@ -22,7 +23,15 @@ section > h1 {
 	overflow: hidden;
 }
 
-section h1 {
+section > a.title {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: @color_text;
+	position: relative;
+}
+
+section.footer_commercial h2 {
 	margin-bottom: 0;
 }
 
@@ -49,6 +58,8 @@ section h1 span {
 	fill: @color_text;
 }
 
+section > a.title:before,
+section.footer_commercial h2:before,
 section > h1:before {
 	content: "";
 	position: absolute;
@@ -61,6 +72,8 @@ section > h1:before {
 	z-index: -2;
 }
 
+section > a.title:after,
+section.footer_commercial h2:after,
 section > h1:after {
 	content: "";
 	position: absolute;
@@ -438,6 +451,11 @@ html[dir="rtl"] div.information a.phone:first-of-type {
 	margin-left: 1em;
 }
 
+div.information > img.note {
+	display: block;
+	margin-top: 0.5em;
+}
+
 div.item_gallery {
 	text-align: center;
 }
@@ -521,10 +539,12 @@ html[dir="rtl"] section.category div.commercial {
 	margin-right: calc(~'20px - 2px');
 }
 
-section.footer_commercial a.link,
+section.footer_commercial a,
 div.commercial a.link {
 	display: inline-block;
 	vertical-align: middle;
+	text-decoration: none;
+	color: @color_text;
 	box-sizing: border-box;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -535,21 +555,33 @@ div.commercial a.link {
 	transition: all 0.3s;
 }
 
-section.footer_commercial a.link {
+section.footer_commercial a {
 	width: 200px;
 	height: 200px;
+	position: relative;
 }
 
-section.footer_commercial a.link:nth-of-type(n+2) {
+section.footer_commercial a:before {
+	content: attr(title);
+	position: absolute;
+	padding: 0.5em;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: fade(@color_background, 90%);
+}
+
+section.footer_commercial a:nth-of-type(n+2) {
 	margin-left: 50px;
 }
 
-html[dir="rtl"] section.footer_commercial a.link:nth-of-type(n+2) {
+html[dir="rtl"] section.footer_commercial a:nth-of-type(n+2) {
 	margin-left: auto;
 	margin-right: 50px;
 }
 
-section.footer_commercial a.link:hover,
+section.footer_commercial a:hover,
 div.commercial a.link:hover {
 	border-color: @color_dark_action;
 }
