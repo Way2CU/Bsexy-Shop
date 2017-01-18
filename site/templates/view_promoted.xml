@@ -16,10 +16,18 @@
 			</title>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
+
+			<!-- Canonical item link -->
+			<link
+				rel="canonical"
+				href="URL::make('id' => fix_id($_REQUEST['id']), 'view_item.xml')"
+				cms:eval="href"
+				/>
 		</head>
 
 		<body>
 			<cms:raw file="parts/gtmbody.txt"/>
+
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
