@@ -5,7 +5,7 @@ site:
   # alias: domain.com
   root: httpdocs
   username: bsexy
-  caracal_branch: develop
+  caracal_branch: release
   # ip_address: 0.0.0.0
   # owner: Some Person
   # plan: Unlimited
