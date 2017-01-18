@@ -37,7 +37,7 @@
 			<!-- Canonical item link -->
 			<link
 				rel="canonical"
-				href="URL::make('id' => fix_id($_REQUEST['id']), 'view_item.xml')"
+				href="URL::make(array('id' => fix_id($_REQUEST['id'])), 'view_item.xml')"
 				cms:eval="href"
 				/>
 		</head>

@@ -3,7 +3,7 @@
 			<a
 				class="image"
 				title="$params['name'][$language]"
-				href="isset($template['area']) ? URL::make(array('service' => $_REQUEST['service'], 'area' => $template['area'], 'id' => $params['id'])) : URL::make(array('id' => $params['id']))"
+				href="isset($template['area']) ? URL::make(array('service' => $_REQUEST['service'], 'area' => $template['area'], 'id' => $params['id'])) : URL::make(array('id' => $params['id']), 'view_promoted.xml')"
 				cms:eval="href,title"
 				>
 				<img
