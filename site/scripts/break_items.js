@@ -27,6 +27,9 @@ Site.BreakItems = function(priority_items) {
 }
 
 $(function() {
-	new Site.BreakItems('div.item[data-priority^="2"]');
-	new Site.BreakItems('div.item[data-priority^="1"]');
+	if(document.querySelectorAll('div.item[data-priority^="2"]').length > 0)
+		new Site.BreakItems('div.item[data-priority^="2"]');
+
+	if(document.querySelectorAll('div.item[data-priority^="1"]').length > 0)
+		new Site.BreakItems('div.item[data-priority^="1"]');
 })
