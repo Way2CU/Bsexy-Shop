@@ -1,0 +1,8 @@
+<document>
+	<a
+		href="URL::make(array('service' => end(array_slice(explode('-', $params['text_id'], 2), 0, 1)), 'area' => $params['text_id']))"
+		cms:eval="href"
+		>
+		<cms:var param="title" multilanguage="yes"/>
+	</a>
+</document>

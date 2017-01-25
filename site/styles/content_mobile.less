@@ -368,6 +368,7 @@ div.information a.phone {
 
 div.information img.note {
 	display: block;
+	margin-bottom: 0.5em;
 }
 
 div.item_gallery div.main_image {
@@ -410,7 +411,7 @@ div.item_gallery div.thumbnails {
 div.item_gallery div.thumbnails img {
 	display: inline-block;
 	vertical-align: top;
-	margin: 0em 0.2em;
+	margin: 0em 0.1em;
 	padding: 0.2em;
 	border: 1px solid @color_border;
 	cursor: pointer;
@@ -420,6 +421,19 @@ div.item_gallery div.thumbnails img {
 div.item_gallery div.thumbnails img.active,
 div.item_gallery div.thumbnails img:hover {
 	border-color: @color_dark_action;
+}
+
+div.item_categories a {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	margin: 0.5em 0.5em;
+	padding: 0.5em 1em;
+	font-weight: 700;
+	border: 1px solid @color_text;
+	color: @color_text;
+	border-radius: 0;
+	transition: all 0.3s;
 }
 
 /**

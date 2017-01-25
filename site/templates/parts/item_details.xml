@@ -32,6 +32,18 @@
 				alt="message"
 				cms:eval="src"
 				/>
+			<!-- show links of categories item belongs to -->
+			<div class="item_categories">
+				<cms:module
+					name="shop"
+					action="show_category_list"
+					item="$params['id']"
+					show_all="1"
+					contains_item="1"
+					template="parts/item_category_links.xml"
+					cms:eval="item"
+					/>
+			</div>
 		</div>
 
 		<!-- Item images -->
@@ -126,6 +138,18 @@
 					alt="message"
 					cms:eval="src"
 					/>
+				<!-- show links of categories item belongs to -->
+				<div class="item_categories">
+					<cms:module
+						name="shop"
+						action="show_category_list"
+						item="$params['id']"
+						show_all="1"
+						contains_item="1"
+						template="parts/item_category_links.xml"
+						cms:eval="item"
+						/>
+				</div>
 			</div>
 		</div>
 	</cms:mobile>
