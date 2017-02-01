@@ -773,3 +773,33 @@ nav#areas ul li ul li a:hover {
 	background-color: fade(white, 70%);
 	color: @color_background;
 }
+
+@media screen and (max-width: 700px) , screen and (max-height: 700px) {
+	nav#categories a {
+		padding: 0.5em;
+		width: auto;
+	}
+
+	nav#categories a svg {
+		width: 2em;
+		height: 2em;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0.5em;
+	}
+
+	nav#categories a span {
+		display: inline-block;
+		vertical-align: middle;
+		height: 1.6em;
+		background-position: center -8.8px;
+	}
+
+	nav#categories {
+		text-align: left;
+	}
+
+	html[dir=rtl] nav#categories {
+		text-align: right;
+	}
+}
