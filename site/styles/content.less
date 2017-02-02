@@ -501,13 +501,21 @@ div.item_categories a {
 	display: inline-block;
 	vertical-align: top;
 	text-decoration: none;
-	padding: 0.5em 1em;
-	border: 1px solid @color_text;
 	color: @color_text;
 	font-weight: 700;
-	border-radius: 0;
-	margin: 0.5em 0.5em;
 	transition: all 0.3s;
+}
+
+div.item_categories a:after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 6px;
+	height: 6px;
+	line-height: 100%;
+	background-color: @color_dark_action;
+	border-radius: 50%;
+	margin: 0 0.5em;
 }
 
 div.item_categories a span {
