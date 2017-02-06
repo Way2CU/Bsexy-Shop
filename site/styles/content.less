@@ -5,6 +5,30 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors:Tal Reznic
  */
+
+ /*
+  * Link to top
+ */
+a.arrow_top {
+	fill: @color_dark_action;
+	position: fixed;
+	right: 1em;
+	top: 90%;
+	transform: rotate(90deg);
+	padding: 1em;
+	transition: all 0.3s;
+}
+
+a.arrow_top:hover {
+	fill: lighten(@color_dark_action, 30%);
+}
+
+a.arrow_top svg {
+	width: 3em;
+	height: 2em;
+	display: block;
+}
+
 section {
 	padding: 0 calc(~'(100% - 1200px)' / 2);
 }
