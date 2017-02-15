@@ -1,6 +1,11 @@
 <document>
 	<footer>
 		<div class="content">
+			<!-- Link to top -->
+			<a href="#" id="top" class="arrow_top">
+				<cms:svg file="site-sprite.svg" symbol="arrow" />
+			</a>
+
 			<cms:desktop>
 				<img
 					class="logo"
