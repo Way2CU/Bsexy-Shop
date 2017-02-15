@@ -6,6 +6,15 @@
 				<cms:svg file="site-sprite.svg" symbol="arrow" />
 			</a>
 
+			<div class="links">
+				<cms:module
+					name="links"
+					action="show_link_list"
+					group="footer_links"
+					template="parts/show_links_footer.xml"
+					/>
+			</div>
+
 			<cms:desktop>
 				<img
 					class="logo"
