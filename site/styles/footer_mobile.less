@@ -65,3 +65,28 @@ footer img.note {
 	width: 90%;
 	padding: 0.5em 0em;
 }
+
+ /*
+  * Link to top
+ */
+
+a.arrow_top {
+	fill: @color_dark_action;
+	position: fixed;
+	right: 0;
+	top: 90%;
+	transform: rotate(90deg);
+	padding: 1em;
+	padding-top: 0;
+	transition: all 0.3s;
+}
+
+a.arrow_top:hover {
+	fill: lighten(@color_dark_action, 30%);
+}
+
+a.arrow_top svg {
+	width: 3em;
+	height: 2em;
+	display: block;
+}
