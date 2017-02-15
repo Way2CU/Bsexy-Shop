@@ -16,6 +16,16 @@
 
 			<!-- Desktop version of home page -->
 			<cms:desktop>
+				<!-- SEO article -->
+				<section class="seo_article">
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="seo_article2"
+						template="stock/article_generic.xml"
+						/>
+				</section>
+
 				<cms:module
 					name="shop"
 					action="show_category"
