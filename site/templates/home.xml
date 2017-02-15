@@ -64,6 +64,14 @@
 
 			<!-- Mobile version home page -->
 			<cms:mobile>
+				<!-- SEO article -->
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="seo_article"
+					template="stock/article_generic.xml"
+					/>
+
 				<section>
 					<cms:module
 						name="shop"
@@ -206,6 +214,13 @@
 					</a>
 
 				</section>
+				<!-- SEO article -->
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="seo_article"
+					template="stock/article_generic.xml"
+					/>
 
 				<!-- Banners-->
 				<div class="commercial">
