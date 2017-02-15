@@ -6,5 +6,6 @@
 	"title_manage_items": "Bsexy: Manage items",
 	"label_search": "Search:",
 	"column_manufacturer": "Manufacturer",
-	"column_phone": "Phone number"
+	"column_phone": "Phone number",
+    "column_visible": "Visible"
 }

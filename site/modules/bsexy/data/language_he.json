@@ -6,5 +6,6 @@
     "title_manage_items": "Bsexy: נהל מוצרים",
 	"label_search": "חפש:",
     "column_manufacturer": "יצרן",
-    "column_phone": "מספר טלפון"
+    "column_phone": "מספר טלפון",
+    "column_visible": "מוצג"
 }
