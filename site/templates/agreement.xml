@@ -1,0 +1,22 @@
+<document>
+	<img
+		src="_BASEURL.'/site/images/logo-vector.svg'"
+		alt="bsexy-logo"
+		class="logo"
+		cms:eval="src"
+		/>
+	<a
+		class="action close"
+		href="javascript:void(0)"
+		>
+		<cms:text constant="label_enter"/>
+	</a>
+
+	<!-- terms article -->
+	<cms:module
+		name="articles"
+		action="show"
+		text_id="terms"
+		template="stock/article_generic.xml"
+		/>
+</document>

@@ -170,6 +170,11 @@ div.latest div.title span {
 }
 
 div.intro {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	padding: 0px calc(~'(100% - 960px)' / 2);
 	padding-top: calc(100vw * 0.33);
 	text-align: center;
@@ -178,6 +183,7 @@ div.intro {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: 100% auto;
+	overflow-y: scroll;
 }
 
 div.intro img.logo {

@@ -45,6 +45,34 @@ Site.is_mobile = function() {
 	return result;
 };
 
+Site.load_agreement = function() {
+	var url = '/agreement';
+	var path = document.querySelector('meta[property]').getAttribute('content');
+	path += url;
+
+	var element = document.createElement('div');
+	element.classList.add('intro');
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			// Add content
+			element.innerHTML = this.responseText;
+			document.querySelector('body').appendChild(element);
+
+			// Assign event listenr to close agreement message
+			var button_close_agreement = document.querySelector('a.close');
+			button_close_agreement.addEventListener('click', function() {
+				document.querySelector('div.intro').remove();
+			});
+		}
+	};
+
+	xhttp.open("GET", path, true);
+	xhttp.send();
+}
+
+
 /**
  * Handle product thumbnail click event
  */
@@ -95,6 +123,12 @@ Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
 
+	// condition for showing agreement page
+	if(!localStorage.getItem('agreement')) {
+		localStorage.setItem('agreement', true);
+		Site.load_agreement();
+	}
+
 	// create function for displaying category items view
 	var view_controls = document.querySelectorAll('div.display a');
 	for(var i = 0,count = view_controls.length; i < count; i++)
@@ -110,6 +144,7 @@ Site.on_load = function() {
 			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
 		}
 	}
+
 };
 
 // connect document `load` event with handler function
