@@ -7,5 +7,6 @@
 	"label_search": "Search:",
 	"column_manufacturer": "Manufacturer",
 	"column_phone": "Phone number",
-    "column_visible": "Visible"
+    "column_visible": "Visible",
+    "preview": "Preview"
 }

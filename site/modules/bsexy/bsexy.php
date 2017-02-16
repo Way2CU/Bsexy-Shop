@@ -563,8 +563,12 @@ class bsexy extends Module {
 						'visible'           => $item->visible,
 						'visible_char'      => $item->visible ? CHAR_CHECKED : CHAR_UNCHECKED,
 						'deleted'           => $item->deleted,
-						'expires'           => date($date_format, strtotime($item->expires)),
-						'item_change'       => URL::make_hyperlink(
+						'expires'           => date($date_format, strtotime($item->expires))
+					);
+
+			// create backend options
+			if ($section == 'backend' || $section == 'backend_module') {
+				$params['item_change'] = URL::make_hyperlink(
 												$shop->get_language_constant('change'),
 												window_Open(
 													'shop_item_change', 	// window id
@@ -578,10 +582,9 @@ class bsexy extends Module {
 														array('backend_action', 'items'),
 														array('sub_action', 'change'),
 														array('id', $item->id)
-													)
-												)
-											),
-						'item_delete'       => URL::make_hyperlink(
+													)));
+
+				$params['item_delete'] = URL::make_hyperlink(
 												$shop->get_language_constant('delete'),
 												window_Open(
 													'shop_item_delete', 	// window id
@@ -595,10 +598,13 @@ class bsexy extends Module {
 														array('backend_action', 'items'),
 														array('sub_action', 'delete'),
 														array('id', $item->id)
-													)
-												)
-											),
+													)));
+
+				$params['item_preview'] = URL::make_hyperlink(
+						$this->get_language_constant('preview'),
+						URL::make(array('id' => $item->id), 'view_item.xml')
 					);
+			}
 
 			// add images link
 			if (!is_null($gallery)) {
