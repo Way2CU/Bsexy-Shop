@@ -66,7 +66,7 @@ class bsexy extends Module {
 				URL::from_file_path($this->path.'images/items.svg'),
 				window_Open( // on click open window
 					'bsexy_items',
-					900,
+					950,
 					$this->get_language_constant('title_manage_items'),
 					true, true,
 					backend_UrlMake($this->name, 'manage_items')
@@ -356,7 +356,7 @@ class bsexy extends Module {
 	 * @param array $chilren
 	 */
 	public function tag_ItemList($tag_params, $children) {
-		global $language;
+		global $language, $section;
 
 		$shop = shop::get_instance();
 		$manager = ItemManager::get_instance();
@@ -602,7 +602,8 @@ class bsexy extends Module {
 
 				$params['item_preview'] = URL::make_hyperlink(
 						$this->get_language_constant('preview'),
-						URL::make(array('id' => $item->id), 'view_item.xml')
+						URL::make(array('id' => $item->id), 'view_item.xml'),
+						null, null, '_blank'
 					);
 			}
 
