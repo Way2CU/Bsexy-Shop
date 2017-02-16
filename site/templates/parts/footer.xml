@@ -10,7 +10,7 @@
 				<cms:module
 					name="links"
 					action="show_link_list"
-					group="footer_links"
+					group="footer_links_seo"
 					template="parts/show_links_footer.xml"
 					/>
 			</div>
