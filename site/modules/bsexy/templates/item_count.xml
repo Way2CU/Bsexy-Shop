@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../../../units/schema/language.dtd">
+<document>
+	<div class="list_item item_count">
+		<cms:text constant="item_count" module="bsexy"/>
+		<cms:raw text="&amp;nbsp;"/>
+		<cms:var param="count"/>
+	</div>
+</document>

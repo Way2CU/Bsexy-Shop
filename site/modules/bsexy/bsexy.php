@@ -38,7 +38,15 @@ class bsexy extends Module {
 			// add backend script
 			if (ModuleHandler::is_loaded('head_tag')) {
 				$head_tag = head_tag::get_instance();
-				$head_tag->addTag('script', array('src'=>URL::from_file_path($this->path.'include/backend.js'), 'type'=>'text/javascript'));
+				$head_tag->addTag('script', array(
+						'src'  => URL::from_file_path($this->path.'include/backend.js'),
+						'type' => 'text/javascript'
+					));
+				$head_tag->addTag('link', array(
+						'href' => URL::from_file_path($this->path.'include/backend.css'),
+						'rel'  => 'stylesheet',
+						'type' => 'text/css'
+					));
 			}
 
 			$bsexy_menu = new backend_MenuItem(
@@ -634,6 +642,18 @@ class bsexy extends Module {
 			$template->set_local_params($params);
 			$template->parse();
 		}
+
+		// show item count
+		$item_count = count($items);
+		$template = $this->load_template($tag_params, 'item_count.xml');
+
+		$params = array(
+				'count' => $item_count
+			);
+
+		$template->restore_xml();
+		$template->set_local_params($params);
+		$template->parse();
 
 		// draw page switch if needed
 		if (!is_null($page_switch)) {

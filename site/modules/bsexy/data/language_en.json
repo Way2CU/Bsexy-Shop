@@ -8,5 +8,6 @@
 	"column_manufacturer": "Manufacturer",
 	"column_phone": "Phone number",
     "column_visible": "Visible",
-    "preview": "Preview"
+    "preview": "Preview",
+    "item_count": "Total items displayed:"
 }
