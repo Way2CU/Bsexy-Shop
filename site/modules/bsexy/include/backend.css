@@ -9,3 +9,31 @@
 div.list_item.item_count {
 	border-top: 1px solid #e5e5e5;
 }
+
+div.list_item span.column span.priority {
+	display: inline-block;
+	vertical-align: sub;
+	width: 0.5em;
+	height: 1em;
+	margin-right: 0.2em;
+
+	border: 1px solid #e5e5e5;
+	line-height: 0;
+}
+
+html[dir=rtl] div.list_item span.column span.priority {
+	margin-right: 0;
+	margin-left: 0.2em;
+}
+
+div.list_item span.column span.priority.regular {
+	background-color: white;
+}
+
+div.list_item span.column span.priority.medium {
+	background-color: #3495db;
+}
+
+div.list_item span.column span.priority.high {
+	background-color: #f1c40f;
+}
