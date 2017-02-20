@@ -571,6 +571,7 @@ class bsexy extends Module {
 						'visible'           => $item->visible,
 						'visible_char'      => $item->visible ? CHAR_CHECKED : CHAR_UNCHECKED,
 						'deleted'           => $item->deleted,
+						'priority'          => $item->priority,
 						'expires'           => date($date_format, strtotime($item->expires))
 					);
 
