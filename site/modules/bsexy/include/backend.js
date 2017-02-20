@@ -102,6 +102,24 @@ Caracal.handle_shop_window_open = function(shop_window) {
 };
 
 /**
+ * Reload item list when shop items are added or changed.
+ *
+ * @param object shop_window
+ * @return boolean
+ */
+Caracal.handle_shop_window_close = function(shop_window) {
+	var handled_windows = ['shop_item_add', 'shop_item_change'];
+
+	// handle only specific windows
+	if (handled_windows.indexOf(shop_window.id) == -1)
+		return true;
+
+	var bsexy_window = Caracal.window_system.getWindow('bsexy_items');
+	if (bsexy_window)
+		bsexy_window.loadContent();
+}
+
+/**
  * Update item management window when filters change.
  *
  * @param object sender
@@ -128,4 +146,5 @@ Caracal.update_bsexy_item_list = function(sender) {
 
 $(function() {
 	Caracal.window_system.events.connect('window-content-load', Caracal.handle_shop_window_open);
+	Caracal.window_system.events.connect('window-close', Caracal.handle_shop_window_close);
 })
