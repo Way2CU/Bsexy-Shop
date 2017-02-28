@@ -10,7 +10,6 @@
 				<h1><cms:var param="title" multilanguage="yes"/></h1>
 			</a>
 
-
 			<!-- Promoted items -->
 			<div class="category_items">
 				<cms:module

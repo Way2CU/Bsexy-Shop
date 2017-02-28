@@ -23,7 +23,6 @@
 				<cms:raw text=" "/>
 				<cms:text constant="site_title_end"/>
 			</title>
-			<cms:script src="_BASEURL.'/site/scripts/break_items.js'" cms:eval="src"/>
 			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
@@ -60,8 +59,30 @@
 						name="shop"
 						action="show_item_list"
 						category="$_REQUEST['area']"
-						order_by="priority"
-						order_asc="0"
+						random="1"
+						priority="25"
+						limit="20"
+						template="parts/category_items.xml"
+						cms:eval="category"
+						/>
+					<br/>
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['area']"
+						random="1"
+						priority="15"
+						limit="20"
+						template="parts/category_items.xml"
+						cms:eval="category"
+						/>
+					<br/>
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['area']"
+						random="1"
+						priority="5"
 						template="parts/category_items.xml"
 						cms:eval="category"
 						/>
