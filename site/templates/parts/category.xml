@@ -6,5 +6,8 @@
 		</cms:if>
 		<cms:var param="title" multilanguage="yes"/>
 	</h1>
-	<cms:markdown param="description" multilanguage="yes"/>
+
+	<div class="category-description">
+		<cms:markdown param="description" multilanguage="yes"/>
+	</div>
 </document>

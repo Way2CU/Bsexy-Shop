@@ -24,12 +24,14 @@
 				<cms:text constant="site_title_end"/>
 			</title>
 			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
+			<cms:script src="_BASEURL.'/site/scripts/read_more.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
 
 		<body>
 			<cms:raw file="parts/gtmbody.txt"/>
+
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 

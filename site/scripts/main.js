@@ -7,10 +7,10 @@
  */
 
 // create or use existing site scope
-var Site = Site || {};
+var Site = Site || new Object();
 
 // make sure variable cache exists
-Site.variable_cache = Site.variable_cache || {};
+Site.variable_cache = Site.variable_cache || new Object();
 
 
 /**
@@ -71,7 +71,6 @@ Site.load_agreement = function() {
 	xhttp.open("GET", path, true);
 	xhttp.send();
 }
-
 
 /**
  * Handle product thumbnail click event
@@ -145,6 +144,12 @@ Site.on_load = function() {
 		}
 	}
 
+	// implement "read more" option on mobile category descriptions
+	if (Site.is_mobile()) {
+		var descriptions = document.querySelectorAll('div.category-description');
+		for (var i=0, count=descriptions.length; i<count; i++)
+			new Site.ReadMore(descriptions[i]);
+	}
 };
 
 // connect document `load` event with handler function

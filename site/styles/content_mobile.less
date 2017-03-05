@@ -636,3 +636,81 @@ nav#areas ul li ul li a span {
 	fill: @color_text;
 }
 
+/**
+ * Read more integration
+ */
+div.category-description {
+	margin-bottom: 2em;
+}
+
+.has-read-more {
+	position: relative;
+	overflow: hidden;
+	max-height: 5em;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 2em;
+
+		opacity: 1;
+		background-image: linear-gradient(180deg, fade(@color_background, 0), @color_background);
+		pointer-events: auto;
+
+		transition: opacity 0.4s;
+	}
+}
+
+.has-read-more.active {
+	max-height: 15em;
+	padding-bottom: 2em;
+
+	&:before {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+.has-read-more a.read-more {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	bottom: 0;
+	left: 50%;
+
+	border: 1px solid @color_text;
+	border-radius: 50%;
+	background-color: @color_background;
+	filter: drop-shadow(0 0 10px @color_background);
+
+	line-height: 0;
+	transform:  translateX(-50%);
+
+	&:before {
+		@size: 0.5em;
+
+		display: block;
+		content: '';
+		width: 0;
+		height: 0;
+		position: relative;
+		left: -@size;
+		bottom: -@size;
+
+		border: @size solid transparent;
+		border-right-color: @color_text;
+		border-top-color: @color_text;
+		transform-origin: 50%;
+		transform: rotate(135deg);
+		transition: transform 0.4s;
+
+		line-height: 0;
+	}
+}
+
+.has-read-more.active a.read-more:before {
+	transform: rotate(-45deg);
+}
