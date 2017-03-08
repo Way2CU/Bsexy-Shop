@@ -1,11 +1,18 @@
 <document>
 	<cms:if condition="isset($template['big_image'])">
-		<img
-			src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 400 : 300, Thumbnail::CONSTRAIN_HEIGHT)"
-			alt="$params['title'][$language]"
-			class="big_image"
-			cms:eval="src,alt"
-			/>
+		<figure
+			itemprop="image"
+			itemscope="itemscope"
+			itemtype="https://schema.org/ImageObject"
+			>
+			<img
+				src="gallery::getThumbnailById($params['id'], null, _DESKTOP_VERSION ? 400 : 300, Thumbnail::CONSTRAIN_HEIGHT)"
+				alt="$params['title'][$language]"
+				class="big_image"
+				cms:eval="src,alt"
+				/>
+			<meta itemprop="url" content="$params['image']" cms:eval="content"/>
+		</figure>
 	</cms:if>
 
 	<cms:if condition="isset($template['thumbnail_image'])">

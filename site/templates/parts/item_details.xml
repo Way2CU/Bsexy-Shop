@@ -1,30 +1,46 @@
 <document>
+	<meta
+		itemscope="itemscrope"
+		itemprop="mainEntityOfPage"
+		itemtype="https://schema.org/WebPage"
+		/>
+
 	<!-- Item title -->
-	<h1><cms:var param="name" multilanguage="yes"/></h1>
+	<h1 itemprop="headline">
+		<cms:var param="name" multilanguage="yes"/>
+	</h1>
 
 	<cms:desktop>
 		<!-- Information -->
 		<div class="information">
-			<cms:markdown param="description" multilanguage="yes"/>
+			<div itemprop="description">
+				<cms:markdown param="description" multilanguage="yes"/>
+			</div>
 
 			<!-- Show phone numbers -->
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="phone1"
-				template="parts/phone.xml"
-				cms:eval="item"
-				/>
+			<div
+				itemprop="author"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Person"
+				>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="phone1"
+					template="parts/phone.xml"
+					cms:eval="item"
+					/>
 
-			<cms:module
-				name="shop"
-				action="show_property"
-				item="$params['id']"
-				text_id="phone2"
-				template="parts/phone.xml"
-				cms:eval="item"
-				/>
+				<cms:module
+					name="shop"
+					action="show_property"
+					item="$params['id']"
+					text_id="phone2"
+					template="parts/phone.xml"
+					cms:eval="item"
+					/>
+			</div>
 
 			<img
 				class="note"
@@ -32,7 +48,8 @@
 				alt="message"
 				cms:eval="src"
 				/>
-			<!-- show links of categories item belongs to -->
+
+			<!-- Show links of categories item belongs to -->
 			<div class="item_categories">
 				<cms:module
 					name="shop"
@@ -112,33 +129,43 @@
 
 			<!-- Information -->
 			<div class="information">
-				<cms:markdown param="description" multilanguage="yes"/>
+				<div itemprop="description">
+					<cms:markdown param="description" multilanguage="yes"/>
+				</div>
 
 				<!-- Show phone numbers -->
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone1"
-					template="parts/phone.xml"
-					cms:eval="item"
-					/>
+				<div
+					itemprop="author"
+					itemscope="itemscope"
+					itemtype="https://schema.org/Person"
+					>
+					<cms:module
+						name="shop"
+						action="show_property"
+						item="$params['id']"
+						text_id="phone1"
+						template="parts/phone.xml"
+						cms:eval="item"
+						/>
 
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone2"
-					template="parts/phone.xml"
-					cms:eval="item"
-					/>
+					<cms:module
+						name="shop"
+						action="show_property"
+						item="$params['id']"
+						text_id="phone2"
+						template="parts/phone.xml"
+						cms:eval="item"
+						/>
+				</div>
+
 				<img
 					class="note"
 					src="_BASEURL.'/site/images/footer-note-vector.svg'"
 					alt="message"
 					cms:eval="src"
 					/>
-				<!-- show links of categories item belongs to -->
+
+				<!-- Show links of categories item belongs to -->
 				<div class="item_categories">
 					<cms:module
 						name="shop"
