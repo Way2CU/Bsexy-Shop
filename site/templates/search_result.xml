@@ -32,7 +32,11 @@
 			<!-- Top part of the site -->
 			<cms:template file="parts/header.xml"/>
 
-			<section class="item_details">
+			<section
+				class="item_details"
+				itemscope="itemscope"
+				itemtype="https://schema.org/NewsArticle"
+				>
 				<cms:module
 					name="shop"
 					action="show_item"
