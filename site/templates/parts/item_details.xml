@@ -4,6 +4,16 @@
 		itemprop="mainEntityOfPage"
 		itemtype="https://schema.org/WebPage"
 		/>
+	<meta
+		itemprop="datePublished"
+		content="date('c', $params['timestamp'])"
+		cms:eval="content"
+		/>
+	<meta
+		itemprop="dateModified"
+		content="date('c', $params['timestamp'])"
+		cms:eval="content"
+		/>
 
 	<!-- Item title -->
 	<h1 itemprop="headline">
@@ -23,14 +33,16 @@
 				itemscope="itemscope"
 				itemtype="https://schema.org/Person"
 				>
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone1"
-					template="parts/phone.xml"
-					cms:eval="item"
-					/>
+				<span itemprop="name">
+					<cms:module
+						name="shop"
+						action="show_property"
+						item="$params['id']"
+						text_id="phone1"
+						template="parts/phone.xml"
+						cms:eval="item"
+						/>
+				</span>
 
 				<cms:module
 					name="shop"

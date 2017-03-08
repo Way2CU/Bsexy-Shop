@@ -12,6 +12,8 @@
 				cms:eval="src,alt"
 				/>
 			<meta itemprop="url" content="$params['image']" cms:eval="content"/>
+			<meta itemprop="width" content="600"/>
+			<meta itemprop="height" content="600"/>
 		</figure>
 	</cms:if>
 
