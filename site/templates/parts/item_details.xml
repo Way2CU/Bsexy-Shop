@@ -73,6 +73,32 @@
 					cms:eval="item"
 					/>
 			</div>
+
+			<!-- Schema publisher -->
+			<div
+				itemprop="publisher"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Organization"
+				>
+				<figure
+					itemprop="logo"
+					itemscope="itemscope"
+					itemtype="https://schema.org/ImageObject"
+					class="publisher"
+					>
+					<meta itemprop="width" content="75"/>
+					<meta itemprop="height" content="50"/>
+					<img
+						class="logo"
+						itemprop="url"
+						src="_BASEURL.'/site/images/logo.png'"
+						alt="publisher"
+						cms:eval="src"
+						cms:constant="alt"
+						/>
+				</figure>
+				<meta itemprop="name" content="publisher" cms:constant="content"/>
+			</div>
 		</div>
 
 		<!-- Item images -->
@@ -140,7 +166,14 @@
 			</div>
 
 			<!-- Information -->
-			<div class="information">
+			<div
+				class="information"
+				itemprop="publisher"
+				itemscope="itemscope"
+				itemtype="https://schema.org/Organization"
+				>
+				<meta itemprop="name" content="publisher" cms:constant="content"/>
+
 				<div itemprop="description">
 					<cms:markdown param="description" multilanguage="yes"/>
 				</div>
@@ -151,14 +184,16 @@
 					itemscope="itemscope"
 					itemtype="https://schema.org/Person"
 					>
-					<cms:module
-						name="shop"
-						action="show_property"
-						item="$params['id']"
-						text_id="phone1"
-						template="parts/phone.xml"
-						cms:eval="item"
-						/>
+					<span itemprop="name">
+						<cms:module
+							name="shop"
+							action="show_property"
+							item="$params['id']"
+							text_id="phone1"
+							template="parts/phone.xml"
+							cms:eval="item"
+							/>
+					</span>
 
 					<cms:module
 						name="shop"

@@ -31,7 +31,7 @@
 					/>
 				<br/>
 
-				<!-- phone link -->
+				<!-- Phone link -->
 				<cms:module
 					name="links"
 					action="show"
@@ -74,8 +74,9 @@
 				<img
 					class="logo"
 					src="_BASEURL.'/site/images/logo-vector.svg'"
-					alt="bsexy-logo"
+					alt="menu_bsexy"
 					cms:eval="src"
+					cms:constant="alt"
 					/>
 			</cms:mobile>
 		</div>
