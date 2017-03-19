@@ -4,10 +4,12 @@
 	"menu_items": "Manage items",
 	"title_search": "Search items by phone number",
 	"title_manage_items": "Bsexy: Manage items",
+    "title_item_categories": "Bsexy: Item categories",
 	"label_search": "Search:",
 	"column_manufacturer": "Manufacturer",
 	"column_phone": "Phone number",
     "column_visible": "Visible",
     "preview": "Preview",
+	"categories": "Categories",
     "item_count": "Total items displayed:"
 }

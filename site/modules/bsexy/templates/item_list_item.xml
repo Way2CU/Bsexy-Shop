@@ -29,6 +29,7 @@
 			<cms:var param="item_change"/><cms:raw text=" "/>
 			<cms:var param="item_delete"/><cms:raw text=" "/>
 			<cms:var param="item_images"/><cms:raw text=" "/>
+			<cms:var param="item_categories"/><cms:raw text=" "/>
 			<cms:var param="item_preview"/>
 		</span>
 	</div>

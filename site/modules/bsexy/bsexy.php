@@ -75,7 +75,7 @@ class bsexy extends Module {
 				URL::from_file_path($this->path.'images/items.svg'),
 				window_Open( // on click open window
 					'bsexy_items',
-					950,
+					1100,
 					$this->get_language_constant('title_manage_items'),
 					true, true,
 					backend_UrlMake($this->name, 'manage_items')
@@ -115,6 +115,10 @@ class bsexy extends Module {
 
 				case 'search':
 					$this->show_search_form();
+					break;
+
+				case 'show_member_categories':
+					$this->show_member_categories();
 					break;
 
 				case 'manage_items':
@@ -607,6 +611,21 @@ class bsexy extends Module {
 														array('module', $shop->name),
 														array('backend_action', 'items'),
 														array('sub_action', 'delete'),
+														array('id', $item->id)
+													)));
+
+				$params['item_categories'] = URL::make_hyperlink(
+												$this->get_language_constant('categories'),
+												window_Open(
+													'bsexy_category_list', 	// window id
+													400,				// width
+													$this->get_language_constant('title_item_categories'), // title
+													true, false,
+													URL::make_query(
+														'backend_module',
+														'transfer_control',
+														array('module', $this->name),
+														array('backend_action', 'show_member_categories'),
 														array('id', $item->id)
 													)));
 

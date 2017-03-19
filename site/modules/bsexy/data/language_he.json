@@ -4,10 +4,12 @@
     "menu_items": "נהל מוצרים",
 	"title_search": "חפש מוצרים לפי טלפון",
     "title_manage_items": "Bsexy: נהל מוצרים",
+    "title_item_categories": "Bsexy: Item categories",
 	"label_search": "חפש:",
     "column_manufacturer": "יצרן",
     "column_phone": "מספר טלפון",
     "column_visible": "מוצג",
 	"preview": "פתח",
+	"categories": "Categories",
     "item_count": "סה\"כ פריטים מוצגים:"
 }
