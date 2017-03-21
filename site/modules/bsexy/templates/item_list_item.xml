@@ -25,11 +25,16 @@
 		<span class="column" style="width: 100px;">
 			<cms:var param="expires"/>
 		</span>
+		<span class="column categories" style="width: 60px;">
+			<span>...</span>
+			<ul>
+				<cms:var param="tags"/>
+			</ul>
+		</span>
 		<span class="column">
 			<cms:var param="item_change"/><cms:raw text=" "/>
 			<cms:var param="item_delete"/><cms:raw text=" "/>
 			<cms:var param="item_images"/><cms:raw text=" "/>
-			<cms:var param="item_categories"/><cms:raw text=" "/>
 			<cms:var param="item_preview"/>
 		</span>
 	</div>

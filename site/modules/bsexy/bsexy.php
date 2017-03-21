@@ -564,6 +564,13 @@ class bsexy extends Module {
 			$manufacturer_name = $manufacturer_names[$item->manufacturer];
 			$phone_number = isset($phone_numbers[$item->id]) ? $phone_numbers[$item->id] : '';
 
+			// prepare tags for display
+			$tag_array = json_decode($item->tags);
+			$tags = '';
+			if ($tag_array !== null)
+				foreach ($tag_array as $tag)
+					$tags .= '<li>'.$tag.'</li>';
+
 			$params = array(
 						'id'                => $item->id,
 						'uid'               => $item->uid,
@@ -573,6 +580,7 @@ class bsexy extends Module {
 						'views'             => $item->views,
 						'phone'             => $phone_number,
 						'timestamp'         => $item->timestamp,
+						'tags'              => $tags,
 						'visible'           => $item->visible,
 						'visible_char'      => $item->visible ? CHAR_CHECKED : CHAR_UNCHECKED,
 						'deleted'           => $item->deleted,
