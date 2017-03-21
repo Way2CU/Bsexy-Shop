@@ -66,7 +66,10 @@ Caracal.add_property_row = function(property_id, data, container) {
 };
 
 
-Caracal.handle_shop_window_open = function(shop_window) {
+/**
+ * Automatically add phone properties to the new item.
+ */
+Caracal.add_properties = function(shop_window) {
 	// make sure we are working with the right window
 	if (shop_window.id != 'shop_item_add')
 		return true;
@@ -143,8 +146,71 @@ Caracal.update_bsexy_item_list = function(sender) {
 	items_window.loadContent(items_window.original_url + '&' + $.param(data));
 };
 
+/**
+ * Update tags entry for before item data is saved.
+ *
+ * @param object window
+ */
+Caracal.update_tags = function(shop_window) {
+	var handled_windows = ['shop_item_add', 'shop_item_change'];
+
+	// handle only specific windows
+	if (handled_windows.indexOf(shop_window.id) == -1)
+		return true;
+
+	// find elements
+	var tags = shop_window.container.find('input[name=tags]').eq(0);
+	var categories = shop_window.container.find('input[type=checkbox][name^=category_id]');
+	var selected = new Array();
+
+	for (var i=0, count=categories.length; i<count; i++) {
+		var category = categories.eq(i);
+
+		if (!category.is(':checked'))
+			continue;
+
+		var data = category.data('text-id');
+		if (data)
+			selected.push();
+	}
+
+	// update tags container
+	tags.val(JSON.stringify(selected));
+};
+
+
+/**
+ * Attach additional handler for shop categories checkbox. This
+ * handler will select child categories as well when parent one
+ * is checked.
+ *
+ * @param object shop_window
+ */
+Caracal.attach_category_click_handler = function(shop_window) {
+	var handled_windows = ['shop_item_add', 'shop_item_change'];
+
+	// handle only specific windows
+	if (handled_windows.indexOf(shop_window.id) == -1)
+		return true;
+
+	// find all checkboxes
+	var categories = shop_window.container.find('input[type=checkbox][name^=category_id]');
+	categories.on('change', function(event) {
+		var category = $(this);
+		var container = category.closest('div.list_item').find('div.children');
+		var children = container.find('input[type=checkbox][name^=category_id]');
+
+		children.each(function(index) {
+			var current = $(this);
+			current.prop('checked', category.is(':checked'));
+		});
+	});
+};
+
 
 $(function() {
-	Caracal.window_system.events.connect('window-content-load', Caracal.handle_shop_window_open);
+	Caracal.window_system.events.connect('window-content-load', Caracal.add_properties);
+	Caracal.window_system.events.connect('window-content-load', Caracal.attach_category_click_handler);
+	Caracal.window_system.events.connect('window-before-submit', Caracal.update_tags);
 	Caracal.window_system.events.connect('window-close', Caracal.handle_shop_window_close);
-})
+});
