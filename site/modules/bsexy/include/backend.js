@@ -171,7 +171,7 @@ Caracal.update_tags = function(shop_window) {
 
 		var data = category.data('text-id');
 		if (data)
-			selected.push();
+			selected.push(data);
 	}
 
 	// update tags container
