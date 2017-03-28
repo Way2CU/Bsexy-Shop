@@ -594,7 +594,7 @@ class bsexy extends Module {
 												$shop->get_language_constant('change'),
 												window_Open(
 													'shop_item_change', 	// window id
-													550,				// width
+													700,				// width
 													$shop->get_language_constant('title_item_change'), // title
 													true, true,
 													URL::make_query(
