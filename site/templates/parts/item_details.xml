@@ -6,12 +6,12 @@
 		/>
 	<meta
 		itemprop="datePublished"
-		content="date('c', $params['timestamp'])"
+		content="date('c', (int) $params['timestamp'])"
 		cms:eval="content"
 		/>
 	<meta
 		itemprop="dateModified"
-		content="date('c', $params['timestamp'])"
+		content="date('c', (int) $params['timestamp'])"
 		cms:eval="content"
 		/>
 
