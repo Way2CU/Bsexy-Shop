@@ -20,10 +20,9 @@ $available_languages = array('he', 'en', 'ru', 'ar');
 $default_language = 'he';
 
 // default session options
-$session_type = Session::TYPE_BROWSER;
+$session_type = SessionType::BROWSER;
 
 // database
-$db_use = true;
 $db_type = DatabaseType::MYSQL;
 $db_config = array(
 		'host' => 'localhost',
