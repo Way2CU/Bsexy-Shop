@@ -369,7 +369,7 @@ class bsexy extends Module {
 	 * @param array $chilren
 	 */
 	public function tag_ItemList($tag_params, $children) {
-		global $language, $section;
+		global $language, $section, $db;
 
 		$shop = shop::get_instance();
 		$manager = ItemManager::get_instance();
@@ -378,6 +378,16 @@ class bsexy extends Module {
 		$order_by = array('id');
 		$order_asc = true;
 		$limit = null;
+
+		// get items displayed on home page
+		$home_items = array();
+		if ($section == 'backend' || $section == 'backend_module') {
+			$sql = Query::load_file('home_page_items.sql', $this);
+			$result = $db->get_results($sql);
+
+			foreach ($result as $item)
+				$home_items []= $item->id;
+		}
 
 		// create conditions
 		if (isset($_REQUEST['manufacturer']) && !empty($_REQUEST['manufacturer']))
@@ -590,6 +600,7 @@ class bsexy extends Module {
 
 			// create backend options
 			if ($section == 'backend' || $section == 'backend_module') {
+				$params['on_home'] = in_array($item->id, $home_items) ? CHAR_CHECKED : CHAR_UNCHECKED;
 				$params['item_change'] = URL::make_hyperlink(
 												$shop->get_language_constant('change'),
 												window_Open(
