@@ -4,9 +4,15 @@
 	<div class="list_item">
 		<span class="column" style="width: 250px;">
 			<cms:choice value="$params['priority']" cms:eval="value">
-				<option value="25"><span class="priority high"/></option>
-				<option value="15"><span class="priority medium"/></option>
-				<option value="5" default="1"><span class="priority regular"/></option>
+				<option value="25">
+					<span class="priority high"><cms:var param="on_home"/></span>
+				</option>
+				<option value="15">
+					<span class="priority medium"><cms:var param="on_home"/></span>
+				</option>
+				<option value="5" default="1">
+					<span class="priority regular"><cms:var param="on_home"/></span>
+				</option>
 			</cms:choice>
 			<cms:var param="name" multilanguage="yes"/>
 		</span>

@@ -13,12 +13,12 @@ div.list_item.item_count {
 div.list_item span.column span.priority {
 	display: inline-block;
 	vertical-align: sub;
-	width: 0.5em;
+	width: 1em;
 	height: 1em;
 	margin-right: 0.2em;
 
 	border: 1px solid #e5e5e5;
-	line-height: 0;
+	line-height: 1;
 }
 
 html[dir=rtl] div.list_item span.column span.priority {
