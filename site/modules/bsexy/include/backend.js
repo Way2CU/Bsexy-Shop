@@ -78,10 +78,15 @@ Caracal.add_properties = function(shop_window) {
 	var expiration_field = shop_window.container.find('input[name=expires]');
 	var date = new Date();
 	date.setMonth(date.getMonth() + 1);
+
 	var month = (date.getMonth() + 1).toString();
 	if (month.length == 1)
 		month = '0' + month;
-	var value = date.getUTCFullYear() + '-' + month + '-' + date.getDate() + 'T00:00';
+	var day = date.getDate();
+	if (day.length == 1)
+		day = '0' + day;
+
+	var value = date.getUTCFullYear() + '-' + month + '-' + day + 'T00:00';
 	expiration_field.val(value);
 
 	// data to add
