@@ -200,15 +200,19 @@ Caracal.attach_category_click_handler = function(shop_window) {
 
 	// find all checkboxes
 	var categories = shop_window.container.find('input[type=checkbox][name^=category_id]');
+	var exclude_list = ['escort', 'apartments', 'massage', 'private', 'vip'];
+
 	categories.on('change', function(event) {
 		var category = $(this);
 		var container = category.closest('div.list_item').find('div.children');
 		var children = container.find('input[type=checkbox][name^=category_id]');
+		var text_id = category.data('text-id');
 
-		children.each(function(index) {
-			var current = $(this);
-			current.prop('checked', category.is(':checked'));
-		});
+		if (exclude_list.indexOf(text_id) == -1)
+			children.each(function(index) {
+				var current = $(this);
+				current.prop('checked', category.is(':checked'));
+			});
 	});
 };
 
