@@ -4,7 +4,6 @@
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title><cms:text constant="site_title"/></title>
-			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>

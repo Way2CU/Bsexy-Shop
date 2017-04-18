@@ -6,6 +6,7 @@
  * This file overrides properties defined in main configuration
  * file for Caracal located in `units/config.php`.
  */
+
 use Core\Cache\Type as CacheType;
 
 // document standard
