@@ -23,43 +23,45 @@
 	<cms:desktop>
 		<!-- Information -->
 		<div class="information">
-			<div itemprop="description">
-				<cms:markdown param="description" multilanguage="yes"/>
-			</div>
+			<div class="details">
+				<div itemprop="description">
+					<cms:markdown param="description" multilanguage="yes"/>
+				</div>
 
-			<!-- Show phone numbers -->
-			<div
-				itemprop="author"
-				itemscope="itemscope"
-				itemtype="https://schema.org/Person"
-				>
-				<span itemprop="name">
+				<!-- Show phone numbers -->
+				<div
+					itemprop="author"
+					itemscope="itemscope"
+					itemtype="https://schema.org/Person"
+					>
+					<span itemprop="name">
+						<cms:module
+							name="shop"
+							action="show_property"
+							item="$params['id']"
+							text_id="phone1"
+							template="parts/phone.xml"
+							cms:eval="item"
+							/>
+					</span>
+
 					<cms:module
 						name="shop"
 						action="show_property"
 						item="$params['id']"
-						text_id="phone1"
+						text_id="phone2"
 						template="parts/phone.xml"
 						cms:eval="item"
 						/>
-				</span>
+				</div>
 
-				<cms:module
-					name="shop"
-					action="show_property"
-					item="$params['id']"
-					text_id="phone2"
-					template="parts/phone.xml"
-					cms:eval="item"
+				<img
+					class="note"
+					src="_BASEURL.'/site/images/footer-note-vector.svg'"
+					alt="message"
+					cms:eval="src"
 					/>
 			</div>
-
-			<img
-				class="note"
-				src="_BASEURL.'/site/images/footer-note-vector.svg'"
-				alt="message"
-				cms:eval="src"
-				/>
 
 			<!-- Show links of categories item belongs to -->
 			<div class="item_categories">
@@ -212,6 +214,7 @@
 					cms:eval="src"
 					/>
 
+			</div>
 				<!-- Show links of categories item belongs to -->
 				<div class="item_categories">
 					<cms:module
@@ -224,7 +227,6 @@
 						cms:eval="item"
 						/>
 				</div>
-			</div>
 		</div>
 	</cms:mobile>
 </document>
