@@ -151,13 +151,123 @@
 
 				<!-- Services links -->
 				<div class="services">
+
+					<!-- Services -->
 					<cms:module
 						name="shop"
-						action="show_category_list"
-						order_by="order"
+						action="show_category"
+						text_id="escort"
 						parent="services"
 						template="parts/services_menu_item.xml"
 						/>
+
+					<!-- Vip -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- private -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="private"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- images -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="images"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- discreet -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="discreet"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- vip2 -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="vip2"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- massage -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="massage"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+
+					<!-- spa -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="spa"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- apartments -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="apartments"
+						parent="services"
+						template="parts/services_menu_item.xml"
+						/>
+					<!-- transgender -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="transgender"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- gays -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="gays"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- sado -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="sado"
+						template="parts/services_menu_item.xml"
+						/>
+
+					<!-- required -->
+					<cms:module
+						name="shop"
+						action="show_category"
+						text_id="required"
+						template="parts/services_menu_item.xml"
+						/>
+
+
+
+
 					<!-- manual service links -->
 					<a
 						target="_blank"
