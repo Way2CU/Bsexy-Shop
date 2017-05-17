@@ -69,3 +69,11 @@ div.list_item span.column.categories:hover ul {
 	opacity: 1;
 	pointer-events: auto;
 }
+
+div.window div.list_item span.column {
+	-moz-user-select: auto;
+	-webkit-user-select: auto;
+	user-select: auto;
+
+	cursor: auto;
+}
