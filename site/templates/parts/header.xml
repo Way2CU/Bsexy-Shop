@@ -233,6 +233,7 @@
 						parent="services"
 						template="parts/services_menu_item.xml"
 						/>
+
 					<!-- transgender -->
 					<cms:module
 						name="shop"
@@ -264,9 +265,6 @@
 						text_id="required"
 						template="parts/services_menu_item.xml"
 						/>
-
-
-
 
 					<!-- manual service links -->
 					<a
