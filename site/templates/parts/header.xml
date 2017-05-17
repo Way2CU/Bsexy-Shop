@@ -12,7 +12,7 @@
 					text_id="phone"
 					template="parts/link.xml"
 					/>
-					
+
 				<!-- logo -->
 				<a
 					href="URL::make()"
@@ -175,14 +175,15 @@
 						<cms:svg file="site-sprite.svg" symbol="webcam"/>
 						<cms:text constant="webcam"/>
 					</a>
-					<a
+					<!-- Form hidden in mobile vesion -->
+				<!-- 	<a
 						target="_blank"
 						href="forum_url"
 						cms:constant="href"
 						>
 						<cms:svg file="site-sprite.svg" symbol="forum"/>
 						<cms:text constant="forum"/>
-					</a>
+					</a> -->
 				</div>
 
 				<!-- Links to services outside the site -->
