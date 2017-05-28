@@ -8,6 +8,7 @@
 
 		<!-- Simple filter options -->
 		<div class="floated">
+			<!-- Manufacturers -->
 			<cms:text constant="label_manufacturer" module="shop"/>
 			<select name="manufacturer" onchange="Caracal.update_bsexy_item_list(this);">
 				<option/>
@@ -21,6 +22,21 @@
 					/>
 			</select>
 
+			<!-- Suppliers -->
+			<cms:text constant="label_manufacturer" module="shop"/>
+			<select name="supplier" onchange="Caracal.update_bsexy_item_list(this);">
+				<option/>
+				<cms:supplier_list
+					selected="isset($_REQUEST['supplier']) ? $_REQUEST['supplier'] : null"
+					template="supplier_option.xml"
+					local="1"
+					order_by="name"
+					order_asc="1"
+					cms:optional="selected"
+					/>
+			</select>
+
+			<!-- Categories -->
 			<cms:text constant="label_category" module="shop"/>
 			<select
 				name="category"

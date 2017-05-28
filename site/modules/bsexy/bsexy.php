@@ -13,6 +13,7 @@ use Core\Module;
 use Core\Events;
 use Modules\Shop\Item\Manager as ItemManager;
 use Modules\Shop\Property\Manager as PropertyManager;
+use Modules\Shop\Supplier\Handler as SupplierHandler;
 
 use ShopItemMembershipManager as ItemMembershipManager;
 use ShopManufacturerManager as ManufacturerManager;
@@ -175,6 +176,9 @@ class bsexy extends Module {
 
 		$manufacturer_handler = ShopManufacturerHandler::get_instance($shop);
 		$template->register_tag_handler('cms:manufacturer_list', $manufacturer_handler, 'tag_ManufacturerList');
+
+		$supplier_handler = SupplierHandler::get_instance($shop);
+		$template->register_tag_handler('cms:supplier_list', $supplier_handler, 'tag_SupplierList');
 
 		$category_handler = ShopCategoryHandler::get_instance($shop);
 		$template->register_tag_handler('cms:category_list', $category_handler, 'tag_CategoryList');
@@ -395,6 +399,9 @@ class bsexy extends Module {
 
 		if (isset($tag_params['manufacturer']) && !empty($tag_params['manufacturer']))
 			$conditions['manufacturer'] = fix_id($tag_params['manufacturer']);
+
+		if (isset($_REQUEST['supplier']))
+			$conditions['supplier'] = fix_id($_REQUEST['supplier']);
 
 		if (isset($tag_params['category'])) {
 			$categories = explode(',', $tag_params['category']);
