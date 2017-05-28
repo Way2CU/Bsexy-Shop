@@ -23,7 +23,7 @@
 			</select>
 
 			<!-- Suppliers -->
-			<cms:text constant="label_manufacturer" module="shop"/>
+			<cms:text constant="label_supplier" module="shop"/>
 			<select name="supplier" onchange="Caracal.update_bsexy_item_list(this);">
 				<option/>
 				<cms:supplier_list
