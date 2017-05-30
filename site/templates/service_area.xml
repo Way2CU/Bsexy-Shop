@@ -3,29 +3,21 @@
 <document>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
-			<title>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="$_REQUEST['service']"
-					template="parts/page_title.xml"
-					cms:eval="text_id"
-					/>
-				<cms:raw text=" - "/>
-				<cms:text constant="site_title_all"/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="$_REQUEST['area']"
-					template="parts/page_title.xml"
-					cms:eval="text_id"
-					/>
-				<cms:raw text=" "/>
-				<cms:text constant="site_title_end"/>
-			</title>
+			<cms:module
+				name="shop"
+				action="add_category_to_title"
+				text_id="$_REQUEST['service']"
+				cms:eval="text_id"
+				/>
+			<cms:module
+				name="shop"
+				action="add_category_to_title"
+				text_id="$_REQUEST['area']"
+				cms:eval="text_id"
+				/>
 			<cms:script src="_BASEURL.'/site/scripts/banner_system.js'" cms:eval="src"/>
 			<cms:script src="_BASEURL.'/site/scripts/read_more.js'" cms:eval="src"/>
-			<cms:module name="head_tag" action="print_tag"/>
+			<cms:module name="head_tag" action="show"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
 

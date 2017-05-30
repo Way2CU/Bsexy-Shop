@@ -3,18 +3,13 @@
 <document>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
-			<title>
-				<cms:module
-					name="shop"
-					action="show_item"
-					id="fix_id($_REQUEST['id'])"
-					template="parts/item_title.xml"
-					cms:eval="id"
-					/>
-				<cms:raw text=" - "/>
-				<cms:text constant="site_title_end"/>
-			</title>
-			<cms:module name="head_tag" action="print_tag"/>
+			<cms:module
+				name="shop"
+				action="add_to_title"
+				id="fix_id($_REQUEST['id'])"
+				cms:eval="id"
+				/>
+			<cms:module name="head_tag" action="show"/>
 			<cms:raw file="parts/gtmhead.txt"/>
 		</head>
 

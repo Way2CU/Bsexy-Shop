@@ -6,6 +6,5 @@
 		style="'background-image: url('.$params['image'].');'"
 		href="$params['redirect_url']"
 		cms:eval="href,style,title"
-		>
-	</a>
+		/>
 </document>
