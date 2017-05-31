@@ -176,7 +176,7 @@ Caracal.update_tags = function(shop_window) {
 		if (!category.is(':checked'))
 			continue;
 
-		var data = category.data('text-id');
+		var data = category.parent()[0].innerText;
 		if (data)
 			selected.push(data);
 	}
