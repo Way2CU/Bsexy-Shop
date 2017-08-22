@@ -3,7 +3,7 @@
 		title="$params['text'][$language]"
 		nofollow="nofollow"
 		class="link"
-		style="'background-image: url('.$params['image'].');'"
+		style="'background-image: url('.gallery::get_raw_image($params['image']).');'"
 		href="$params['redirect_url']"
 		cms:eval="href,style,title"
 		/>

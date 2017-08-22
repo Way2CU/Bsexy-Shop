@@ -223,8 +223,8 @@
 							<cms:text constant="forum"/>
 						</h3>
 					</a>
-
 				</section>
+
 				<!-- SEO article -->
 				<cms:module
 					name="articles"
