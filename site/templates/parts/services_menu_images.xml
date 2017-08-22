@@ -5,7 +5,7 @@
 		cms:eval="href"
 		>
 		<img
-			src="gallery::getThumbnailById($params['image'], null, 150,Thumbnail::CONSTRAIN_HEIGHT)"
+			src="gallery::get_image($params['image'], 150,Thumbnail::CONSTRAIN_HEIGHT)"
 			alt="$params['title'][$language]"
 			cms:eval="src,alt"
 			/>
