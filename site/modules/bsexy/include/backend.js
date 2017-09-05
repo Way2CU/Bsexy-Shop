@@ -89,6 +89,10 @@ Caracal.add_properties = function(shop_window) {
 	var value = date.getUTCFullYear() + '-' + month + '-' + day + 'T00:00';
 	expiration_field.val(value);
 
+	// set default priority
+	var priority_field = shop_window.container.find('input[name=priority]');
+	priority_field.val('5');
+
 	// data to add
 	var data = {
 			text_id: 'phone',
