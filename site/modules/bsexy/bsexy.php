@@ -400,7 +400,7 @@ class bsexy extends Module {
 		if (isset($tag_params['manufacturer']) && !empty($tag_params['manufacturer']))
 			$conditions['manufacturer'] = fix_id($tag_params['manufacturer']);
 
-		if (isset($_REQUEST['supplier']))
+		if (isset($_REQUEST['supplier']) && !empty($_REQUEST['supplier']))
 			$conditions['supplier'] = fix_id($_REQUEST['supplier']);
 
 		if (isset($tag_params['category'])) {
