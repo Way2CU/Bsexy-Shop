@@ -32,6 +32,9 @@ $db_config = array(
 		'name' => 'web_engine'
 	);
 
+// configure content security policy
+$content_security_policy = 'script-src \'self\' www.googletagmanager.com';
+
 // configure code generation
 $cache_method = CacheType::NONE;
 $optimize_code = false;
