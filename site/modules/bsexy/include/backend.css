@@ -77,3 +77,40 @@ div.window div.list_item span.column {
 
 	cursor: auto;
 }
+
+div#bsexy_items label.manufacturer span {
+	display: inline-block;
+	vertical-align: middle;
+	height: calc(1.2em + 6px);
+	width: 60px;
+	margin: 3px;
+	padding: 2px;
+
+	box-sizing: border-box;
+	position: relative;
+	top: -2px;
+
+	border: 1px solid #929292;
+	background-color: #d5d5d5;
+
+	color: black;
+}
+
+div#bsexy_items label.manufacturer input {
+	width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	transition: none;
+}
+
+div#bsexy_items label.manufacturer input:focus {
+	width: 60px;
+	margin: 3px;
+	padding: 2px;
+	border: 1px solid #929292;
+}
+
+div#bsexy_items label.manufacturer input:focus + span {
+	display: none;
+}

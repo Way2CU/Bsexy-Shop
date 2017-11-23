@@ -10,7 +10,10 @@
 		<div class="floated">
 			<!-- Manufacturers -->
 			<cms:text constant="label_manufacturer" module="shop"/>
-			<input name="manufacturer" list="manufacturers" onchange="Caracal.update_bsexy_item_list(this);"/>
+			<label class="manufacturer">
+				<input name="manufacturer" list="manufacturers" onchange="Caracal.update_bsexy_item_list(this);"/>
+				<span/>
+			</label>
 			<datalist id="manufacturers">
 				<cms:manufacturer_list
 					selected="isset($_REQUEST['manufacturer']) ? $_REQUEST['manufacturer'] : null"

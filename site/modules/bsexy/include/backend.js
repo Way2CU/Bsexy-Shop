@@ -132,15 +132,34 @@ Caracal.handle_shop_window_close = function(shop_window) {
 }
 
 /**
+ * Update manufacturer value.
+ */
+Caracal.update_manufacturer_value = function(shop_window) {
+	if (shop_window && shop_window.id == 'bsexy_items')
+		var items_window = shop_window; else
+		var items_window = Caracal.window_system.getWindow('bsexy_items');
+	var manufacturer = items_window.container.find('label.manufacturer input');
+	var manufacturer_value = items_window.container.find('label.manufacturer span');
+
+	// update manufacturer value
+	var option = items_window.container.find('datalist#manufacturers option[value="'+manufacturer.val()+'"]');
+	if (option.length > 0)
+		manufacturer_value.innerText = option.innerText; else
+		manufacturer_value.innerText = '';
+};
+
+/**
  * Update item management window when filters change.
  *
  * @param object sender
  */
 Caracal.update_bsexy_item_list = function(sender) {
 	var items_window = Caracal.window_system.getWindow('bsexy_items');
-	var manufacturer = items_window.container.find('input[name=manufacturer]');
+	var manufacturer = items_window.container.find('label.manufacturer input');
 	var supplier = items_window.container.find('select[name=supplier]');
 	var category = items_window.container.find('select[name=category]');
+
+	Caracal.update_manufacturer_value();
 
 	// prepare data to send to server
 	var data = {
@@ -226,6 +245,7 @@ Caracal.attach_category_click_handler = function(shop_window) {
 $(function() {
 	Caracal.window_system.events.connect('window-content-load', Caracal.add_properties);
 	Caracal.window_system.events.connect('window-content-load', Caracal.attach_category_click_handler);
+	Caracal.window_system.events.connect('window-content-load', Caracal.update_manufacturer_value);
 	Caracal.window_system.events.connect('window-before-submit', Caracal.update_tags);
 	Caracal.window_system.events.connect('window-close', Caracal.handle_shop_window_close);
 });
