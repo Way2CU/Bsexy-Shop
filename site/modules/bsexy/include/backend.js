@@ -138,7 +138,7 @@ Caracal.handle_shop_window_close = function(shop_window) {
  */
 Caracal.update_bsexy_item_list = function(sender) {
 	var items_window = Caracal.window_system.getWindow('bsexy_items');
-	var manufacturer = items_window.container.find('select[name=manufacturer]');
+	var manufacturer = items_window.container.find('input[name=manufacturer]');
 	var supplier = items_window.container.find('select[name=supplier]');
 	var category = items_window.container.find('select[name=category]');
 
