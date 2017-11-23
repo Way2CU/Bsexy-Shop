@@ -33,7 +33,7 @@ $db_config = array(
 	);
 
 // configure content security policy
-$content_security_policy = 'script-src \'self\' www.googletagmanager.com';
+$content_security_policy = 'script-src \'unsafe-inline\' \'self\' www.googletagmanager.com www.google-analytics.com';
 
 // configure code generation
 $cache_method = CacheType::NONE;
