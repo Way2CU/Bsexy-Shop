@@ -47,6 +47,10 @@
 					order_by="order"
 					template="parts/services_menu_item.xml"
 					/>
+				<a href="URL::make(array(), 'sex_stories.xml')" cms:eval="href">
+					<cms:svg file="site-sprite.svg" symbol="required"/>
+					<cms:text constant="menu_sex_stories"/>
+				</a>
 				<!-- manual service links -->
 				<a
 					target="_blank"
@@ -263,6 +267,12 @@
 						text_id="required"
 						template="parts/services_menu_item.xml"
 						/>
+
+					<!-- sex stories -->
+					<a href="URL::make(array(), 'sex_stories.xml')" cms:eval="href">
+						<cms:svg file="site-sprite.svg" symbol="required"/>
+						<cms:text constant="menu_sex_stories"/>
+					</a>
 
 					<!-- manual service links -->
 					<a

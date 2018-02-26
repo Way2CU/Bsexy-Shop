@@ -1,0 +1,25 @@
+<document>
+	<li>
+		<div class="story_item">
+
+			<!-- Content -->
+			<cms:markdown param="content" multilanguage="yes" chars="200"/>
+
+			<!-- item image -->
+			<cms:module
+				name="gallery"
+				action="show_image"
+				text_id="$params['text_id']"
+				cms:eval="text_id"
+				/>
+
+			<!-- read more button -->
+			<a
+				href="URL::make(array('id' => $params['id']), 'view_sex_story.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="read_more_button"/>
+			</a>
+		</div>
+	</li>
+</document>

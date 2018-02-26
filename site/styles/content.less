@@ -112,6 +112,40 @@ html[dir="rtl"] section div.title a.action.show {
 
 section.category_areas {
 	position: relative;
+
+	ul#category_list {
+		margin: 0;
+		padding: 0;
+		padding-top: 2rem;
+		list-style-type: none;
+
+		li {
+			display: inline-block;
+			margin: 0 0.5rem;
+			margin-bottom: 1rem;
+			width: calc(~'(100% - 2rem) / 6');
+			border: 1px solid @color_dark_action;
+			text-align: center;
+
+			div.story_item {
+
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+
+				a {
+					display: block;
+					padding: 0.5rem 0.5rem;
+					background-image:
+					linear-gradient(180deg, @color_dark_action 0%, @color_bright_action 100%);
+					text-decoration: none;
+					color: white;
+				}
+			}
+		}
+	}
 }
 
 section.category_areas > p {
@@ -547,6 +581,26 @@ div.item_categories a span {
 
 div.item_categories a:hover {
 	border-color: @color_dark_action;
+}
+
+div.article_holder {
+	display: inline-block;
+	width: calc(~'(100% - 4rem) / 2');
+	margin: 1rem;
+	vertical-align: top;
+
+	article {
+		width: 100%;
+	}
+}
+
+div.image_view {
+	display: inline-block;
+	width: calc(~'(100% - 4rem) / 2');
+	margin: 1rem;
+	position: relative;
+	height: 650px;
+	vertical-align: top;
 }
 
 /**

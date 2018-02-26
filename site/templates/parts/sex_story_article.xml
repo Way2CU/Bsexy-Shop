@@ -1,0 +1,47 @@
+<document>
+	<!-- story title -->
+	<h1><cms:var param="title" multilanguage="yes"/></h1>
+
+	<!-- story article -->
+	<div class="article_holder">
+		<cms:module
+			name="articles"
+			action="show"
+			text_id="$params['text_id']"
+			group="sex_stories"
+			cms:eval="text_id"
+			template="stock/article_generic.xml"
+			/>
+	</div>
+
+	<!-- Item images -->
+	<div class="item_gallery">
+		<!-- Big image container-->
+		<div class="main_image">
+			<cms:module
+				name="gallery"
+				action="show_image_list"
+				group_id="$params['gallery']"
+				limit="4"
+				template="parts/sex_story_gallery_view.xml"
+				cms:eval="group_id"
+				>
+				<param name="big_image" value=""/>
+			</cms:module>
+		</div>
+
+		<!-- Thumbnail images -->
+		<div class="thumbnails">
+			<cms:module
+				name="gallery"
+				action="show_image_list"
+				group_id="$params['gallery']"
+				limit="4"
+				template="parts/sex_story_gallery_view.xml"
+				cms:eval="group_id"
+				>
+				<param name="thumbnail_image" value=""/>
+			</cms:module>
+		</div>
+	</div>
+</document>

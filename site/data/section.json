@@ -4,6 +4,8 @@
 	"/sitemap.xml": "sitemap.xml",
 	"/item/{n:id}": "view_item.xml",
 	"/promoted/{n:id}": "view_promoted.xml",
+	"/sex-stories": "sex_stories.xml",
+	"/sex-stories/{n:id}": "view_sex_story.xml",
 	"/{service}/{area}": "service_area.xml",
 	"/{service}/{area}/{n:id}": "view.xml",
 	"/search": "search.xml",

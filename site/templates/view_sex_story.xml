@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:text constant="sex_stories_title"/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="articles"
+					action="show"
+					id="$_REQUEST['id']"
+					group="sex_stories"
+					cms:eval="id"
+					template="parts/article_title.xml"
+					/>
+			</title>
+			<cms:module name="head_tag" action="show"/>
+		</head>
+		<body>
+			<cms:template file="parts/header.xml"/>
+
+			<section class="item_details">
+				<cms:module
+					name="articles"
+					action="show"
+					id="$_REQUEST['id']"
+					group="sex_stories"
+					cms:eval="id"
+					template="parts/sex_story_article.xml"
+					/>
+			</section>
+
+			<!-- Bottom section of the site -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>
