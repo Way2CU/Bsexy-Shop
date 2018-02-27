@@ -68,14 +68,14 @@
 					<cms:svg file="site-sprite.svg" symbol="webcam"/>
 					<cms:text constant="webcam"/>
 				</a>
-				<a
+				<!-- <a
 					target="_blank"
 					href="forum_url"
 					cms:constant="href"
 					>
 					<cms:svg file="site-sprite.svg" symbol="forum"/>
 					<cms:text constant="forum"/>
-				</a>
+				</a> -->
 			</nav>
 
 			<div id="options">
