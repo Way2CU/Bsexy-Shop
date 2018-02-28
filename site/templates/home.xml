@@ -208,7 +208,7 @@
 						</h3>
 					</a>
 
-					<a
+					<!-- <a
 						class="category"
 						href="forum_url"
 						cms:constant="href"
@@ -222,7 +222,7 @@
 						<h3 class="title">
 							<cms:text constant="forum"/>
 						</h3>
-					</a>
+					</a> -->
 				</section>
 
 				<!-- SEO article -->
