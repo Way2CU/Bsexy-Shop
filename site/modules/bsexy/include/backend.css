@@ -78,6 +78,14 @@ div.window div.list_item span.column {
 	cursor: auto;
 }
 
+div.window div.list_item span.column:nth-child(3) {
+	-moz-user-select: text;
+	-webkit-user-select: text;
+	user-select: text;
+
+	cursor: auto;
+}
+
 div#bsexy_items label.manufacturer span {
 	display: inline-block;
 	vertical-align: middle;
