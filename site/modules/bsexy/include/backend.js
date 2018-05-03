@@ -135,7 +135,10 @@ Caracal.handle_shop_window_close = function(shop_window) {
  * Update manufacturer value.
  */
 Caracal.update_manufacturer_value = function(shop_window) {
-	if (shop_window && shop_window.id == 'bsexy_items')
+	if (shop_window && shop_window.id != 'bsexy_items')
+		return;
+
+	if (shop_window)
 		var items_window = shop_window; else
 		var items_window = Caracal.window_system.getWindow('bsexy_items');
 	var manufacturer = items_window.container.find('label.manufacturer input');
@@ -144,8 +147,8 @@ Caracal.update_manufacturer_value = function(shop_window) {
 	// update manufacturer value
 	var option = items_window.container.find('datalist#manufacturers option[value="'+manufacturer.val()+'"]');
 	if (option.length > 0)
-		manufacturer_value.innerText = option.innerText; else
-		manufacturer_value.innerText = '';
+		manufacturer_value.html(option.html()); else
+		manufacturer_value.html('');
 };
 
 /**

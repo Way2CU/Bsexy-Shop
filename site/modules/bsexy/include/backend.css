@@ -100,7 +100,7 @@ div#bsexy_items label.manufacturer input {
 	width: 0;
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border-width: 0;
 	transition: none;
 }
 
@@ -108,7 +108,7 @@ div#bsexy_items label.manufacturer input:focus {
 	width: 60px;
 	margin: 3px;
 	padding: 2px;
-	border: 1px solid #929292;
+	border-width: 1px;
 }
 
 div#bsexy_items label.manufacturer input:focus + span {
